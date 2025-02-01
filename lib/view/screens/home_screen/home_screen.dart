@@ -126,6 +126,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ],
                             ),
+
+                            Card(
+                              color: Colors.white,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: CustomText(
+                                  text: "Volunteer",
+                                  fontSize: isTablet ? 8.sp : 14.sp,
+                                  color: AppColors.primary,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
                           ],
                         )
                       ],
@@ -289,9 +302,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ],
                                     ),
                                     SizedBox(
-                                      height: 5,
+                                      height: 5.h,
                                     ),
-                                    // Leader
+                                    /// Leader
                                     Row(
                                       children: [
                                         CustomNetworkImage(
@@ -317,7 +330,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ],
                                     ),
                                     SizedBox(
-                                      height: 10,
+                                      height: 10.h,
                                     ),
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

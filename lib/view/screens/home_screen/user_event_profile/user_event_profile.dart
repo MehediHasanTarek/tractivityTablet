@@ -83,30 +83,31 @@ class _UserEventProfileState extends State<UserEventProfile> {
                               ],
                             ),
 
+                            SizedBox(height: 15,),
+                            Row(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 8,vertical: 8),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.neutral02,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),child: CustomText(text: "Working Time : 6:30 hours",fontSize: 12,fontWeight: FontWeight.w400,),
+                                ),
+                             /*   SizedBox(width: 8,),
+                                Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.neutral02,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),child: CustomText(text: "Millage : 8km",fontSize: 12,fontWeight: FontWeight.w400,),
+                                ),*/
+                              ],
+                            ),
                           ],
                         )
                       ],
                     ),
-                    SizedBox(height: 15,),
-                    Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 10,vertical: 8),
-                          decoration: BoxDecoration(
-                            color: AppColors.neutral02,
-                            borderRadius: BorderRadius.circular(10),
-                          ),child: CustomText(text: "Working Time : 6:30 hours",fontSize: 12,fontWeight: FontWeight.w400,),
-                        ),
-                        SizedBox(width: 8,),
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 10,vertical: 8),
-                          decoration: BoxDecoration(
-                            color: AppColors.neutral02,
-                            borderRadius: BorderRadius.circular(10),
-                          ),child: CustomText(text: "Millage : 8km",fontSize: 12,fontWeight: FontWeight.w400,),
-                        ),
-                      ],
-                    ),
+                
                     SizedBox(
                       height: 20.h,
                     ),

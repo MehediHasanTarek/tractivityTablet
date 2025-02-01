@@ -10,7 +10,9 @@ import 'package:tractivity_app/utils/app_const/app_const.dart';
 import 'package:tractivity_app/utils/app_icons/app_icons.dart';
 import 'package:tractivity_app/utils/app_images/app_images.dart';
 import 'package:tractivity_app/utils/app_strings/app_strings.dart';
+import 'package:tractivity_app/utils/toast.dart';
 import 'package:tractivity_app/view/components/custom_button/custom_button.dart';
+import 'package:tractivity_app/view/components/custom_from_card/custom_from_card.dart';
 import 'package:tractivity_app/view/components/custom_image/custom_image.dart';
 import 'package:tractivity_app/view/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:tractivity_app/view/components/custom_tab_selected/custom_tab_single_text.dart';
@@ -115,7 +117,24 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ],
-                              )
+                              ),
+
+                              SizedBox(
+                                height: 4.h,
+                              ),
+
+                              Card(
+                                color: Colors.white,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: CustomText(
+                                    text: "Adminstrator",
+                                    fontSize: isTablet ? 8.sp : 14.sp,
+                                    color: AppColors.primary,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
                             ],
                           )
                         ],
@@ -195,45 +214,146 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
 
                                             SizedBox(
                                               width: 250.w,
-                                              child: Expanded(
-                                                child: CustomText(
-                                                  text: "Empowering communities  worldwide  through education, healthcare,  and sustainable development initiatives.",
-                                                  fontSize: 12,
-                                                  color: AppColors.black_80,
-                                                  fontWeight: FontWeight.w400,
-                                                  textAlign: TextAlign.start,
-                                                   maxLines: 2,
-                                                  overflow: TextOverflow.clip, // Add ellipsis at the end if the text overflows.
-                                                  // maxLines: 3,
-                                                ),
+                                              child: CustomText(
+                                                text: "Empowering communities  worldwide  through education, healthcare,  and sustainable development initiatives.",
+                                                fontSize: 12,
+                                                color: AppColors.black_80,
+                                                fontWeight: FontWeight.w400,
+                                                textAlign: TextAlign.start,
+                                                 maxLines: 2,
+                                                overflow: TextOverflow.clip, // Add ellipsis at the end if the text overflows.
+                                                // maxLines: 3,
                                               ),
                                             ),
 
-                                            CustomButton(
-                                              onTap: () {
+                                           Column(
+                                             children: [
 
-                                                showDialog(
-                                                  context: context,
-                                                  builder: (ctx) => AlertDialog(
-                                                    backgroundColor: Colors.white,
-                                                    insetPadding: EdgeInsets.all(8),
-                                                    contentPadding: EdgeInsets.all(8),
-                                                    title: SizedBox(),
-                                                    content: SizedBox(
-                                                      width: MediaQuery.sizeOf(context).width,
-                                                      child: AlertDialogEvent(title: "Are you sure you want to \n delete ?",discription: "",),
-                                                    ),
-                                                  ),
-                                                );
+                                               CustomButton(
+                                                 onTap: () {
 
-                                              },
-                                              title: "Delete",
-                                              width: 60.w,
-                                              height: 32.h,
-                                              textColor: AppColors.black,
-                                              fillColor: AppColors.primary,
-                                              fontSize: 12,
-                                            ),
+                                                   showDialog(
+                                                     context: context,
+                                                     builder: (ctx) => AlertDialog(
+                                                       backgroundColor: Colors.white,
+                                                       insetPadding: EdgeInsets.all(8),
+                                                       contentPadding: EdgeInsets.all(8),
+                                                       title: SizedBox(),
+                                                       content: SizedBox(
+                                                         width: MediaQuery.sizeOf(context).width,
+                                                         child: AlertDialogEvent(title: "Are you sure you want to \n delete ?",discription: "",),
+                                                       ),
+                                                     ),
+                                                   );
+
+                                                 },
+                                                 title: "Delete",
+                                                 width: 60.w,
+                                                 height: 32.h,
+                                                 textColor: AppColors.black,
+                                                 fillColor: AppColors.primary,
+                                                 fontSize: 12,
+                                               ),
+
+                                               SizedBox(
+                                                 height: 8.h,
+                                               ),
+                                               CustomButton(
+                                                 onTap: () {
+
+                                                   showDialog(
+                                                     context: context,
+                                                     builder: (ctx) => AlertDialog(
+                                                       backgroundColor: Colors.white,
+                                                       insetPadding: EdgeInsets.all(8),
+                                                       contentPadding: EdgeInsets.all(8),
+                                                       //   clipBehavior: Clip.antiAliasWithSaveLayer,
+                                                       title:Row(
+                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                         children: [
+
+                                                           Align(
+                                                             alignment: Alignment.centerLeft,
+                                                             child: CustomText(
+                                                               text: "Edit Organization",
+                                                               fontSize: 24,
+                                                               color: AppColors.black,
+                                                               fontWeight: FontWeight.w500,
+                                                               bottom: 8,
+                                                             ),
+                                                           ),
+
+                                                           Align(
+                                                             alignment: Alignment.centerRight,
+                                                             child: InkWell(
+                                                                 onTap: () {
+                                                                   Navigator.of(context).pop();
+                                                                 },
+                                                                 child: const Icon(
+                                                                   Icons.close,
+                                                                   size: 32,
+                                                                   color: Colors.black,
+                                                                 )),
+                                                           )
+                                                         ],
+                                                       ),
+                                                       content: SingleChildScrollView(
+                                                         child: Padding(
+                                                           padding: const EdgeInsets.all(8.0),
+                                                           child: SizedBox(
+                                                             width: MediaQuery.sizeOf(context).width,
+
+                                                             child: Column(
+                                                               children: [
+
+                                                                 CustomFormCard(
+                                                                   title: "Organization Name",
+                                                                   hintText: "Organization Name",
+                                                                   hasBackgroundColor: true,
+                                                                   fontSize: isTablet?16:16,
+                                                                   controller: TextEditingController(),
+                                                                 ),
+
+                                                                 CustomFormCard(
+                                                                     title: "Description",
+                                                                     hintText: "Description",
+                                                                     hasBackgroundColor: true,
+                                                                     fontSize: isTablet?16:16,
+                                                                     controller: TextEditingController()),
+
+                                                                 Padding(
+                                                                   padding: const EdgeInsets.only(left: 12,right: 12),
+                                                                   child: CustomButton(
+                                                                     onTap: () {
+
+                                                                       Navigator.of(context).pop();
+                                                                     },
+                                                                     title: "Edit",
+                                                                     height: 45.h,
+                                                                     textColor: AppColors.black,
+                                                                     fillColor: AppColors.primary,
+                                                                     fontSize: 12,
+                                                                   ),
+                                                                 ),
+
+                                                               ],
+                                                             ),
+                                                           ),
+                                                         ),
+                                                       ),
+                                                     ),
+                                                   );
+
+                                                 },
+                                                 title: "Edit",
+                                                 width: 60.w,
+                                                 height: 32.h,
+                                                 textColor: AppColors.black,
+                                                 fillColor: AppColors.primary,
+                                                 fontSize: 12,
+                                               ),
+                                             ],
+                                           )
                                           ],
                                         ),
                                       )

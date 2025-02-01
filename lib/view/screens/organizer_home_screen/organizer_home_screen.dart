@@ -104,7 +104,20 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                               fontWeight: FontWeight.w400,
                             ),
                           ],
-                        )
+                        ),
+
+                        Card(
+                          color: Colors.white,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CustomText(
+                              text: "Organizer",
+                              fontSize: isTablet ? 8.sp : 14.sp,
+                              color: AppColors.primary,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
                       ],
                     )
                   ],

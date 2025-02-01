@@ -42,7 +42,7 @@ import 'package:tractivity_app/view/screens/organizer_home_screen/organize_detai
 import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_recent_event_details.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_home_screen.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_invite_mission_screen/organize_map.dart';
-import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_invite_mission_screen/organizer_approved.dart';
+import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_invite_mission_screen/organizer_create_event.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_invite_mission_screen/organizer_invite_mission_screen.dart';
 import 'package:tractivity_app/view/screens/profile_screen/edit_profile_screen.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/explore_event_screen.dart';

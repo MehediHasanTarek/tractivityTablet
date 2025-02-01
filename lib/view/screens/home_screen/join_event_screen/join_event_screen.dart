@@ -155,7 +155,7 @@ class _JoinEventScreenState extends State<JoinEventScreen> {
                                       ),
 
                                       SizedBox(
-                                        width: 10,
+                                        width: 10.w,
                                       ),
 
                                       Column(
@@ -254,7 +254,7 @@ class _JoinEventScreenState extends State<JoinEventScreen> {
                                               InkWell(
                                                 onTap: () {
 
-                                                  /*    showDialog(
+                                                  /* showDialog(
                                                     context: context,
                                                     builder: (ctx) => AlertDialog(
                                                       backgroundColor: Colors.white,

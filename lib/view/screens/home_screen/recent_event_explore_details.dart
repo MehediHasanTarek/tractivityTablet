@@ -7,6 +7,7 @@ import 'package:tractivity_app/utils/app_colors/app_colors.dart';
 import 'package:tractivity_app/utils/app_const/app_const.dart';
 import 'package:tractivity_app/utils/app_icons/app_icons.dart';
 import 'package:tractivity_app/view/components/custom_button/custom_button.dart';
+import 'package:tractivity_app/view/components/custom_from_card/custom_from_card.dart';
 import 'package:tractivity_app/view/components/custom_image/custom_image.dart';
 import 'package:tractivity_app/view/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:tractivity_app/view/components/custom_royel_appbar/custom_royel_appbar.dart';
@@ -29,7 +30,7 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
          return Scaffold(
            appBar: CustomRoyelAppbar(
              leftIcon: true,
-             titleName: "Recent Event Details",
+             titleName: "My Event Details",
            ),
            body: Padding(
              padding: const EdgeInsets.all(16.0),
@@ -354,7 +355,7 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
                          fontSize: 12,
                        ),
 
-                       const SizedBox(
+                      const SizedBox(
                          width: 8,
                        ),
                        CustomButton(
@@ -434,12 +435,101 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
 
 
                    Padding(
-                     padding: const EdgeInsets.only(bottom: 32,top: 24),
+                     padding:  EdgeInsets.only(bottom: 32,top: 24),
                      child: CustomButton(
                        onTap: () {
-                         Get.toNamed(AppRoutes.exoloreEventCompletedScreen);
+                       ///Get.toNamed(AppRoutes.exoloreEventCompletedScreen);
+
+                         showDialog(
+                           context: context,
+                           builder: (ctx) => AlertDialog(
+                             backgroundColor: Colors.white,
+                             insetPadding: EdgeInsets.all(8),
+                             contentPadding: EdgeInsets.all(8),
+                             //   clipBehavior: Clip.antiAliasWithSaveLayer,
+                             title:Row(
+                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                               children: [
+
+                                 Align(
+                                   alignment: Alignment.centerLeft,
+                                   child: CustomText(
+                                     text: "",
+                                     fontSize: 24,
+                                     color: AppColors.black,
+                                     fontWeight: FontWeight.w500,
+                                     bottom: 8,
+                                   ),
+                                 ),
+
+                                 Align(
+                                   alignment: Alignment.centerRight,
+                                   child: InkWell(
+                                       onTap: () {
+                                         Navigator.of(context).pop();
+                                       },
+                                       child: const Icon(
+                                         Icons.close,
+                                         size: 32,
+                                         color: Colors.black,
+                                       )),
+                                 )
+                               ],
+                             ),
+                             content: SingleChildScrollView(
+                               child: Padding(
+                                 padding: const EdgeInsets.all(8.0),
+                                 child: SizedBox(
+                                   width: MediaQuery.sizeOf(context).width,
+                                   child: Column(
+                                     mainAxisAlignment: MainAxisAlignment.start,
+                                     crossAxisAlignment: CrossAxisAlignment.start,
+                                     children: [
+
+                                       CustomText(
+                                         text: "🎉 Congratulations on successfully completing your volunteer work and submitting it! 🌟 Your dedication and effort are truly inspiring. 🙌 Keep up the great work!",
+                                         fontSize: 14.sp,
+                                         color: AppColors.black,
+                                         fontWeight: FontWeight.w400,
+                                         maxLines: 4,
+                                         bottom: 8,
+                                       ),
+
+                                       CustomFormCard(
+                                         title: "working Time",
+                                         hintText: "4:30 Hours",
+                                         hasBackgroundColor: true,
+                                         fontSize: isTablet?16:16,
+                                         readOnly: true,
+                                         controller: TextEditingController(),
+                                       ),
+
+
+                                       Padding(
+                                         padding: const EdgeInsets.only(left: 12,right: 12),
+                                         child: CustomButton(
+                                           height:45.h,
+                                           width: 90.w,
+                                           onTap: () {
+
+                                             Navigator.of(context).pop();
+                                           },
+                                           title: "Done",
+
+                                           textColor: AppColors.black,
+                                           fillColor: AppColors.primary,
+                                           fontSize: 12,
+                                         ),
+                                       )
+                                     ],
+                                   ),
+                                 ),
+                               ),
+                             ),
+                           ),
+                         );
                        },
-                       title: "Event Complete",
+                       title: "Work Done",
                        height: 45.h,
                        textColor: AppColors.black,
                        fillColor: AppColors.primary,
