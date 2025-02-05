@@ -139,8 +139,8 @@ class _AdminstratiorEventListScreenState extends State<AdminstratiorEventListScr
                                     ),
                                   ],
                                 ),
-                                const SizedBox(
-                                  height: 10,
+                                  SizedBox(
+                                  height: 10.h,
                                 ),
 
                                 Row(

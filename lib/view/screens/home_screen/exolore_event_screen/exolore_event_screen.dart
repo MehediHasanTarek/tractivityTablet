@@ -51,7 +51,7 @@ class ExoloreEventScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomText(
-                    text: AppStrings.completeEvent,
+                    text: AppStrings.invitedMission,
                     color: AppColors.blue,
                     fontSize: 18,
                     fontWeight: FontWeight.w600,

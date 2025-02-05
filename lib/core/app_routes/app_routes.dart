@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/adminstratior_eventlist_screen.dart';
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/adminstrator_event_details_screen.dart';
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/adminstrator_home_screen.dart';
+import 'package:tractivity_app/view/screens/adminstrator_home_screen/adminstrator_mission_details_screen.dart';
+import 'package:tractivity_app/view/screens/adminstrator_home_screen/adminstrator_organization_details_screen.dart';
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/event_complete_screen.dart';
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/member/adminstrator_member.dart';
 import 'package:tractivity_app/view/screens/auth_screen/signup_screen/location_map_screen.dart';
@@ -111,6 +113,8 @@ class AppRoutes {
   static const String joinDetailsScreen = "/JoinDetailsScreen";
   static const String adminstratorEventDetailsScreen = "/AdminstratorEventDetailsScreen";
   static const String organizationEventListScreen = "/OrganizationEventListScreen";
+  static const String adminstratorMissionDetailsScreen = "/AdminstratorMissionDetailsScreen";
+  static const String adminstratorOrganizationDetailsScreen = "/AdminstratorOrganizationDetailsScreen";
 
 
 
@@ -178,6 +182,8 @@ class AppRoutes {
     GetPage(name: organizeDetailsScreen, page: () => OrganizeDetailsScreen()),
     GetPage(name: organizationEventListScreen, page: () => OrganizationEventListScreen()),
     GetPage(name: adminstratiorEventListScreen, page: () => AdminstratiorEventListScreen()),
+    GetPage(name: adminstratorMissionDetailsScreen, page: () => AdminstratorMissionDetailsScreen()),
+    GetPage(name: adminstratorOrganizationDetailsScreen, page: () => AdminstratorOrganizationDetailsScreen()),
 
 
 

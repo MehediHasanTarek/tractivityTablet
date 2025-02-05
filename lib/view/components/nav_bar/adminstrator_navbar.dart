@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:tractivity_app/view/screens/adminstrator_home_screen/administratior_create.dart';
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/adminstrator_home_screen.dart';
-import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_home_screen.dart';
-import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_invite_mission_screen/organizer_invite_mission_screen.dart';
 import '../../../utils/app_colors/app_colors.dart';
 import '../../../utils/app_icons/app_icons.dart';
 import '../../../utils/app_strings/app_strings.dart';
 import '../custom_text/custom_text.dart';
+
 class AdminstratorNavbar extends StatefulWidget {
   final int currentIndex;
   const AdminstratorNavbar({required this.currentIndex, super.key});
@@ -166,7 +164,7 @@ class _UserNavBarState extends State<AdminstratorNavbar> {
           Get.offAll(() => AdminstratorHomeScreen());
           break;
         case 1:
-          Get.to(() => AdministratiorCreateScreen());
+        ///  Get.to(() => AdministratiorCreateScreen());
           break;
 
       }

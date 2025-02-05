@@ -11,6 +11,11 @@ class AppImages {
   static const String mapimage = "$basePath/mapimage.png";
   static const String confirmbooking = "$basePath/confirmbooking.png";
 
+  static const String joinMission = "$basePath/join_mission.svg";
+
+  static const String checkImage = "$basePath/check.png";
+
+
 
 
 

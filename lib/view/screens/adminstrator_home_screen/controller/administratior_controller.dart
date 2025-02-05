@@ -20,7 +20,7 @@ class AdministratiorController extends GetxController {
   RxInt currentIndex = 0.obs;
   RxList<String> nameList = [
     AppStrings.recentEvents,
-    AppStrings.completeEvent,
+    AppStrings.invitedMission,
   ].obs;
   RxList<String> inviteMissionNameList = [
     AppStrings.inviteMission,

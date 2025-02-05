@@ -105,14 +105,14 @@ class _AdminstratorMemberState extends State<AdminstratorMember> {
                                       ),
                                       content: SizedBox(
                                         width: MediaQuery.sizeOf(context).width,
-                                        height:MediaQuery.sizeOf(context).height/2.2,
+                                        height:MediaQuery.sizeOf(context).height/3,
                                         child:Column(
                                           children: [
 
                                             ///============ Working Time ============
                                             CustomFormCard(
                                                 fontSize: isTablet?16:16,
-                                                title: "Working Time",
+                                                title: "Hours",
                                                 hintText:"04:30 Hours",
                                                 readOnly: true,
                                                 hasBackgroundColor: true,
@@ -122,7 +122,7 @@ class _AdminstratorMemberState extends State<AdminstratorMember> {
                                             ///============ Working Distance ============
                                             CustomFormCard(
                                                 fontSize: isTablet?16:16,
-                                                title: "Working Distance",
+                                                title: "Millage",
                                                 hintText:"12 Km",
                                                 readOnly: true,
                                                 hasBackgroundColor: true,
@@ -130,15 +130,15 @@ class _AdminstratorMemberState extends State<AdminstratorMember> {
 
 
                                             ///============ Working Role ============
-                                            CustomFormCard(
+
+                                      /*      CustomFormCard(
                                                 fontSize: isTablet?16:16,
                                                 title: "Working Role",
                                                 hintText:"Food Delivery",
                                                 hasBackgroundColor: true,
                                                 readOnly: true,
                                                 controller: TextEditingController()),
-
-
+                                            */
                                           ],
                                         ),
                                       ),

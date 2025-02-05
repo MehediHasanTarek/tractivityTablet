@@ -5,8 +5,8 @@ class OrganizerController extends GetxController{
   RxInt currentIndex = 0.obs;
   RxList<String> nameList = [
 
-    AppStrings.completeEvent,
-    AppStrings.recentEvents
+    AppStrings.invitedMission,
+    AppStrings.missionList
 
   ].obs;
   RxList<String> inviteMissionNameList = [
