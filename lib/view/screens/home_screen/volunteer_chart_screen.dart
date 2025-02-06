@@ -1,19 +1,15 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:tractivity_app/core/app_routes/app_routes.dart';
+import 'package:tractivity_app/utils/app_colors/app_colors.dart';
+import 'package:tractivity_app/utils/app_const/app_const.dart';
+import 'package:tractivity_app/utils/app_strings/app_strings.dart';
 import 'package:tractivity_app/view/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:tractivity_app/view/components/custom_text/custom_text.dart';
 import 'package:tractivity_app/view/components/custom_text_field/custom_text_field.dart';
-import 'package:tractivity_app/view/screens/adminstrator_home_screen/alert_dialog_event.dart';
-import '../../../../utils/app_colors/app_colors.dart';
-import '../../../../utils/app_const/app_const.dart';
-import '../../../../utils/app_strings/app_strings.dart';
 
-class SingleMessageScreen extends StatelessWidget {
-  SingleMessageScreen({super.key});
+
+class VolunteerChartScreen extends StatelessWidget {
+  VolunteerChartScreen({super.key});
   final List<bool> align = [
     true,
     false,
@@ -67,11 +63,12 @@ class SingleMessageScreen extends StatelessWidget {
               ),
 
               Column(
-                  crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
 
-                CustomText(
-                    text: AppStrings.singleProfile,
-                    fontSize: 22,
+                 CustomText(
+                    text: "Message",
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.w700,
                     color: AppColors.black),
               ]),
@@ -142,7 +139,6 @@ class SingleMessageScreen extends StatelessWidget {
 
 
 }
-
 
 class CustomInboxMassage extends StatelessWidget {
   const CustomInboxMassage({
@@ -271,3 +267,6 @@ class CustomInboxMassage extends StatelessWidget {
     });
   }
 }
+
+
+

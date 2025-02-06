@@ -33,6 +33,7 @@ class CustomInviteMissionContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
 
+
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -90,7 +91,7 @@ class CustomInviteMissionContainer extends StatelessWidget {
                     CustomButton(onTap: (){
                       ///OrganizerApprovedScreen
 
-                      Get.toNamed(AppRoutes.organizerApprovedScreen);
+                      Get.toNamed(AppRoutes.organizerEventCreateScreen);
 
                     }, title: "Accept",height:isTablet?30.h: 30.h,
                       width:isTablet?70.sp: 60.sp,fontSize:isTablet?6.sp:14.sp,),

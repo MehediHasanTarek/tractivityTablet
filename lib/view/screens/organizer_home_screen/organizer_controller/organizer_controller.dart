@@ -22,6 +22,10 @@ class OrganizerController extends GetxController{
    "Mission List",
   ].obs;
 
+  RxBool missionActiveInactiveStatus = false.obs;
+
+  RxBool missionMarkasActiveStatus = false.obs;
+
 
 
 }

@@ -41,44 +41,31 @@ class _OrganizerEventCreateScreenState extends State<OrganizerEventCreateScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
 
-                Row(
-                  children: [
-                    CustomNetworkImage(
-                      imageUrl: AppConstants.profileImage,
-                      height: 100,
-                      width: 100,
-                      boxShape: BoxShape.circle,
-                      border: Border.all(color: AppColors.primary, width: 3),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomText(
-                          text: "Mehedi Bin Ab. Salam",
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                        ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.location_on,
-                              color: AppColors.primary,
-                              size: 20,
-                            ),
-                            CustomText(
-                              text: "Bushwick Brooklyn, NY, USA",
-                              fontSize: 12,
-                              color: AppColors.primary,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ],
-                        )
-                      ],
-                    )
-                  ],
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: "Mission:",
+                  fontSize:isTablet?6.sp: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.primary,
+                  bottom: 5,
+                ),
+                CustomText(
+                  text: "Mission Horizons Foundation",
+                  fontSize:isTablet?6.sp: 16.sp,
+                  color: AppColors.black_80,
+                  fontWeight: FontWeight.w600,
+                  bottom: 6.h,
+                ),
+
+                CustomText(
+                  text: "Empowering communities  worldwide  through education, healthcare,  and sustainable development initiatives.",
+                  fontSize: 12,
+                  color: AppColors.black_02,
+                  fontWeight: FontWeight.w400,
+                  textAlign: TextAlign.start,
+                  overflow: TextOverflow.clip,
+                  maxLines: 3,
+                  bottom: 4.h,// Add ellipsis at the end if the text overflows.
                 ),
 
                 const SizedBox(
@@ -156,7 +143,7 @@ class _OrganizerEventCreateScreenState extends State<OrganizerEventCreateScreen>
                     hasBackgroundColor: true,
                     controller: TextEditingController()),
 
-                ///============ Event Name ============
+                ///============ Event Description ============
                 CustomFormCard(
                     fontSize: isTablet?16:16,
                     title: "Description",
@@ -164,11 +151,35 @@ class _OrganizerEventCreateScreenState extends State<OrganizerEventCreateScreen>
                     hasBackgroundColor: true,
                     controller: TextEditingController()),
 
+                ///============ Event Street ============
+                CustomFormCard(
+                    fontSize: isTablet?16:16,
+                    title: "Street",
+                    hintText: "Street",
+                    hasBackgroundColor: true,
+                    controller: TextEditingController()),
+
+                ///============ Event City ============
+                CustomFormCard(
+                    fontSize: isTablet?16:16,
+                    title: "City",
+                    hintText: "City",
+                    hasBackgroundColor: true,
+                    controller: TextEditingController()),
+
+                ///============ Event Country ============
+                CustomFormCard(
+                    fontSize: isTablet?16:16,
+                    title: "Country",
+                    hintText: "Country",
+                    hasBackgroundColor: true,
+                    controller: TextEditingController()),
+
                 Row(
                   ///mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
 
-                    const Icon(
+                   /* const Icon(
                       Icons.location_on,
                       size: 24,
                     ),
@@ -177,7 +188,7 @@ class _OrganizerEventCreateScreenState extends State<OrganizerEventCreateScreen>
                       Get.toNamed(AppRoutes.organizeMapScreen);
 
                     }, title: "Map",height:isTablet?30.h: 25.h,width: 60.w,fontSize:isTablet?6.sp: 12.sp,),
-
+*/
 
                     const SizedBox(
                       width: 8,
@@ -271,19 +282,8 @@ class _OrganizerEventCreateScreenState extends State<OrganizerEventCreateScreen>
 
                     CustomButton(onTap: (){
 
-                    }, title: "Public",height: 30.h,width: isTablet?60.w:70.w,fontSize:isTablet? 6.sp:14.sp,),
+                    }, title: "Public",height: 30.h,width: isTablet?70.w:80.w,fontSize:isTablet? 6.sp:14.sp,),
 
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    CustomButton(onTap: (){
-
-                    }, title: "Organization",height: 30.h,width:isTablet?90.w: 100.w,fontSize:isTablet? 6.sp:14.sp,
-                      textColor: AppColors.black,
-                      fillColor: AppColors.white,
-                      isBorder: true,
-                      borderWidth: .5,
-                    ),
                   ],
                 ),
 
@@ -295,7 +295,7 @@ class _OrganizerEventCreateScreenState extends State<OrganizerEventCreateScreen>
 
                   Get.toNamed(AppRoutes.addMemberScreen);
 
-                }, title: "Add Member",height: 30.h,width: 90.w,fontSize: 12,
+                }, title: "Add Volunteer",height: 30.h,width: 120.w,fontSize: 12,
                   textColor: AppColors.black,
                 ),
 
@@ -305,8 +305,9 @@ class _OrganizerEventCreateScreenState extends State<OrganizerEventCreateScreen>
 
                 CustomButton(onTap: (){
                   Get.toNamed(AppRoutes.memberScreen);
-                }, title: "View All Members",height: 30.h,width:isTablet?120.w: 140.w,fontSize:isTablet? 6.sp:14.sp,
+                }, title: "Add Role to Volunteer",height: 30.h,width:isTablet?170.w: 160.w,fontSize:isTablet? 6.sp:12.sp,
                   textColor: AppColors.black,
+
                 ),
 
               ],

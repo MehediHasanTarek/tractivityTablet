@@ -153,7 +153,7 @@ class _OrganizerInviteMissionScreenState extends State<OrganizerInviteMissionScr
 
                                       CustomButton(onTap: (){
 
-                                        Get.toNamed(AppRoutes.organizerApprovedScreen);
+                                        Get.toNamed(AppRoutes.organizerEventCreateScreen);
                                       }, title: "Duplicate",height:isTablet?35.h: 30.h,width:70.w,
                                         fontSize: 12,textColor: Colors.black87,),
 

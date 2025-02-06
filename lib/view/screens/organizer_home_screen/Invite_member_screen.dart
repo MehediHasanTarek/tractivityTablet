@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tractivity_app/core/app_routes/app_routes.dart';
 import 'package:tractivity_app/utils/app_colors/app_colors.dart';
@@ -69,7 +70,8 @@ class _InviteMemberScreenState extends State<InviteMemberScreen> {
           Padding(
             padding: const EdgeInsets.all(24.0),
             child: CustomButton(onTap: (){
-            }, title: "Invite",fontSize: 12,),
+              Get.toNamed(AppRoutes.organizerEventCreateScreen);
+            }, title: "Done",fontSize: 12.sp,),
           ),
 
         ],
