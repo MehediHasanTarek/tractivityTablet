@@ -208,7 +208,7 @@ class   AppStrings {
   static const String donation = "Donation";
   static const String invitedMission = "Invited Mission";
   static const String recentEvents = "Running Events";
-  static const String inviteEvent = "Invited Events";
+  static const String inviteEvent = "Event Invitation";
   static const String missionList = "Mission List";
   static const String eventListText = "All Events";
 

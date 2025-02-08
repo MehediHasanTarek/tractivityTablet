@@ -10,6 +10,7 @@ import 'package:tractivity_app/view/components/custom_netwrok_image/custom_netwo
 import 'package:tractivity_app/view/components/custom_tab_selected/custom_tab_selected.dart';
 import 'package:tractivity_app/view/components/custom_text/custom_text.dart';
 import 'package:tractivity_app/view/components/nav_bar/nav_bar.dart';
+import 'package:tractivity_app/view/screens/adminstrator_home_screen/alert_dialog_event.dart';
 import 'package:tractivity_app/view/screens/profile_screen/events_profile_screen/events_controller/events_controller.dart';
 
 class JoinEventScreen extends StatefulWidget {
@@ -89,26 +90,7 @@ class _JoinEventScreenState extends State<JoinEventScreen> {
                       ],
                     ),
                   ),
-               /*   SizedBox(height: 15,),
-                  Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10,vertical: 8),
-                        decoration: BoxDecoration(
-                          color: AppColors.neutral02,
-                          borderRadius: BorderRadius.circular(10),
-                        ),child: CustomText(text: "Working Time : 6:30 hours",fontSize: 12,fontWeight: FontWeight.w400,),
-                      ),
-                      SizedBox(width: 8,),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10,vertical: 8),
-                        decoration: BoxDecoration(
-                          color: AppColors.neutral02,
-                          borderRadius: BorderRadius.circular(10),
-                        ),child: CustomText(text: "Millage : 8km",fontSize: 12,fontWeight: FontWeight.w400,),
-                      ),
-                    ],
-                  ),*/
+
                   SizedBox(
                     height: 20,
                   ),
@@ -120,7 +102,7 @@ class _JoinEventScreenState extends State<JoinEventScreen> {
                         selectedIndex: eventsController.currentIndex.value,
                         onTabSelected: (value) {
                           eventsController.currentIndex.value = value;
-                      //    setState(() {});
+
                         },
                         selectedColor: AppColors.primary,
                         unselectedColor: AppColors.black),
@@ -241,7 +223,7 @@ class _JoinEventScreenState extends State<JoinEventScreen> {
                                                     borderRadius: BorderRadius.circular(10),
                                                   ),
                                                   child: CustomText(
-                                                    text:   "Accept",
+                                                    text:   "Explore",
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.w500,
                                                     color: AppColors.black,
@@ -254,7 +236,7 @@ class _JoinEventScreenState extends State<JoinEventScreen> {
                                               InkWell(
                                                 onTap: () {
 
-                                                  /* showDialog(
+                                                    showDialog(
                                                     context: context,
                                                     builder: (ctx) => AlertDialog(
                                                       backgroundColor: Colors.white,
@@ -263,10 +245,10 @@ class _JoinEventScreenState extends State<JoinEventScreen> {
                                                       title: SizedBox(),
                                                       content: SizedBox(
                                                         width: MediaQuery.sizeOf(context).width,
-                                                        child: AlertDialogEvent(title: "Are you sure you want to \n Delivery this Event?",discription: "",),
+                                                        child: AlertDialogEvent(title: "Are you sure you want to \n Decline this Event?",discription: "",),
                                                       ),
                                                     ),
-                                                  );*/
+                                                  );
                                                 },
                                                 child: Container(
                                                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
@@ -275,7 +257,7 @@ class _JoinEventScreenState extends State<JoinEventScreen> {
                                                     borderRadius: BorderRadius.circular(10),
                                                   ),
                                                   child: CustomText(
-                                                    text: "Reject",
+                                                    text: "Decline",
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.w500,
                                                     color: AppColors.black,

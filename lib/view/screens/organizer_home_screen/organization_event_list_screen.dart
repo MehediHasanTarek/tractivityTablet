@@ -56,7 +56,6 @@ class _OrganizationEventListScreenState extends State<OrganizationEventListScree
                   height: 16.h,
                 ),
 
-
                 Column(
                     children: List.generate(2, (index) {
 

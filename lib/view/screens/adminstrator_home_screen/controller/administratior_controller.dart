@@ -17,6 +17,15 @@ import 'package:tractivity_app/view/screens/adminstrator_home_screen/organizatio
 class AdministratiorController extends GetxController {
 
 
+  RxList<String> items = [
+    "private",
+    "public",
+  ].obs;
+
+
+
+  RxBool missionStatues = false.obs;
+
   RxInt currentIndex = 0.obs;
   RxList<String> nameList = [
     AppStrings.recentEvents,

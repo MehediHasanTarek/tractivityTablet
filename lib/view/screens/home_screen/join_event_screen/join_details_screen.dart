@@ -7,6 +7,7 @@ import 'package:tractivity_app/utils/app_colors/app_colors.dart';
 import 'package:tractivity_app/utils/app_const/app_const.dart';
 import 'package:tractivity_app/utils/app_icons/app_icons.dart';
 import 'package:tractivity_app/view/components/custom_button/custom_button.dart';
+import 'package:tractivity_app/view/components/custom_from_card/custom_from_card.dart';
 import 'package:tractivity_app/view/components/custom_image/custom_image.dart';
 import 'package:tractivity_app/view/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:tractivity_app/view/components/custom_royel_appbar/custom_royel_appbar.dart';
@@ -41,18 +42,15 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
                  mainAxisAlignment: MainAxisAlignment.start,
                  crossAxisAlignment: CrossAxisAlignment.start,
                  children: [
-
                    CustomNetworkImage(
                      imageUrl: AppConstants.eventImage,
                      height:isTablet?200.h: 170.h,
                      width: MediaQuery.of(context).size.width,
                      borderRadius: BorderRadius.circular(10),
                    ),
-
                    SizedBox(
                      height: 12.h,
                    ),
-
                    Row(
                      mainAxisAlignment: MainAxisAlignment.start,
                      crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +61,6 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
                        const SizedBox(
                          width: 8,
                        ),
-
                        Expanded(
                          child: Column(
                            crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,23 +77,16 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
                                    color: AppColors.black_80,
                                  ),
 
+                                 GestureDetector(
+                                     onTap: (){
+                                       Get.toNamed(AppRoutes.volunteerChartScreen);
+                                     },
+                                     child: CustomImage(imageSrc: AppIcons.chart)),
 
-                                 CustomButton(
-                                   onTap: () {
-                                     ///chatScreen
-                                     Get.toNamed(AppRoutes.messageScreen);
-                                   },
-                                   title: "Chat",
-                                   width: 80.w,
-                                   height: 32.h,
-                                   textColor: AppColors.black,
-                                   fillColor: AppColors.primary,
-                                   fontSize: 12,
-                                 ),
                                ],
                              ),
 
-                             const CustomText(
+                             CustomText(
                                text: "Download",
                                fontSize: 12,
                                fontWeight: FontWeight.w400,
@@ -108,99 +98,10 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
                      ],
                    ),
                    SizedBox(
-                     height: 12,
-                   ),
-
-                   CustomText(
-                     text: "Rohingya refugee camp",
-                     fontSize: 14,
-                     fontWeight: FontWeight.w500,
-                     color: AppColors.black_80,
-                   ),
-
-                   const SizedBox(
-                     height: 12,
+                     height: 12.h,
                    ),
 
                    Row(
-                     children: [
-
-                       CustomText(
-                         text: "Rohingya refugee camp",
-                         fontSize: 14,
-                         fontWeight: FontWeight.w500,
-                         color: AppColors.black_80,
-                       ),
-
-                       SizedBox(
-                         width: 4,
-                       ),
-                       CustomText(
-                         text: "(Event Name)",
-                         fontSize: 12,
-                         fontWeight: FontWeight.w500,
-                         color: AppColors.lightBlue,
-                       ),
-                     ],
-                   ),
-
-                   const SizedBox(
-                     height: 8,
-                   ),
-
-                   Row(
-                     children: [
-
-                       CustomText(
-                         text: "Empower Tomorrow",
-                         fontSize: 14,
-                         fontWeight: FontWeight.w500,
-                         color: AppColors.black_80,
-                       ),
-
-                       SizedBox(
-                         width: 4,
-                       ),
-                       CustomText(
-                         text: "(Mission Name)",
-                         fontSize: 12,
-                         fontWeight: FontWeight.w500,
-                         color: AppColors.lightBlue,
-                       ),
-                     ],
-                   ),
-
-                   const SizedBox(
-                     height: 12,
-                   ),
-
-                   Row(
-                     children: [
-
-                       CustomText(
-                         text: "Global Horizons Foundation",
-                         fontSize: 14,
-                         fontWeight: FontWeight.w500,
-                         color: AppColors.black_80,
-                       ),
-
-                       SizedBox(
-                         width: 4,
-                       ),
-                       CustomText(
-                         text: "(Organization)",
-                         fontSize: 12,
-                         fontWeight: FontWeight.w500,
-                         color: AppColors.lightBlue,
-                       ),
-                     ],
-                   ),
-
-                   const SizedBox(
-                     height: 12,
-                   ),
-
-                   const Row(
                      children: [
                        Icon(
                          Icons.location_pin,
@@ -211,247 +112,488 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
                        ),
                        CustomText(
                          text: "Cox’s Bazar",
-                         fontSize: 12,
+                         fontSize:isTablet?6.sp: 12.sp,
                          fontWeight: FontWeight.w400,
                          color: AppColors.black_80,
                        ),
                      ],
                    ),
-                   const SizedBox(
-                     height: 12,
+                   SizedBox(
+                     height: 4.h,
                    ),
-                   Row(
+
+                   const Divider(
+                     color: Colors.black54,
+                   ),
+
+                   SizedBox(
+                     height: 8.h,
+                   ),
+
+                   CustomText(
+                     text: "Organization",
+                     fontSize:isTablet?6.sp: 14.sp,
+                     fontWeight: FontWeight.w500,
+                     color: AppColors.primary,
+                   ),
+
+                   SizedBox(
+                     height: 4.h,
+                   ),
+                   CustomText(
+                     text: "Global Horizons Foundation",
+                     fontSize:isTablet?6.sp: 14.sp,
+                     fontWeight: FontWeight.w500,
+                     color: AppColors.black_80,
+                     bottom: 6,
+                   ),
+
+                   const Divider(
+                     color: Colors.black54,
+                   ),
+
+                   SizedBox(
+                     height: 12.h,
+                   ),
+
+                   Column(
+                     mainAxisAlignment: MainAxisAlignment.start,
+                     crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
-                       CustomNetworkImage(
-                         imageUrl: AppConstants.profileImage,
-                         height:isTablet?32.h: 24.h,
-                         width:isTablet?32.w: 24.w,
-                         boxShape: BoxShape.circle,
-                         border: Border.all(color: AppColors.primary, width: 3),
-                       ),
-                       const SizedBox(
-                         width: 10,
+
+                       CustomText(
+                         text: "Mission Name",
+                         fontSize:isTablet?6.sp: 14.sp,
+                         fontWeight: FontWeight.w500,
+                         color: AppColors.primary,
                        ),
 
-                       Text.rich(
-                         TextSpan(
-                             text: 'Mehedi Bin',
-                             style: TextStyle(
-                                 fontSize: 12.sp, fontWeight: FontWeight.w600),
-                             children: [
-                               TextSpan(
-                                 text: ' Leader',
-                                 style: TextStyle(
-                                     fontSize:  12.sp,
-                                     fontWeight: FontWeight.w400,
-                                     color: AppColors.lightBlue),
-                               ),
-                             ]),
+                       SizedBox(
+                         height: 4.h,
+                       ),
+
+                       CustomText(
+                         text: "Empower Tomorrow",
+                         fontSize:isTablet?6.sp: 14.sp,
+                         fontWeight: FontWeight.w500,
+                         color: AppColors.black_80,
+                         bottom: 6,
+                       ),
+
+                     ],
+                   ),
+
+                   const Divider(
+                     color: Colors.black54,
+                   ),
+
+                   SizedBox(
+                     height: 12.h,
+                   ),
+
+                   Column(
+                     mainAxisAlignment: MainAxisAlignment.start,
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+
+                       CustomText(
+                         text: "Event",
+                         fontSize:isTablet?6.sp: 14.sp,
+                         fontWeight: FontWeight.w500,
+                         color: AppColors.primary,
+
+                       ),
+                       SizedBox(
+                         height: 4.h,
+                       ),
+
+                       CustomText(
+                         text: "Rohingya refugee camp",
+                         fontSize:isTablet?6.sp: 14.sp,
+                         fontWeight: FontWeight.w500,
+                         color: AppColors.black_80,
+                         bottom: 6,
+                       ),
+
+                       const Divider(
+                         color: Colors.black54,
                        ),
                      ],
                    ),
-                   const SizedBox(
-                     height: 12,
+
+                   SizedBox(
+                     height: 12.h,
+                   ),
+
+                   CustomText(
+                     text: "Organizer",
+                     fontSize:isTablet?6.sp: 14.sp,
+                     fontWeight: FontWeight.w500,
+                     color: AppColors.primary,
+                     bottom: 8,
                    ),
                    Row(
                      children: [
                        CustomNetworkImage(
                          imageUrl: AppConstants.profileImage,
-                         height:isTablet?32.h: 24.h,
-                         width:isTablet?32.w: 24.w,
+                         height:isTablet?42.h: 32.h,
+                         width:isTablet?42.w: 32.w,
                          boxShape: BoxShape.circle,
                          border: Border.all(color: AppColors.primary, width: 3),
                        ),
-                       const SizedBox(
-                         width: 10,
+
+                       SizedBox(
+                         width: 8.w,
                        ),
-                       Text.rich(
-                         TextSpan(
-                             text: 'Sujon',
-                             style: TextStyle(
-                                 fontSize: 12.sp, fontWeight: FontWeight.w600),
-                             children: [
-                               TextSpan(
-                                 text: ' Food Delivery',
-                                 style: TextStyle(
-                                     fontSize: 12.sp,
-                                     fontWeight: FontWeight.w400,
-                                     color: AppColors.lightBlue),
-                               ),
-                             ]),
+                       CustomText(
+                         text: "Sujon",
+                         fontSize:isTablet?6.sp: 14.sp,
+                         fontWeight: FontWeight.bold,
+                         color: AppColors.black,
+                         bottom: 6,
                        ),
                      ],
                    ),
-                   const SizedBox(
-                     height: 24,
+
+                   SizedBox(
+                     height: 8.h,
                    ),
-                   const CustomText(
+                   Row(
+                     children: [
+                       CustomNetworkImage(
+                         imageUrl: AppConstants.profileImage,
+                         height:isTablet?42.h: 32.h,
+                         width:isTablet?42.w: 32.w,
+                         boxShape: BoxShape.circle,
+                         border: Border.all(color: AppColors.primary, width: 3),
+                       ),
+
+                       SizedBox(
+                         width: 8.w,
+                       ),
+                       CustomText(
+                         text: "Mehedi",
+                         fontSize:isTablet?6.sp: 14.sp,
+                         fontWeight: FontWeight.bold,
+                         color: AppColors.black,
+                         bottom: 6,
+                       ),
+                     ],
+                   ),
+
+                   const Divider(
+                     color: Colors.black54,
+                   ),
+                   SizedBox(
+                     height: 12.h,
+                   ),
+
+                   CustomText(
                      text: "Description",
-                     fontSize: 16,
+                     fontSize:isTablet?8.sp: 16.sp,
                      fontWeight: FontWeight.w600,
-                     color: AppColors.black_80,
+                     color: AppColors.primary,
                    ),
-                   const SizedBox(
-                     height: 8,
+                   SizedBox(
+                     height: 8.h,
                    ),
-                   const CustomText(
+
+                   CustomText(
                      text:
                      "The Rohingya have faced decades of discrimination \n and repression under successive Myanmar authorities. denied citizenship \n under the 1982 Citizenship Law, they are one of \n the largest stateless populations in the world.",
-                     fontSize: 12,
+                     fontSize:isTablet?6.sp: 12.sp,
                      fontWeight: FontWeight.w400,
                      color: AppColors.black_80,
                      textAlign: TextAlign.start,
                    ),
-                   const SizedBox(
-                     height: 16,
+                   SizedBox(
+                     height: 16.h,
                    ),
-                   const CustomText(
+
+                   const Divider(
+                     color: Colors.black54,
+                   ),
+
+                   CustomText(
                      text: "Time & Date",
-                     fontSize: 14,
+                     fontSize:isTablet?8.sp: 14.sp,
                      fontWeight: FontWeight.w600,
-                     color: AppColors.black_80,
+                     color: AppColors.primary,
                    ),
-
-                   const SizedBox(
-                     height: 8,
+                   SizedBox(
+                     height: 8.h,
                    ),
-
-                   const CustomText(
+                   CustomText(
                      text: "22 December, 2024, 8.00 am-12.00 pm",
-                     fontSize: 12,
+                     fontSize:isTablet?8.sp: 14.sp,
                      fontWeight: FontWeight.w400,
                      color: AppColors.black_80,
                    ),
 
-                   const SizedBox(
-                     height: 16,
+
+                   SizedBox(
+                     height: 8.h,
+                   ),
+                   const Divider(
+                     color: Colors.black54,
                    ),
 
-                   Row(
-                     children: [
+                   CustomText(
+                     text: "Street",
+                     fontSize:isTablet?8.sp: 14.sp,
+                     fontWeight: FontWeight.w600,
+                     color: AppColors.primary,
+                   ),
+                   SizedBox(
+                     height: 4.h,
+                   ),
+                   CustomText(
+                     text: "Bijoy Sarani",
+                     fontSize:isTablet?6.sp: 14.sp,
+                     fontWeight: FontWeight.w500,
+                     color: AppColors.black_80,
+                     bottom: 6,
+                   ),
 
+                   const Divider(
+                     color: Colors.black54,
+                   ),
 
-                       CustomButton(
-                         onTap: () {
-                           Get.toNamed(AppRoutes.memberScreen);
-                         },
-                         title: "Details",
-                         width: 80.w,
-                         height: 32.h,
-                         textColor: AppColors.black,
-                         fillColor: AppColors.primary,
-                         fontSize: 12,
-                       ),
+                   CustomText(
+                     text: "City",
+                     fontSize:isTablet?8.sp: 14.sp,
+                     fontWeight: FontWeight.w600,
+                     color: AppColors.primary,
+                   ),
+                   SizedBox(
+                     height: 4.h,
+                   ),
+                   CustomText(
+                     text: "Dhaka city, Keraniganj",
+                     fontSize:isTablet?6.sp: 14.sp,
+                     fontWeight: FontWeight.w500,
+                     color: AppColors.black_80,
+                     bottom: 6,
+                   ),
 
-                       const SizedBox(
-                         width: 12,
-                       ),
+                   const Divider(
+                     color: Colors.black54,
+                   ),
 
-                       ///report_page
+                   CustomText(
+                     text: "My Role",
+                     fontSize:isTablet?8.sp: 14.sp,
+                     fontWeight: FontWeight.w600,
+                     color: AppColors.primary,
+                   ),
+                   SizedBox(
+                     height: 4.h,
+                   ),
+                   CustomText(
+                     text: "Food Delivery",
+                     fontSize:isTablet?6.sp: 14.sp,
+                     fontWeight: FontWeight.w500,
+                     color: AppColors.black_80,
+                     bottom: 6,
+                   ),
 
-                       Row(
-                         children: [
+                   SizedBox(
+                     height: 8.h,
+                   ),
+                   CustomButton(
+                     onTap: () {
+                       showDialog(
+                         context: context,
+                         builder: (ctx) => AlertDialog(
+                           backgroundColor: Colors.white,
+                           insetPadding: EdgeInsets.all(8),
+                           contentPadding: EdgeInsets.all(8),
+                           //   clipBehavior: Clip.antiAliasWithSaveLayer,
+                           title:Row(
+                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                             children: [
 
-                           CustomButton(
-                             onTap: () {},
-                             title: "Start Work",
-                             width: 80.w,
-                             height: 32.h,
-                             textColor: AppColors.black,
-                             fillColor: AppColors.primary,
-                             fontSize: 12,
-                           ),
-
-                           SizedBox(
-                             width: 8,
-                           ),
-                           CustomButton(
-                             onTap: () {
-                               showDialog(
-                                 context: context,
-                                 builder: (ctx) => AlertDialog(
-                                   backgroundColor: Colors.white,
-                                   insetPadding: EdgeInsets.all(16),
-                                   contentPadding: EdgeInsets.all(16),
-                                   //   clipBehavior: Clip.antiAliasWithSaveLayer,
-                                   title: Align(
-                                     alignment: Alignment.centerRight,
-                                     child: Row(
-                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                       children: [
-
-                                         CustomText(
-                                           text: "Working Time",
-                                           fontSize: 14,
-                                           fontWeight: FontWeight.w600,
-                                           color: AppColors.black_80,
-                                         ),
-
-                                         InkWell(
-                                             onTap: () {
-                                               Navigator.of(context).pop();
-                                             },
-                                             child: const Icon(
-                                               Icons.close,
-                                               size: 32,
-                                               color: Colors.black,
-                                             ))
-                                       ],
-                                     ),
-                                   ),
-                                   content: SizedBox(
-                                     width: MediaQuery.sizeOf(context).width,
-                                     height: 100,
-                                     child: Column(
-                                       children: [
-
-                                         ///============ Working Distance ============
-                                         Container(
-                                           height: 60,
-                                           width: MediaQuery.sizeOf(context).width,
-                                           decoration: BoxDecoration(
-                                             color: AppColors.white,
-                                             borderRadius: BorderRadius.circular(10),
-                                             border: Border.all(color: AppColors.black_80, width: 1),
-                                           ),
-                                           child: Padding(
-                                             padding: const EdgeInsets.only(right: 16.0),
-                                             child: CustomTextField(
-                                               readOnly: true,
-                                               fillColor: AppColors.white,
-                                               hintText: "04:30 Hours",
-                                             ),
-                                           ),
-                                         ),
-                                       ],
-                                     ),
-                                   ),
+                               Align(
+                                 alignment: Alignment.centerLeft,
+                                 child: CustomText(
+                                   text: "",
+                                   fontSize: 24,
+                                   color: AppColors.black,
+                                   fontWeight: FontWeight.w500,
+                                   bottom: 8,
                                  ),
-                               );
-                             },
-                             title: "End Work",
-                             width: 80.w,
-                             height: 32.h,
-                             textColor: AppColors.black,
-                             fillColor: AppColors.primary,
-                             fontSize: 12,
-                           )
-                         ],
-                       ),
+                               ),
 
-                     ],
+                               Align(
+                                 alignment: Alignment.centerRight,
+                                 child: InkWell(
+                                     onTap: () {
+                                       Navigator.of(context).pop();
+                                     },
+                                     child: const Icon(
+                                       Icons.close,
+                                       size: 32,
+                                       color: Colors.black,
+                                     )),
+                               )
+                             ],
+                           ),
+                           content: SingleChildScrollView(
+                             child: Padding(
+                               padding: const EdgeInsets.all(8.0),
+                               child: SizedBox(
+                                 width: MediaQuery.sizeOf(context).width,
+                                 child: Column(
+                                   mainAxisAlignment: MainAxisAlignment.start,
+                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                   children: [
+
+                                     CustomText(
+                                       text: "🎉 Congratulations on successfully completing your volunteer work and submitting it! 🌟 Your dedication and effort are truly inspiring. 🙌 Keep up the great work!",
+                                       fontSize: 14.sp,
+                                       color: AppColors.black,
+                                       fontWeight: FontWeight.w400,
+                                       maxLines: 4,
+                                       bottom: 8,
+                                       textAlign: TextAlign.start,
+                                     ),
+
+                                     CustomFormCard(
+                                       title: "working Time",
+                                       hintText: "4:30 Hours",
+                                       hasBackgroundColor: true,
+                                       fontSize: isTablet?16:16,
+                                       readOnly: true,
+                                       controller: TextEditingController(),
+                                     ),
+
+
+                                     Padding(
+                                       padding: const EdgeInsets.only(left: 12,right: 12),
+                                       child: CustomButton(
+                                         height:45.h,
+                                         width: 90.w,
+                                         onTap: () {
+                                           Navigator.of(context).pop();
+                                         },
+                                         title: "Done",
+
+                                         textColor: AppColors.black,
+                                         fillColor: AppColors.primary,
+                                         fontSize: 12,
+                                       ),
+                                     )
+                                   ],
+                                 ),
+                               ),
+                             ),
+                           ),
+                         ),
+                       );
+                     },
+                     title: "Start Work",
+                     // width: 80.w,
+                     height: 45.h,
+                     textColor: AppColors.black,
+                     fillColor: AppColors.primary,
+                     fontSize: 12,
                    ),
 
-
-                   const SizedBox(
-                     height: 16,
-                   ),
                    Padding(
-                     padding: const EdgeInsets.only(bottom: 16),
+                     padding:  EdgeInsets.only(bottom: 32,top: 24),
                      child: CustomButton(
                        onTap: () {
+                         ///Get.toNamed(AppRoutes.exoloreEventCompletedScreen);
 
-                         Get.toNamed(AppRoutes.exoloreEventCompletedScreen);
+                         showDialog(
+                           context: context,
+                           builder: (ctx) => AlertDialog(
+                             backgroundColor: Colors.white,
+                             insetPadding: EdgeInsets.all(8),
+                             contentPadding: EdgeInsets.all(8),
+                             //   clipBehavior: Clip.antiAliasWithSaveLayer,
+                             title:Row(
+                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                               children: [
+
+                                 Align(
+                                   alignment: Alignment.centerLeft,
+                                   child: CustomText(
+                                     text: "",
+                                     fontSize: 24,
+                                     color: AppColors.black,
+                                     fontWeight: FontWeight.w500,
+                                     bottom: 8,
+                                   ),
+                                 ),
+
+                                 Align(
+                                   alignment: Alignment.centerRight,
+                                   child: InkWell(
+                                       onTap: () {
+                                         Navigator.of(context).pop();
+                                       },
+                                       child: const Icon(
+                                         Icons.close,
+                                         size: 32,
+                                         color: Colors.black,
+                                       )),
+                                 )
+                               ],
+                             ),
+                             content: SingleChildScrollView(
+                               child: Padding(
+                                 padding: const EdgeInsets.all(8.0),
+                                 child: SizedBox(
+                                   width: MediaQuery.sizeOf(context).width,
+                                   child: Column(
+                                     mainAxisAlignment: MainAxisAlignment.start,
+                                     crossAxisAlignment: CrossAxisAlignment.start,
+                                     children: [
+
+                                       CustomText(
+                                         text: "🎉 Congratulations on successfully completing your volunteer work and submitting it! 🌟 Your dedication and effort are truly inspiring. 🙌 Keep up the great work!",
+                                         fontSize: 14.sp,
+                                         color: AppColors.black,
+                                         fontWeight: FontWeight.w400,
+                                         maxLines: 4,
+                                         bottom: 8,
+                                         textAlign: TextAlign.start,
+                                       ),
+
+                                       CustomFormCard(
+                                         title: "working Time",
+                                         hintText: "4:30 Hours",
+                                         hasBackgroundColor: true,
+                                         fontSize: isTablet?16:16,
+                                         readOnly: true,
+                                         controller: TextEditingController(),
+                                       ),
+
+
+                                       Padding(
+                                         padding: const EdgeInsets.only(left: 12,right: 12),
+                                         child: CustomButton(
+                                           height:45.h,
+                                           width: 90.w,
+                                           onTap: () {
+
+                                             Navigator.of(context).pop();
+                                           },
+                                           title: "Done",
+
+                                           textColor: AppColors.black,
+                                           fillColor: AppColors.primary,
+                                           fontSize: 12,
+                                         ),
+                                       )
+                                     ],
+                                   ),
+                                 ),
+                               ),
+                             ),
+                           ),
+                         );
                        },
                        title: "Work Done",
                        height: 45.h,
@@ -465,27 +607,6 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
              ),
            ),
 
-/*      bottomNavigationBar:
-      Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-
-            Padding(
-              padding: const EdgeInsets.only(bottom: 45,left: 16,right: 16),
-              child: CustomButton(
-                onTap: () {
-
-                  Get.toNamed(AppRoutes.exoloreEventCompletedScreen);
-                },
-                title: "Event Complete",
-                height: 45.h,
-                textColor: AppColors.black,
-                fillColor: AppColors.primary,
-                fontSize: 12,
-              ),
-            )
-        ],
-      ),*/
 
          );
        });

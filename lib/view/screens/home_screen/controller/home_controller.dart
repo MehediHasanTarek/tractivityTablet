@@ -12,6 +12,7 @@ class HomeController extends GetxController{
   ].obs;
 
 
+  RxBool donationStatues = false.obs;
 
 
 }

@@ -42,196 +42,201 @@ class _EditPersonProfileScreenState extends State<EditPersonProfileScreen> {
           leftIcon: true,
         ),
         body: SingleChildScrollView(
-          child: Padding(
-            padding:
-            const EdgeInsets.only(left: 15, right: 15, top: 16, bottom: 50),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+          child: Obx(
+            () {
+              return Padding(
+                padding:
+                const EdgeInsets.only(left: 15, right: 15, top: 16, bottom: 50),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
 
-                ///====================== profile image===================
+                    ///====================== profile image===================
 
-                Center(
-                  child: Stack(
-                    children: [
-                      Container(
-                        height: 120.h,
-                        width: 120.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.grey,
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.primary,
-                          ),
-                          image: DecorationImage(
-                            image: FileImage(File(authController.chooseUserImage.value)),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 5,
-                        right: isTablet? -80:0,
-                        left: 0,
-                        child: GestureDetector(
-                          onTap: () {
-                            authController.chooseUserPhoto();
-                          },
-                          child: Container(
-                            height: 30,
-                            width: 30,
+                    Center(
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          Container(
+                            height: 120.h,
+                            width: 120.w,
                             decoration: BoxDecoration(
-                              color: AppColors.primary,
                               shape: BoxShape.circle,
+                              color: Colors.grey,
+                              border: Border.all(
+                                width: 1,
+                                color: AppColors.primary,
+                              ),
+                              image: DecorationImage(
+                                image: FileImage(File(authController.chooseUserImage.value)),
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                            child: const Icon(
-                              Icons.camera_alt,
-                              size: 18,
-                              color: AppColors.white,
+                          ),
+                          Positioned(
+                            bottom: 5,
+                            right: isTablet? -80:-70,
+                            left: 0,
+                            child: GestureDetector(
+                              onTap: () {
+                                authController.chooseUserPhoto();
+                              },
+                              child: Container(
+                                height: 30,
+                                width: 30,
+                                decoration: BoxDecoration(
+                                  color: AppColors.primary,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: const Icon(
+                                  Icons.camera_alt,
+                                  size: 18,
+                                  color: AppColors.white,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
+                    ),
 
-                /// =====Profile Name List =========
-                SizedBox(
-                  height: 12.h,
-                ),
+                    /// =====Profile Name List =========
+                    SizedBox(
+                      height: 12.h,
+                    ),
 
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
                         children: [
-                          Radio(
-                            value: "Volunteer",
-                            fillColor:
-                            MaterialStateColor.resolveWith((states) => AppColors.primary),
-                            groupValue: checkValueStatues,
-                            onChanged: (String? value) {
-                              setState(() {
-                                checkValueStatues = value!;
-                              });
-                            },
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Radio(
+                                value: "Volunteer",
+                                fillColor:
+                                MaterialStateColor.resolveWith((states) => AppColors.primary),
+                                groupValue: checkValueStatues,
+                                onChanged: (String? value) {
+                                  setState(() {
+                                    checkValueStatues = value!;
+                                  });
+                                },
+                              ),
+                              const CustomText(
+                                text: "Volunteer",
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ],
                           ),
-                          const CustomText(
-                            text: "Volunteer",
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Radio(
+                                value: "Organizer",
+                                groupValue: checkValueStatues,
+                                fillColor:
+                                MaterialStateColor.resolveWith((states) => AppColors.primary),
+                                onChanged: (value) {
+                                  setState(() {
+                                    checkValueStatues = value!;
+                                  });
+                                },
+                              ),
+                              CustomText(
+                                text: "Organizer",
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ],
+                          ),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+
+                              Radio(
+                                value: "Administrator",
+                                groupValue: checkValueStatues,
+                                fillColor:
+                                MaterialStateColor.resolveWith((states) => AppColors.primary),
+                                onChanged: (value) {
+                                  setState(() {
+                                    checkValueStatues = value!;
+                                  });
+                                },
+                              ),
+
+                              CustomText(
+                                text: "Administrator",
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ],
                           ),
                         ],
                       ),
+                    ),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Radio(
-                            value: "Organizer",
-                            groupValue: checkValueStatues,
-                            fillColor:
-                            MaterialStateColor.resolveWith((states) => AppColors.primary),
-                            onChanged: (value) {
-                              setState(() {
-                                checkValueStatues = value!;
-                              });
-                            },
-                          ),
-                          CustomText(
-                            text: "Organizer",
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ],
-                      ),
+                    SizedBox(
+                      height: 12.h,
+                    ),
+                    ///============ First Name ============
+                    CustomFormCard(
+                        title: AppStrings.yourFirstName,
+                        hintText: AppStrings.enterYourName,
+                        fontSize: isTablet?16:16,
+                        hasBackgroundColor: true,
+                        controller: TextEditingController()),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
+                    ///============ Last Name ============
+                    CustomFormCard(
+                        title: "Talent/Skill",
+                        hintText: "Enter Talent/Skill",
+                        fontSize: isTablet?16:16,
+                        hasBackgroundColor: true,
+                        controller: TextEditingController()),
 
-                          Radio(
-                            value: "Administrator",
-                            groupValue: checkValueStatues,
-                            fillColor:
-                            MaterialStateColor.resolveWith((states) => AppColors.primary),
-                            onChanged: (value) {
-                              setState(() {
-                                checkValueStatues = value!;
-                              });
-                            },
-                          ),
+                    ///============ phoneNumber ============
+                    CustomFormCard(
+                        title: AppStrings.phoneNumber,
+                        hintText: AppStrings.enterYourPhone,
+                        hasBackgroundColor: true,
+                        fontSize: isTablet?16:16,
+                        controller: TextEditingController()),
 
-                          CustomText(
-                            text: "Administrator",
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                    ///============ email ============
+                    CustomFormCard(
+                        title: AppStrings.email,
+                        hintText: AppStrings.enterYourEmail,
+                        hasBackgroundColor: true,
+                        fontSize: isTablet?16:16,
+                        controller: TextEditingController()),
+
+                    ///============ Location ============
+                    CustomFormCard(
+                        title: AppStrings.location,
+                        hintText: AppStrings.enterYourLocation,
+                        hasBackgroundColor: true,
+                        fontSize: isTablet?16:16,
+                        controller: TextEditingController()),
+
+
+                    CustomButton(
+                      onTap: () {
+                        //  Get.toNamed(AppRoutes.loginScreen);
+                      },
+                      title: "SAVE SETTINGS",
+                      height: isTablet?70:60,
+                      fontSize: isTablet ? 16 : 14,
+                    )
+                  ],
                 ),
-
-                SizedBox(
-                  height: 12.h,
-                ),
-                ///============ First Name ============
-                CustomFormCard(
-                    title: AppStrings.yourFirstName,
-                    hintText: AppStrings.enterYourName,
-                    fontSize: isTablet?16:16,
-                    hasBackgroundColor: true,
-                    controller: TextEditingController()),
-
-                ///============ Last Name ============
-                CustomFormCard(
-                    title: "Talent/Skill",
-                    hintText: "Enter Talent/Skill",
-                    fontSize: isTablet?16:16,
-                    hasBackgroundColor: true,
-                    controller: TextEditingController()),
-
-                ///============ phoneNumber ============
-                CustomFormCard(
-                    title: AppStrings.phoneNumber,
-                    hintText: AppStrings.enterYourPhone,
-                    hasBackgroundColor: true,
-                    fontSize: isTablet?16:16,
-                    controller: TextEditingController()),
-
-                ///============ email ============
-                CustomFormCard(
-                    title: AppStrings.email,
-                    hintText: AppStrings.enterYourEmail,
-                    hasBackgroundColor: true,
-                    fontSize: isTablet?16:16,
-                    controller: TextEditingController()),
-
-                ///============ Location ============
-                CustomFormCard(
-                    title: AppStrings.location,
-                    hintText: AppStrings.enterYourLocation,
-                    hasBackgroundColor: true,
-                    fontSize: isTablet?16:16,
-                    controller: TextEditingController()),
-
-
-                CustomButton(
-                  onTap: () {
-                    //  Get.toNamed(AppRoutes.loginScreen);
-                  },
-                  title: "SAVE SETTINGS",
-                  height: isTablet?70:60,
-                  fontSize: isTablet ? 16 : 14,
-                )
-              ],
-            ),
+              );
+            }
           ),
         ),
       );

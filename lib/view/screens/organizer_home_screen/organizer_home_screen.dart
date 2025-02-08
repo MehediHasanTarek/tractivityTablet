@@ -70,18 +70,6 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
               child: Column(
                 children: [
 
-                  Card(
-                    color: Colors.white,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: CustomText(
-                        text: "Organizer",
-                        fontSize: isTablet ? 8.sp : 14.sp,
-                        color: AppColors.primary,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
 
                   ///=============== Recemt Events Tab Bar ===============
                   SizedBox(height: 16,),
@@ -257,7 +245,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                                                         ),
                                                       );
                                                     },
-                                                    title: "Approved",
+                                                    title: "Accept",
                                                     width: 80.w,
                                                     height: 32.h,
                                                     textColor: AppColors.black,
@@ -305,7 +293,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                               );
                             })),
 
-                        ///============ Complete Event ========
+                        ///============ mission List ========
                         if(organizerController.currentIndex.value ==1)
                           Column(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -470,9 +458,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                                                                       alignment: Alignment.centerRight,
                                                                       child: InkWell(
                                                                           onTap: () {
-
                                                                             Navigator.of(context).pop();
-
                                                                           },
                                                                           child: const Icon(
                                                                             Icons.close,
@@ -482,7 +468,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                                                                     )
                                                                   ],
                                                                 ),
-                                                                content: Obx(
+                                                                   content: Obx(
                                                                         () {
                                                                       return SingleChildScrollView(
                                                                         child: SizedBox(
@@ -505,7 +491,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                                                                               Container(
                                                                                 padding: EdgeInsets.all(8),
                                                                                 decoration: BoxDecoration(
-                                                                                  color: AppColors.grey_5.withOpacity(0.5),
+                                                                                  color: AppColors.grey_3.withOpacity(0.5),
                                                                                   borderRadius: BorderRadius.circular(15),
                                                                                 ),
                                                                                 child: Column(

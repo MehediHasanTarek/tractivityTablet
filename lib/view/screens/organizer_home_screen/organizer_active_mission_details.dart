@@ -388,7 +388,7 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
                                         Get.toNamed(AppRoutes.organizerRecentEventDetails);
                                       },
                                       child: Container(
-                                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                                         decoration: BoxDecoration(
                                           color: AppColors.primary,
                                           borderRadius: BorderRadius.circular(10),
@@ -403,7 +403,27 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
                                     ),
 
 
-
+                                    SizedBox(
+                                      width: 8.w,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        Get.toNamed(AppRoutes.organizerEventCreateScreen);
+                                      },
+                                      child: Container(
+                                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                                        decoration: BoxDecoration(
+                                          color: AppColors.primary,
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                        child:  CustomText(
+                                          text:  "Duplicate",
+                                          fontSize:isTablet?6.sp: 12.sp,
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColors.black,
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ],

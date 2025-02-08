@@ -32,6 +32,7 @@ import 'package:tractivity_app/view/screens/home_screen/home_screen.dart';
 import 'package:tractivity_app/view/screens/home_screen/join_event_screen/join_details_screen.dart';
 import 'package:tractivity_app/view/screens/home_screen/join_event_screen/join_event_screen.dart';
 import 'package:tractivity_app/view/screens/home_screen/join_event_screen/join_event_details_screen.dart';
+import 'package:tractivity_app/view/screens/home_screen/join_organization_screen.dart';
 import 'package:tractivity_app/view/screens/home_screen/member_screen/event_compleate_member.dart';
 import 'package:tractivity_app/view/screens/home_screen/member_screen/member_screen.dart';
 import 'package:tractivity_app/view/screens/home_screen/recent_event_explore_details.dart';
@@ -41,7 +42,7 @@ import 'package:tractivity_app/view/screens/notification/notification_screen.dar
 import 'package:tractivity_app/view/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/Invite_member_screen.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/organization_event_list_screen.dart';
-import 'package:tractivity_app/view/screens/organizer_home_screen/organize_details_screen.dart';
+import 'package:tractivity_app/view/screens/organizer_home_screen/organize_mission_details_screen.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_active_mission_details.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_inactive_mission_details.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_mission_details_screen.dart';
@@ -123,6 +124,7 @@ class AppRoutes {
   static const String organizerMissionDetailsScreen = "/OrganizerMissionDetailsScreen";
   static const String organizerInactiveMissionDetails = "/OrganizerInactiveMissionDetails";
   static const String organizerActiveMissionDetails = "/OrganizerActiveMissionDetails";
+  static const String joinOrganizationScreen = "/JoinOrganizationScreen";
 
 
 
@@ -196,6 +198,7 @@ class AppRoutes {
     GetPage(name: organizerMissionDetailsScreen, page: () => OrganizerMissionDetailsScreen()),
     GetPage(name: organizerInactiveMissionDetails, page: () => OrganizerInactiveMissionDetails()),
     GetPage(name: organizerActiveMissionDetails, page: () => OrganizerActiveMissionDetails()),
+    GetPage(name: joinOrganizationScreen, page: () => JoinOrganizationScreen()),
 
 
 

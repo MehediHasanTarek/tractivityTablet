@@ -324,7 +324,7 @@ class ExoloreCompleteDetailsScreen extends StatelessWidget {
                 ),
                 CustomText(
                   text: "22 December, 2024, 8.00 am-12.00 pm",
-                  fontSize:isTablet?8.sp: 14.sp,
+                  fontSize:isTablet?6.sp: 14.sp,
                   fontWeight: FontWeight.w400,
                   color: AppColors.black_80,
                 ),

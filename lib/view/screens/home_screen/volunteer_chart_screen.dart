@@ -68,7 +68,7 @@ class VolunteerChartScreen extends StatelessWidget {
 
                  CustomText(
                     text: "Message",
-                    fontSize: 22.sp,
+                    fontSize:isTablet?10.sp: 22.sp,
                     fontWeight: FontWeight.w700,
                     color: AppColors.black),
               ]),

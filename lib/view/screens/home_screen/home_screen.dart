@@ -90,6 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
                   SizedBox(height: isTablet ? 20 : 12),
 
                   /// Profile Section**
@@ -127,18 +128,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
 
-                            Card(
-                              color: Colors.white,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: CustomText(
-                                  text: "Volunteer",
-                                  fontSize: isTablet ? 8.sp : 14.sp,
-                                  color: AppColors.primary,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
                           ],
                         )
                       ],

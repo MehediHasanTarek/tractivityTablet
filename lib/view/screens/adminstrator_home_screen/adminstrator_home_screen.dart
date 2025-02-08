@@ -25,6 +25,11 @@ import 'package:tractivity_app/view/screens/adminstrator_home_screen/alert_dialo
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/controller/administratior_controller.dart';
 import 'package:tractivity_app/view/screens/home_screen/homepage_drawer.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_controller/organizer_controller.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:flutter/material.dart';
+
+
+
 class AdminstratorHomeScreen extends StatefulWidget {
   const AdminstratorHomeScreen({super.key});
 
@@ -79,19 +84,6 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                   child: Column(
                     children: [
 
-                      Card(
-                        color: Colors.white,
-                        child: Padding(
-                          padding:   const EdgeInsets.all(8.0),
-                          child: CustomText(
-                            text: "Adminstrator",
-                            fontSize: isTablet ? 8.sp : 14.sp,
-                            color: AppColors.primary,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-
                       ///=============== Recemt Events Tab Bar ===============
 
                       const SizedBox(height: 20,),
@@ -102,7 +94,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                           selectedIndex: administratorController.adminstratior_currentIndex.value,
                           onTabSelected: (value) {
                             administratorController.adminstratior_currentIndex.value = value;
-                            setState(() {});
+                           setState(() {});
                           },
                           selectedColor: AppColors.primary,
                           unselectedColor: AppColors.grey_1
@@ -112,7 +104,6 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
 
                       ///============ show Organization List ========
                       if(administratorController.adminstratior_currentIndex.value==0)
-
                         Column(
                             children: List.generate(6, (index) {
                               return InkWell(
@@ -253,7 +244,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                         Container(
                                                                           padding: EdgeInsets.all(8),
                                                                           decoration: BoxDecoration(
-                                                                            color: AppColors.grey_5.withOpacity(0.5),
+                                                                            color: AppColors.grey_3.withOpacity(0.5),
                                                                             borderRadius: BorderRadius.circular(15),
                                                                           ),
                                                                           child: Column(
@@ -372,7 +363,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                                                       ),
 
                                                                                                       CustomText(
-                                                                                                        text: "Mission Horizons Foundation",
+                                                                                                        text: "Jamal",
                                                                                                         fontSize:isTablet?6.sp: 14.sp,
                                                                                                         color: AppColors.black_80,
                                                                                                         fontWeight: FontWeight.w600,
@@ -419,10 +410,17 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                                                           // Give your checkbox border a custom width
                                                                                                           width: 1.4,
                                                                                                         ),
-                                                                                                        value: administratorController.selectedOranization.value,
+                                                                                                        value: administratorController.organizationIdList.contains(index.toString()),
                                                                                                         onChanged: (bool? value) {
 
-                                                                                                          administratorController.selectedLeader.value = value!;
+                                                                                                          administratorController.selectedOranization.value = value!;
+
+                                                                                                          if(administratorController.selectedOranization.value){
+
+                                                                                                            administratorController.organizationIdList.add(index.toString());
+                                                                                                          }else{
+                                                                                                            administratorController.organizationIdList.remove(index.toString());
+                                                                                                          }
 
                                                                                                         },
                                                                                                       ),
@@ -663,7 +661,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                       if(administratorController.adminstratior_currentIndex.value==1)
                         Column(
                             children: List.generate(3, (index) {
-                              return InkWell(
+                              return GestureDetector(
                                 onTap: (){
                                   Get.toNamed(AppRoutes.adminstratorMissionDetailsScreen);
                                 },
@@ -818,7 +816,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                         Container(
                                                                           padding: EdgeInsets.all(8),
                                                                           decoration: BoxDecoration(
-                                                                            color: AppColors.grey_5.withOpacity(0.5),
+                                                                            color: AppColors.grey_3.withOpacity(0.5),
                                                                             borderRadius: BorderRadius.circular(15),
                                                                           ),
                                                                           child: Column(
@@ -937,7 +935,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                                                         ),
 
                                                                                                         CustomText(
-                                                                                                          text: "Mission Horizons Foundation",
+                                                                                                          text: "Hasan",
                                                                                                           fontSize:isTablet?6.sp: 14.sp,
                                                                                                           color: AppColors.black_80,
                                                                                                           fontWeight: FontWeight.w600,
@@ -984,11 +982,17 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                                                             // Give your checkbox border a custom width
                                                                                                             width: 1.4,
                                                                                                           ),
-                                                                                                          value: administratorController.selectedOranization.value,
+                                                                                                          value: administratorController.organizationIdList.contains(index.toString()),
                                                                                                           onChanged: (bool? value) {
 
-                                                                                                            administratorController.selectedLeader.value = value!;
+                                                                                                            administratorController.selectedOranization.value = value!;
 
+                                                                                                            if(administratorController.selectedOranization.value){
+
+                                                                                                              administratorController.organizationIdList.add(index.toString());
+                                                                                                            }else{
+                                                                                                              administratorController.organizationIdList.remove(index.toString());
+                                                                                                            }
                                                                                                           },
                                                                                                         ),
 
@@ -1092,7 +1096,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
               }
           ),
         ),
-        bottomNavigationBar:   Column(
+        bottomNavigationBar:  Column(
           mainAxisSize: MainAxisSize.min,
           children: [
 
@@ -1246,7 +1250,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                             )
                           ],
                         ),
-                        content: Obx(() {
+                           content: Obx(() {
 
                               return SingleChildScrollView(
                                 child: SizedBox(
@@ -1338,7 +1342,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                           ),
 
                                                                           CustomText(
-                                                                            text: "Mission Horizons Foundation",
+                                                                            text: "Empower Tomorrow",
                                                                             fontSize:isTablet?6.sp: 14.sp,
                                                                             color: AppColors.black_80,
                                                                             fontWeight: FontWeight.w600,
@@ -1361,7 +1365,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                   ),
 
                                                                   Padding(
-                                                                    padding: const EdgeInsets.only(left: 16,right: 4),
+                                                                    padding: const EdgeInsets.only(left: 4,right: 4),
                                                                     child: Row(
                                                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1397,10 +1401,17 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                                 // Give your checkbox border a custom width
                                                                                 width: 1.4,
                                                                               ),
-                                                                              value: administratorController.selectedOranization.value,
+                                                                              value: administratorController.organizationIdList.contains(index.toString()),
                                                                               onChanged: (bool? value) {
 
-                                                                                administratorController.selectedLeader.value = value!;
+                                                                                administratorController.selectedOranization.value = value!;
+
+                                                                                if(administratorController.selectedOranization.value){
+
+                                                                                  administratorController.organizationIdList.add(index.toString());
+                                                                                }else{
+                                                                                  administratorController.organizationIdList.remove(index.toString());
+                                                                                }
 
                                                                               },
                                                                             ),
@@ -1408,10 +1419,6 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                         ),
                                                                       ],
                                                                     ),
-                                                                  ),
-
-                                                                  const SizedBox(
-                                                                    height: 4,
                                                                   ),
 
                                                                 ],
@@ -1436,7 +1443,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                       const Align(
                                         alignment: Alignment.topLeft,
                                         child: CustomText(
-                                          text: "Add Leader",
+                                          text: "Add Organizer",
                                           fontSize: 14,
                                           color: AppColors.black,
                                           fontWeight: FontWeight.w500,
@@ -1456,7 +1463,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                           /// height: 70.h,
                                           child: ExpansionTile(
                                             title: CustomText(
-                                              text: "Select Leader",
+                                              text: "Select Organizer",
                                               fontSize:isTablet? 6.sp:14.sp,
                                               color: AppColors.black,
                                               fontWeight: FontWeight.w500,
@@ -1466,7 +1473,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
 
                                               ///======== Search Bar ==============
                                               const CustomTextField(
-                                                hintText: "Search",
+                                                hintText: "Search for Organizer",
                                                 fillColor: AppColors.neutral02,
                                                 suffixIcon: Icon(
                                                   Icons.search,
@@ -1481,7 +1488,6 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                               Column(
                                                 children: List.generate(
                                                     3,(index){
-
 
                                                   return Column(
                                                     children: [
@@ -1516,7 +1522,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                       ),
 
                                                                       CustomText(
-                                                                        text: "Mission Horizons Foundation",
+                                                                        text: "Mehedi Hasan",
                                                                         fontSize:isTablet?6.sp: 14.sp,
                                                                         color: AppColors.black_80,
                                                                         fontWeight: FontWeight.w600,
@@ -1563,10 +1569,17 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                           // Give your checkbox border a custom width
                                                                           width: 1.4,
                                                                         ),
-                                                                        value: administratorController.selectedOranization.value,
+                                                                        value: administratorController.organizationIdList.contains(index.toString()),
                                                                         onChanged: (bool? value) {
 
-                                                                          administratorController.selectedLeader.value = value!;
+                                                                          administratorController.selectedOranization.value = value!;
+
+                                                                          if(administratorController.selectedOranization.value){
+
+                                                                            administratorController.organizationIdList.add(index.toString());
+                                                                          }else{
+                                                                            administratorController.organizationIdList.remove(index.toString());
+                                                                          }
 
                                                                         },
                                                                       ),
@@ -1596,6 +1609,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                       ),
 
 
+
                                       const SizedBox(
                                         height: 12,
                                       ),
@@ -1617,6 +1631,85 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                           hasBackgroundColor: true,
                                           controller: administratorController.missionDescriptionController.value),
 
+                                      Row(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment
+                                            .start,
+                                        children: [
+
+                                          CustomText(
+                                            text:
+                                            "Access mode:",
+                                            fontSize:
+                                            14,
+                                            color: AppColors
+                                                .primary,
+                                            fontWeight:
+                                            FontWeight
+                                                .w600,
+                                          ),
+
+                                          Radio<bool>(
+                                            value:
+                                            false, // Value for "No"
+                                            fillColor:
+                                            WidgetStateColor.resolveWith((states) =>
+                                            AppColors.primary),
+                                            groupValue: administratorController
+                                                .missionStatues
+                                                .value,
+                                            onChanged:
+                                                (bool?
+                                            value) {
+                                                  administratorController
+                                                  .missionStatues
+                                                  .value = value!;
+
+
+                                            },
+                                          ),
+                                          const CustomText(
+                                            text:
+                                            "private",
+                                            fontSize:
+                                            14,
+                                            color: AppColors
+                                                .black,
+                                            fontWeight:
+                                            FontWeight
+                                                .w600,
+                                          ),
+                                          Radio<bool>(
+                                            value:
+                                            true, // Value for "Yes"
+                                            fillColor:
+                                            WidgetStateColor.resolveWith((states) =>
+                                            AppColors.primary),
+                                            groupValue: administratorController
+                                                .missionStatues
+                                                .value,
+                                            onChanged:(bool? value) {
+
+                                                  administratorController
+                                                  .missionStatues
+                                                  .value = value!;
+
+                                            },
+                                          ),
+
+                                          const CustomText(
+                                            text:
+                                            "public",
+                                            fontSize:
+                                            14,
+                                            color: AppColors
+                                                .black,
+                                            fontWeight:
+                                            FontWeight
+                                                .w600,
+                                          ),
+                                        ],
+                                      ),
 
                                       Padding(
                                         padding: const EdgeInsets.only(left: 12,right: 12,bottom: 12),
@@ -1630,7 +1723,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                             }
 
                                           },
-                                          title: "Done",
+                                          title: "Create",
                                           height: 60.h,
                                           textColor: AppColors.black,
                                           fillColor: AppColors.primary,
