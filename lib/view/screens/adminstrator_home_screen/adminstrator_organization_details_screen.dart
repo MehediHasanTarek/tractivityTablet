@@ -92,14 +92,14 @@ class _AdminstratorOrganizationDetailsScreenState extends State<AdminstratorOrga
 
                 Column(
                     children: List.generate(3, (index) {
-                      return InkWell(
+                      return GestureDetector(
                         onTap: (){
                           Get.toNamed(AppRoutes.adminstratorMissionDetailsScreen);
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
-                            height:isTablet?140.h: 130.h,
+                            height:isTablet?140.h: 140.h,
                             decoration: BoxDecoration(
                               color: AppColors.grey_3.withOpacity(0.5),
                               borderRadius: BorderRadius.circular(15),
@@ -336,9 +336,9 @@ class _AdminstratorOrganizationDetailsScreenState extends State<AdminstratorOrga
                                                                                 Padding(
                                                                                   padding: const EdgeInsets.all(4.0),
                                                                                   child: Container(
-                                                                                    height:isTablet?130.h: 100.h,
+                                                                                    height:isTablet?130.h: 110.h,
                                                                                     decoration: BoxDecoration(
-                                                                                      color: AppColors.grey_5.withOpacity(0.5),
+                                                                                      color: AppColors.grey_3.withOpacity(0.5),
                                                                                       borderRadius: BorderRadius.circular(15),
                                                                                     ),
                                                                                     padding: EdgeInsets.all(12),

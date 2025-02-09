@@ -40,8 +40,8 @@ class AdministratiorController extends GetxController {
   RxInt adminstratior_currentIndex = 0.obs;
 
   RxList<String> adminstratiorNameList = [
-    "Organization List",
-    "Mission List",
+    "Organization",
+    "Mission",
   ].obs;
 
 

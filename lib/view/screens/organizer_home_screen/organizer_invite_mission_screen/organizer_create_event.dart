@@ -295,7 +295,7 @@ class _OrganizerEventCreateScreenState extends State<OrganizerEventCreateScreen>
 
                   Get.toNamed(AppRoutes.addMemberScreen);
 
-                }, title: "Add Volunteer",height: 30.h,width: 120.w,fontSize: 12,
+                }, title: "Add Volunteers",height: 30.h,width: 120.w,fontSize: 12,
                   textColor: AppColors.black,
                 ),
 
@@ -305,29 +305,25 @@ class _OrganizerEventCreateScreenState extends State<OrganizerEventCreateScreen>
 
                 CustomButton(onTap: (){
                   Get.toNamed(AppRoutes.memberScreen);
-                }, title: "Add Role to Volunteer",height: 30.h,width:isTablet?170.w: 160.w,fontSize:isTablet? 6.sp:12.sp,
+                }, title: "Add Role to Volunteers",height: 30.h,width:isTablet?170.w: 160.w,fontSize:isTablet? 6.sp:12.sp,
                   textColor: AppColors.black,
 
                 ),
 
+
+                SizedBox(
+                  height: 16,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: CustomButton(onTap: (){
+                  }, title: "Submit",fontSize: 12, height: isTablet?70:60,),
+                ),
               ],
             ),
           ),
         ),
-        bottomNavigationBar: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
 
-            Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: CustomButton(onTap: (){
-              }, title: "Submit",fontSize: 12, height: isTablet?70:60,),
-            ),
-
-
-
-          ],
-        ),
       );
     });
   }

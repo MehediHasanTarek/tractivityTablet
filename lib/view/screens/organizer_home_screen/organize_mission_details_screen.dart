@@ -35,7 +35,7 @@ class _OrganizeDetailsScreenState extends State<OrganizeDetailsScreen> {
         ),
 
         body: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding:   EdgeInsets.all(12.0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -109,7 +109,6 @@ class _OrganizeDetailsScreenState extends State<OrganizeDetailsScreen> {
                                 ),
                               ),
 
-
                             ],
                           ),
                         ),
@@ -121,10 +120,11 @@ class _OrganizeDetailsScreenState extends State<OrganizeDetailsScreen> {
                   height: 26,
                 ),
 
-                const CustomText(
+                  CustomText(
                   text: "Mission",
-                  fontSize: 16,
+                  fontSize:isTablet?12.sp: 18.sp,
                   fontWeight: FontWeight.w600,
+                  color: AppColors.primary,
                 ),
 
                 SizedBox(
@@ -136,7 +136,7 @@ class _OrganizeDetailsScreenState extends State<OrganizeDetailsScreen> {
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 10.0),
                         child: Container(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
                           decoration: BoxDecoration(
                             color: AppColors.neutral02,

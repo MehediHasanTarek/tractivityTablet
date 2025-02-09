@@ -42,10 +42,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
 
-                const CustomText(
+                  CustomText(
                   text: "Event invitation",
-                  fontSize: 16,
+                  fontSize:isTablet?12.sp: 18.sp,
                   fontWeight: FontWeight.w600,
+                  color: AppColors.primary,
                 ),
 
                 SizedBox(
@@ -228,6 +229,107 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   ],
                 ),
 
+               ///mission invitation details
+                SizedBox(
+                  height: 24.h,
+                ),
+                  CustomText(
+                  text: "Mission invitation",
+                  fontSize:isTablet?12.sp: 18.sp,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.primary,
+                ),
+
+                SizedBox(
+                  height: 16.h,
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+
+                    SvgPicture.asset(
+                      AppIcons.userIcons,
+                      width: isTablet?60.w:45.w,
+                      height: isTablet?60.h:45.h,
+                    ),
+
+                    SizedBox(
+                        width: 8.w
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+
+                        const CustomText(
+                          text: "Mehedi Hasan invite you for a mission.",
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        const CustomText(
+                          text: "20 June. 2025",
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+
+                        const SizedBox(
+                          height: 8,
+                        ),
+
+                        Row(
+                          children: [
+                            CustomButton(
+                              onTap: () {
+                                Get.toNamed(AppRoutes.jonEventDetailsScreen);
+                              },
+                              title: "Explore",
+                              width: 70.w,
+                              height: 32.h,
+                              textColor: AppColors.black,
+                              fillColor: AppColors.primary,
+                              isBorder: true,
+                              fontSize: 14,
+                            ),
+
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            CustomButton(
+                              onTap: () {
+
+                                showDialog(
+                                  context: context,
+                                  builder: (ctx) => AlertDialog(
+                                    backgroundColor: Colors.white,
+                                    insetPadding: EdgeInsets.all(8),
+                                    contentPadding: EdgeInsets.all(8),
+                                    title: SizedBox(),
+                                    content: SizedBox(
+                                      width: MediaQuery.sizeOf(context).width,
+                                      child: AlertDialogEvent(title: "Are you sure you want to \n Delete this Event?",discription: "",),
+                                    ),
+                                  ),
+                                );
+                              },
+                              title: "Delete",
+                              width: 70.w,
+                              height: 32.h,
+                              textColor: AppColors.black,
+                              fillColor: AppColors.white_50,
+                              isBorder: true,
+                              fontSize: 14,
+                            ),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ],
             ),
           ),

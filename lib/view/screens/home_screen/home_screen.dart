@@ -77,7 +77,12 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               icon: Padding(
                 padding: const EdgeInsets.only(right: 12),
-                child: Icon(Icons.notifications_active_outlined, color: AppColors.black,size: isTablet?42:24,),
+               child:SvgPicture.asset(
+                 AppIcons.event_notification,
+                 semanticsLabel: 'My SVG Image',
+                 height:  isTablet?42.h:32.h,
+                 width:  isTablet?42.w:32.w,
+               ),
               ),
             )
           ],
@@ -165,11 +170,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               Text.rich(
                                 TextSpan(
-                                  text: 'Completed Event',
+                                  text: 'Completed Events',
                                   style: TextStyle(fontSize: isTablet ? 28 : 24, fontWeight: FontWeight.w600),
                                   children: [
                                     TextSpan(
-                                      text: '\nDetails',
+                                      text: '',
                                       style: TextStyle(fontSize: isTablet ? 28 : 24, fontWeight: FontWeight.w600),
                                     ),
                                   ],

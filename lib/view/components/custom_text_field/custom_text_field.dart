@@ -97,6 +97,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       textAlign: widget.textAlign,
       textAlignVertical: widget.textAlignVertical,
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         isDense: widget.isDens,
         errorMaxLines: 2,
         hintText: widget.hintText,
@@ -115,12 +116,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
                   padding: const EdgeInsets.all(16),
                   child: Icon(obscureText ? Icons.visibility : Icons.visibility_off, color: Colors.grey,),
 
-                  /*SvgPicture.asset(
-                    obscureText ? AppIcons.eyeOff : AppIcons.eye,
-                    height: 22,
-                    width: 22,
-                    color: AppColors.black,
-                  ),*/
                 ),
               )
             : widget.suffixIcon,

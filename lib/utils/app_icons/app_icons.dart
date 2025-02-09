@@ -27,6 +27,7 @@ class AppIcons {
   static const String uploadIcon = "$basePath/upload_icon.svg";
   static const String chart = "$basePath/chart.svg";
   static const String groupImage = "$basePath/group_image.png";
+  static const String event_notification = "$basePath/event_notification.svg";
 
 
 

@@ -100,7 +100,7 @@ class   AppStrings {
   static const String messages = "Messages";
   static const String profile = "Profile";
   static const String singleProfile = "User Message";
-  static const String team = "Join Event";
+  static const String team = "Join";
   ///===================================================
   static const String letsGo = "LET’S GO";
   static const String serveOut = "JoinUp";
@@ -158,9 +158,9 @@ class   AppStrings {
   static const String firstName = "First Name";
   static const String country = "Country";
   static const String expiration = "Expiration date ";
-  static const String state = "State";
+  static const String state = "state";
   static const String security = "Security code";
-  static const String lastName = "Last Name";
+  static const String lastName = "last Name";
   static const String iconImage = "ICON/ IMAGE";
   static const String time = "Time";
   static const String openInvite = "Open/ Invite Only";

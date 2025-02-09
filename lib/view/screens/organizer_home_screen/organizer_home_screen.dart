@@ -56,7 +56,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                 ));
           }),
           title: Text(
-            AppStrings.serveOut,
+            "Organizer",
             style: TextStyle(
                 color: AppColors.black,
                 fontSize: 30.sp,
@@ -88,8 +88,6 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                 //  SizedBox(height: 12,),
 
                   ///============ Invited Mission ========
-                  ///  Get.toNamed(AppRoutes.organizerRecentEventDetails);
-
                   Expanded(
                     child: ListView(
                       shrinkWrap: true,

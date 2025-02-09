@@ -41,6 +41,8 @@ import 'package:tractivity_app/view/screens/home_screen/volunteer_chart_screen.d
 import 'package:tractivity_app/view/screens/notification/notification_screen.dart';
 import 'package:tractivity_app/view/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/Invite_member_screen.dart';
+import 'package:tractivity_app/view/screens/organizer_home_screen/mission_event_report_screen.dart';
+import 'package:tractivity_app/view/screens/organizer_home_screen/mission_to_volunteers_invite_screen.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/organization_event_list_screen.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/organize_mission_details_screen.dart';
 import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_active_mission_details.dart';
@@ -125,6 +127,8 @@ class AppRoutes {
   static const String organizerInactiveMissionDetails = "/OrganizerInactiveMissionDetails";
   static const String organizerActiveMissionDetails = "/OrganizerActiveMissionDetails";
   static const String joinOrganizationScreen = "/JoinOrganizationScreen";
+  static const String missionToVolunteersInviteScreen = "/MissionToVolunteersInviteScreen";
+  static const String missionEventReportScreen = "/MissionEventReportScreen";
 
 
 
@@ -199,6 +203,8 @@ class AppRoutes {
     GetPage(name: organizerInactiveMissionDetails, page: () => OrganizerInactiveMissionDetails()),
     GetPage(name: organizerActiveMissionDetails, page: () => OrganizerActiveMissionDetails()),
     GetPage(name: joinOrganizationScreen, page: () => JoinOrganizationScreen()),
+    GetPage(name: missionToVolunteersInviteScreen, page: () => MissionToVolunteersInviteScreen()),
+    GetPage(name: missionEventReportScreen, page: () => MissionEventReportScreen()),
 
 
 

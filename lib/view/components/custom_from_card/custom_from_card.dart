@@ -58,13 +58,14 @@ class CustomFormCard extends StatelessWidget {
           maxLines: 2,
         ),
         CustomTextField(
+
           prefixIcon: prefixIcon,
           validator: validator,
           readOnly: readOnly,
           hintText: hintText,
           hintStyle: GoogleFonts.roboto(
               fontWeight: FontWeight.w400,
-              fontSize: 18,
+              fontSize: 14.sp,
               color: AppColors.grey_1),
           suffixIcon: suffixIcon,
           isPassword: isPassword,
@@ -76,7 +77,7 @@ class CustomFormCard extends StatelessWidget {
           keyboardType: keyboardType ?? (isPassword ? TextInputType.visiblePassword : TextInputType.text),
           onTap: onTap,
           maxLines: isPassword ? 1 : maxLine,
-          fieldBorderRadius: 15,
+          fieldBorderRadius: 8,
 
         ),
         SizedBox(height: 15.h),

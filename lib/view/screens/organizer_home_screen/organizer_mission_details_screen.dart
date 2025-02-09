@@ -103,7 +103,7 @@ class _OrganizerMissionDetailsScreenState extends State<OrganizerMissionDetailsS
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 CustomText(
-                                  text: "Farhad Hossain",
+                                  text: "Tarek",
                                   fontSize:isTablet?8.sp:12.sp,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.black,

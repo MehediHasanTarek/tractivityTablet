@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:tractivity_app/core/app_routes/app_routes.dart';
 import 'package:tractivity_app/utils/app_colors/app_colors.dart';
 import 'package:tractivity_app/utils/app_const/app_const.dart';
@@ -19,6 +20,8 @@ class OrganizerActiveMissionDetails extends StatefulWidget {
 }
 
 class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDetails> {
+
+  final storage = GetStorage();
 
   @override
   Widget build(BuildContext context) {
@@ -273,10 +276,59 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
                 const Divider(
                   color: Colors.black54,
                 ),
-                  SizedBox(
-                  height: 16.h,
+                SizedBox(
+                  height: 8.h,
                 ),
 
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+
+                      CustomButton(
+                        onTap: () {
+
+                       Get.toNamed(AppRoutes.missionToVolunteersInviteScreen);
+                        },
+                        title: "add volunteer",
+                        height:isTablet?40.h: 35.h,
+                        width: 110.w,
+                        textColor: AppColors.white,
+                        fillColor: AppColors.primary,
+                        fontSize: 12,
+                      ),
+
+                      CustomButton(
+                        onTap: () {
+                          Get.toNamed(AppRoutes.missionEventReportScreen);
+                        },
+                        title: "Report",
+                        height:isTablet?40.h: 35.h,
+                        width: 100.w,
+                        textColor: AppColors.white,
+                        fillColor: AppColors.primary,
+                        fontSize: 12,
+                      ),
+                    ],
+                  ),
+
+                SizedBox(
+                  height: 8.h,
+                ),
+
+                  SizedBox(
+                  height: 12.h,
+                ),
+                CustomText(
+                  text: "working Time:18:30 Hours  Millage:18:30 Hours",
+                  fontSize:isTablet?6.sp: 12.sp,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.primary,
+                  textAlign: TextAlign.start,
+                ),
+
+                SizedBox(
+                  height: 12.h,
+                ),
                 CustomText(
                   textAlign: TextAlign.start,
                   text: "Event List",
@@ -367,17 +419,7 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
                                   height: 10.h,
                                 ),
 
-                                CustomText(
-                                  text: "working Time:18:30 Hours \n Millage:18:30 Hours",
-                                  fontSize:isTablet?6.sp: 8.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.primary,
-                                  textAlign: TextAlign.start,
-                                ),
 
-                                SizedBox(
-                                  height: 8.h,
-                                ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [

@@ -47,17 +47,21 @@ class _DonationScreenState extends State<DonationScreen> {
                       SizedBox(height: isTablet ? 20 : 12),
 
                       /// **Donation Description**
-                      CustomText(
-                        text: "100% of your donation will go towards \n building the infrastructure \n of Serve Out. We have no paid staff.",
-                        fontSize: isTablet ? 18 : 18,
-                        fontWeight: FontWeight.w500,
-                        textAlign: TextAlign.start,
+                      SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: CustomText(
+                          text: "100% of your donation will go towards building the infrastructure  of Serve Out. We have no paid staff.building the infrastructure  of Serve Out. We have no paid staff.",
+                          fontSize: isTablet ? 12.sp : 18.sp,
+                          fontWeight: FontWeight.w500,
+                          textAlign: TextAlign.start,
+                          maxLines: 3,
+                        ),
                       ),
 
                       SizedBox(height: isTablet ? 20 : 12),
 
                       CustomText(
-                        text: "Your Details",
+                        text: "Basic details",
                         fontSize: isTablet ? 18 : 18,
                         fontWeight: FontWeight.w600,
                         color: AppColors.primary,
@@ -129,6 +133,13 @@ class _DonationScreenState extends State<DonationScreen> {
 
                       SizedBox(height: isTablet ? 16 : 8),
 
+                      CustomText(
+                        text: "Amount & card details",
+                        fontSize: isTablet ? 12.sp : 18.sp,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.primary,
+                        bottom: 8,
+                      ),
                       /// amount
                       CustomFormCard(
                         title: "Amount",
@@ -141,8 +152,7 @@ class _DonationScreenState extends State<DonationScreen> {
 
                       SizedBox(height: isTablet ? 20 : 12),
 
-
-                      /// **Card Information**
+                      ///Card Information**
                       CustomText(
                         text: AppStrings.card,
                         fontSize: isTablet ? 16 : 14,
@@ -153,7 +163,7 @@ class _DonationScreenState extends State<DonationScreen> {
 
                       /// **Card Input**
                       Container(
-                        height: 60,
+                        height: 60.h,
                         width: constraints.maxWidth,
                         decoration: BoxDecoration(
                           color: AppColors.white,
@@ -206,12 +216,19 @@ class _DonationScreenState extends State<DonationScreen> {
 
                       SizedBox(height: isTablet ? 12.h : 8.h),
 
+                      CustomText(
+                        text: "Donation Type",
+                        fontSize: isTablet ? 12.sp : 18.sp,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.primary,
+                        bottom: 8,
+                      ),
 
                       CustomText(
                         text: "Donation Type",
-                        fontSize: isTablet ? 16 : 14,
+                        fontSize: isTablet ? 12.sp : 12.sp,
                         fontWeight: FontWeight.w600,
-                        bottom: 6,
+
                       ),
 
                       Row(
@@ -225,8 +242,7 @@ class _DonationScreenState extends State<DonationScreen> {
                             WidgetStateColor.resolveWith((states) =>
                             AppColors.primary),
                             groupValue: homeController.donationStatues.value,
-                            onChanged:
-                                (bool? value) {
+                            onChanged:(bool? value) {
 
                              homeController.donationStatues.value = value!;
 
@@ -240,7 +256,6 @@ class _DonationScreenState extends State<DonationScreen> {
                             color: AppColors
                                 .black,
                             fontWeight:FontWeight.w600,
-
                           ),
 
                           Radio<bool>(

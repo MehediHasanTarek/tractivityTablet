@@ -130,7 +130,7 @@ class _MemberScreenState extends State<MemberScreen> {
                                         ),
                                         content: SizedBox(
                                           width: MediaQuery.sizeOf(context).width,
-                                          height:MediaQuery.sizeOf(context).height/4,
+                                          height:MediaQuery.sizeOf(context).height/3.3,
                                           child:Column(
                                             children: [
 
@@ -143,7 +143,7 @@ class _MemberScreenState extends State<MemberScreen> {
                                                   controller: TextEditingController()),
 
                                               Padding(
-                                                padding: const EdgeInsets.all(24.0),
+                                                padding: const EdgeInsets.all(8.0),
                                                 child: CustomButton(onTap: (){
 
                                                   Navigator.of(context).pop();

@@ -1,22 +1,24 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tractivity_app/core/app_routes/app_routes.dart';
 import 'package:tractivity_app/utils/app_colors/app_colors.dart';
 import 'package:tractivity_app/utils/app_const/app_const.dart';
+import 'package:tractivity_app/view/components/custom_button/custom_button.dart';
 import 'package:tractivity_app/view/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:tractivity_app/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:tractivity_app/view/components/custom_text/custom_text.dart';
-import 'package:tractivity_app/view/screens/adminstrator_home_screen/alert_dialog_event.dart';
 
-class AdminstratorMissionDetailsScreen extends StatefulWidget {
-  const AdminstratorMissionDetailsScreen({super.key});
+class MissionEventReportScreen extends StatefulWidget {
+  const MissionEventReportScreen({super.key});
 
   @override
-  State<AdminstratorMissionDetailsScreen> createState() => _AdminstratorMissionDetailsScreenState();
+  State<MissionEventReportScreen> createState() => _MissionEventReportScreenState();
 }
 
-class _AdminstratorMissionDetailsScreenState extends State<AdminstratorMissionDetailsScreen> {
+class _MissionEventReportScreenState extends State<MissionEventReportScreen> {
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context,constraints){
@@ -24,13 +26,33 @@ class _AdminstratorMissionDetailsScreenState extends State<AdminstratorMissionDe
       final isTablet = constraints.maxWidth > 600;
 
       return Scaffold(
-     appBar: CustomRoyelAppbar(
-        leftIcon: true,
-        titleName: "Mission Details",
-       ),
+        
+        floatingActionButton: FloatingActionButton.extended(onPressed: (){},
+          backgroundColor: Colors.amber,
+          label: Row(
+            children: [
+
+              CustomText(
+                textAlign: TextAlign.start,
+                text: "Download",
+                fontSize:isTablet?6.sp: 14.sp,
+                fontWeight: FontWeight.w500,
+                color: AppColors.white,
+                bottom: 5,
+              ),
+              SizedBox(
+                width: 4.w,
+              ),
+              Icon(Icons.arrow_circle_down_outlined,color: Colors.white,),
+            ],
+          ),),
+        appBar: CustomRoyelAppbar(
+          leftIcon: true,
+          titleName: "Mission Report",
+        ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,7 +75,7 @@ class _AdminstratorMissionDetailsScreenState extends State<AdminstratorMissionDe
                   bottom: 6.h,
                 ),
 
-                 CustomText(
+                CustomText(
                   text: "Empowering communities  worldwide  through education, healthcare,  and sustainable development initiatives.",
                   fontSize: 12,
                   color: AppColors.black_02,
@@ -64,9 +86,9 @@ class _AdminstratorMissionDetailsScreenState extends State<AdminstratorMissionDe
                   bottom: 4.h,// Add ellipsis at the end if the text overflows.
                 ),
 
-                  Divider(
+                const Divider(
                   color: Colors.black54,
-                 // height: 16.h,
+                  // height: 16.h,
                 ),
 
                 CustomText(
@@ -78,72 +100,6 @@ class _AdminstratorMissionDetailsScreenState extends State<AdminstratorMissionDe
                   bottom: 8.h,
                 ),
 
-                Padding(
-                  padding: EdgeInsets.only(bottom: 10.h),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GestureDetector(
-                        onTap: (){},
-                        child: Row(
-                          children: [
-
-                            CustomNetworkImage(
-                              imageUrl: AppConstants.profileImage,
-                              height:isTablet?64.h: 60.h,
-                              width:isTablet?64.w: 60.w,
-                              boxShape: BoxShape.circle,
-                            ),
-
-                            SizedBox(
-                              width: 10.w,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(
-                                  text: "Mehedi Hassan",
-                                  fontSize:isTablet?8.sp:12.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black,
-                                ),
-                                CustomText(
-                                  text: "Student",
-                                  fontSize:isTablet?6.sp: 12.sp,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.black_80,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(6),
-                        decoration: BoxDecoration(
-                          color: AppColors.primary,
-                          borderRadius: BorderRadius.circular(10.r),
-                          // border: Border.all(color: AppColors.primary,width: 2),
-                        ),
-                        child: GestureDetector(
-                          onTap: (){
-
-                          },
-                          child: Center(
-                              child: CustomText(
-                                text: "Remove",
-                                color: AppColors.white,
-                                fontSize:isTablet?6.sp: 12.sp,
-                                fontWeight: FontWeight.w600,
-                              )),
-                        ),
-                      ),
-
-
-                    ],
-                  ),
-                ),
 
                 Padding(
                   padding: EdgeInsets.only(bottom: 10.h),
@@ -154,6 +110,7 @@ class _AdminstratorMissionDetailsScreenState extends State<AdminstratorMissionDe
                         onTap: (){},
                         child: Row(
                           children: [
+
                             CustomNetworkImage(
                               imageUrl: AppConstants.profileImage,
                               height:isTablet?64.h: 60.h,
@@ -173,7 +130,7 @@ class _AdminstratorMissionDetailsScreenState extends State<AdminstratorMissionDe
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.black,
                                 ),
-                                  CustomText(
+                                CustomText(
                                   text: "Student",
                                   fontSize:isTablet?6.sp: 12.sp,
                                   fontWeight: FontWeight.w400,
@@ -185,143 +142,108 @@ class _AdminstratorMissionDetailsScreenState extends State<AdminstratorMissionDe
                         ),
                       ),
 
-
-                   Row(
-
-                     children: [
-
-                       Container(
-                         padding: EdgeInsets.all(6),
-                         decoration: BoxDecoration(
-                           color: AppColors.black_04,
-                           borderRadius: BorderRadius.circular(10.r),
-                           // border: Border.all(color: AppColors.primary,width: 2),
-                         ),
-                         child: GestureDetector(
-                           onTap: (){
-
-                           },
-                           child:  Center(
-                               child: CustomText(
-                                 text: "Invited",
-                                 color: AppColors.white,
-                                 fontSize:isTablet?6.sp: 12.sp,
-                                 fontWeight: FontWeight.w600,
-                               )),
-                         ),
-                       ),
-
-                         SizedBox(
-                           width: 8.w,
-                         ),
-                       Container(
-                         padding: EdgeInsets.all(6),
-                         decoration: BoxDecoration(
-                           color: AppColors.primary,
-                           borderRadius: BorderRadius.circular(10.r),
-                           // border: Border.all(color: AppColors.primary,width: 2),
-                         ),
-                         child: GestureDetector(
-                           onTap: (){
-
-                           },
-                           child:  Center(
-                               child: CustomText(
-                                 text: "Remove",
-                                 color: AppColors.white,
-                                 fontSize:isTablet?6.sp: 12.sp,
-                                 fontWeight: FontWeight.w600,
-                               )),
-                         ),
-                       ),
-                     ],
-                   )
                     ],
                   ),
                 ),
 
-               /* Column(
-                    children: List.generate(3, (index) {
-                      return Padding(
-                        padding: EdgeInsets.only(bottom: 10.h),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 10.h),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: (){},
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            GestureDetector(
-                              onTap: (){},
-                              child: Row(
-                                children: [
-                                  CustomNetworkImage(
-                                    imageUrl: AppConstants.profileImage,
-                                    height:isTablet?64.h: 60.h,
-                                    width:isTablet?64.w: 60.w,
-                                    boxShape: BoxShape.circle,
-                                  ),
-                                  SizedBox(
-                                    width: 10.w,
-                                  ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      CustomText(
-                                        text: "Mehedi Hassan",
-                                        fontSize:isTablet?8.sp:16.sp,
-                                        fontWeight: FontWeight.w600,
-                                        color: AppColors.black,
-                                      ),
-                                      const CustomText(
-                                        text: "Student",
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                        color: AppColors.black_80,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+
+                            CustomNetworkImage(
+                              imageUrl: AppConstants.profileImage,
+                              height:isTablet?64.h: 60.h,
+                              width:isTablet?64.w: 60.w,
+                              boxShape: BoxShape.circle,
                             ),
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: AppColors.primary,
-                                borderRadius: BorderRadius.circular(10.r),
-                                // border: Border.all(color: AppColors.primary,width: 2),
-                              ),
-                              child: GestureDetector(
-                                onTap: (){
-
-
-                                },
-                                child: const Center(
-                                    child: CustomText(
-                                      text: "Details",
-                                      color: AppColors.white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                    )),
-                              ),
+                            SizedBox(
+                              width: 10.w,
                             ),
-
-
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomText(
+                                  text: "Jamal Hasan",
+                                  fontSize:isTablet?8.sp:12.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.black,
+                                ),
+                                CustomText(
+                                  text: "worker",
+                                  fontSize:isTablet?6.sp: 12.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.black_80,
+                                ),
+                              ],
+                            ),
                           ],
                         ),
-                      );
-                    })
-                ),*/
+                      ),
+
+
+                      Row(
+
+                        children: [
+
+                          Container(
+                            padding: EdgeInsets.all(6),
+                            decoration: BoxDecoration(
+                              color: AppColors.black_04,
+                              borderRadius: BorderRadius.circular(10.r),
+                              // border: Border.all(color: AppColors.primary,width: 2),
+                            ),
+                            child: GestureDetector(
+                              onTap: (){
+
+                              },
+                              child:  Center(
+                                  child: CustomText(
+                                    text: "Invited",
+                                    color: AppColors.white,
+                                    fontSize:isTablet?6.sp: 12.sp,
+                                    fontWeight: FontWeight.w600,
+                                  )),
+                            ),
+                          ),
+
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+
+
 
                 const Divider(
                   color: Colors.black54,
                 ),
+                SizedBox(
+                  height: 8.h,
+                ),
 
-                  SizedBox(
-                  height: 24.h,
+                CustomText(
+                  text: "working Time:18:30 Hours  Millage:18:30 Hours",
+                  fontSize:isTablet?6.sp: 12.sp,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.primary,
+                  textAlign: TextAlign.start,
+                ),
+
+                SizedBox(
+                  height: 12.h,
                 ),
                 CustomText(
                   textAlign: TextAlign.start,
-                  text: "Events List",
+                  text: "Event List",
                   fontSize:isTablet?6.sp: 18.sp,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w500,
                   color: AppColors.primary,
                   bottom: 8.h,
                 ),
@@ -352,7 +274,7 @@ class _AdminstratorMissionDetailsScreenState extends State<AdminstratorMissionDe
                                   width: 150.w,
                                   child: CustomText(
                                     textAlign: TextAlign.start,
-                                    text: "Cox’s Bazar Beach Helping Peolple"!,
+                                    text: "Cox’s Bazar Beach Helping Peolple",
                                     maxLines: 3,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500,
@@ -403,48 +325,7 @@ class _AdminstratorMissionDetailsScreenState extends State<AdminstratorMissionDe
                                     ),
                                   ],
                                 ),
-                                  SizedBox(
-                                  height: 10.h,
-                                ),
 
-                                CustomText(
-                                  text: "working Time:18:30 Hours \n Millage:18:30 Hours",
-                                  fontSize:isTablet?6.sp: 8.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.primary,
-                                  textAlign: TextAlign.start,
-                                ),
-
-                                SizedBox(
-                                  height: 8.h,
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-
-                                    GestureDetector(
-                                      onTap: () {
-
-                                        Get.toNamed(AppRoutes.adminstratorEventDetailsScreen);
-                                      },
-                                      child: Container(
-                                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                        decoration: BoxDecoration(
-                                          color: AppColors.primary,
-                                          borderRadius: BorderRadius.circular(10),
-                                        ),
-                                        child:  CustomText(
-                                          text:  "Explore",
-                                          fontSize:isTablet?6.sp: 12.sp,
-                                          fontWeight: FontWeight.w500,
-                                          color: AppColors.black,
-                                        ),
-                                      ),
-                                    ),
-
-
-                                  ],
-                                ),
                               ],
                             )
                           ],
@@ -456,7 +337,9 @@ class _AdminstratorMissionDetailsScreenState extends State<AdminstratorMissionDe
             ),
           ),
         ),
+
       );
     });
   }
-}
+  }
+
