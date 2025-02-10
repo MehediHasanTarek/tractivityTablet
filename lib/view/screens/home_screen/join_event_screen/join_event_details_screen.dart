@@ -297,7 +297,7 @@ class _JonEventDetailsScreenState extends State<JonEventDetailsScreen> {
 
                     CustomText(
                       text: "Description",
-                      fontSize:isTablet?8.sp: 16.sp,
+                      fontSize:isTablet?6.sp: 16.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.primary,
                     ),
@@ -323,7 +323,7 @@ class _JonEventDetailsScreenState extends State<JonEventDetailsScreen> {
 
                     CustomText(
                       text: "Time & Date",
-                      fontSize:isTablet?8.sp: 14.sp,
+                      fontSize:isTablet?6.sp: 14.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.primary,
                     ),
@@ -347,7 +347,7 @@ class _JonEventDetailsScreenState extends State<JonEventDetailsScreen> {
 
                     CustomText(
                       text: "Street",
-                      fontSize:isTablet?8.sp: 14.sp,
+                      fontSize:isTablet?6.sp: 14.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.primary,
                     ),
@@ -368,7 +368,7 @@ class _JonEventDetailsScreenState extends State<JonEventDetailsScreen> {
 
                     CustomText(
                       text: "City",
-                      fontSize:isTablet?8.sp: 14.sp,
+                      fontSize:isTablet?6.sp: 14.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.primary,
                     ),
@@ -389,7 +389,7 @@ class _JonEventDetailsScreenState extends State<JonEventDetailsScreen> {
 
                     CustomText(
                       text: "My Role",
-                      fontSize:isTablet?8.sp: 14.sp,
+                      fontSize:isTablet?6.sp: 14.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.primary,
                     ),

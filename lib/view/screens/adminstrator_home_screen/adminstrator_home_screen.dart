@@ -264,7 +264,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                                 padding: const EdgeInsets.only(left: 8,right: 8),
                                                                                 child: CustomText(
                                                                                   text: "Empowering communities  worldwide  through education, healthcare.",
-                                                                                  fontSize: 12.sp,
+                                                                                  fontSize:isTablet?6.sp: 12.sp,
                                                                                   color: AppColors.black_80,
                                                                                   fontWeight: FontWeight.w400,
                                                                                   textAlign: TextAlign.start,
@@ -844,7 +844,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                             padding: const EdgeInsets.only(left: 8,right: 8),
                                                                             child: CustomText(
                                                                               text: "Empowering communities  worldwide  through education, healthcare.",
-                                                                              fontSize: 12.sp,
+                                                                              fontSize:isTablet?6.sp: 12.sp,
                                                                               color: AppColors.black_80,
                                                                               fontWeight: FontWeight.w400,
                                                                               textAlign: TextAlign.start,
@@ -1269,7 +1269,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                         alignment: Alignment.topLeft,
                                         child: CustomText(
                                           text: "Add Organization",
-                                          fontSize:isTablet?10.sp: 16.sp,
+                                          fontSize:isTablet?8.sp: 16.sp,
                                           color: AppColors.black,
                                           fontWeight: FontWeight.bold,
                                           bottom: 4,
@@ -1289,7 +1289,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                           child: ExpansionTile(
                                             title: CustomText(
                                               text: "Select Organization",
-                                              fontSize:isTablet? 6.sp:14.sp,
+                                              fontSize:isTablet? 8.sp:14.sp,
                                               color: AppColors.black,
                                               fontWeight: FontWeight.w500,
                                               textAlign: TextAlign.start,
@@ -1449,7 +1449,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                         alignment: Alignment.topLeft,
                                         child: CustomText(
                                           text: "Add Organizer",
-                                          fontSize:isTablet?10.sp: 16.sp,
+                                          fontSize:isTablet?6.sp: 16.sp,
                                           color: AppColors.black,
                                           fontWeight: FontWeight.bold,
                                           bottom: 8,
@@ -1636,6 +1636,9 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                           hasBackgroundColor: true,
                                           controller: administratorController.missionDescriptionController.value),
 
+                                      SizedBox(
+                                        height: 8.h,
+                                      ),
                                       Row(
                                         mainAxisAlignment:
                                         MainAxisAlignment
@@ -1716,6 +1719,9 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                         ],
                                       ),
 
+                                      SizedBox(
+                                        height: 8.h,
+                                      ),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 12,right: 12,bottom: 12),
                                         child: CustomButton(

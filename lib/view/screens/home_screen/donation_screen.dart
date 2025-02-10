@@ -51,7 +51,7 @@ class _DonationScreenState extends State<DonationScreen> {
                         scrollDirection: Axis.vertical,
                         child: CustomText(
                           text: "100% of your donation will go towards building the infrastructure  of Serve Out. We have no paid staff.building the infrastructure  of Serve Out. We have no paid staff.",
-                          fontSize: isTablet ? 12.sp : 18.sp,
+                          fontSize: isTablet ? 8.sp : 18.sp,
                           fontWeight: FontWeight.w500,
                           textAlign: TextAlign.start,
                           maxLines: 3,
@@ -62,7 +62,7 @@ class _DonationScreenState extends State<DonationScreen> {
 
                       CustomText(
                         text: "Basic details",
-                        fontSize: isTablet ? 18 : 18,
+                        fontSize: isTablet ? 8.sp : 18,
                         fontWeight: FontWeight.w600,
                         color: AppColors.primary,
                         bottom: 12,
@@ -135,7 +135,7 @@ class _DonationScreenState extends State<DonationScreen> {
 
                       CustomText(
                         text: "Amount & card details",
-                        fontSize: isTablet ? 12.sp : 18.sp,
+                        fontSize: isTablet ? 7.sp : 18.sp,
                         fontWeight: FontWeight.w600,
                         color: AppColors.primary,
                         bottom: 8,
@@ -218,7 +218,7 @@ class _DonationScreenState extends State<DonationScreen> {
 
                       CustomText(
                         text: "Donation Type",
-                        fontSize: isTablet ? 12.sp : 18.sp,
+                        fontSize: isTablet ? 8.sp : 18.sp,
                         fontWeight: FontWeight.w600,
                         color: AppColors.primary,
                         bottom: 8,
@@ -226,7 +226,7 @@ class _DonationScreenState extends State<DonationScreen> {
 
                       CustomText(
                         text: "Donation Type",
-                        fontSize: isTablet ? 12.sp : 12.sp,
+                        fontSize: isTablet ? 8.sp : 12.sp,
                         fontWeight: FontWeight.w600,
 
                       ),
@@ -252,7 +252,7 @@ class _DonationScreenState extends State<DonationScreen> {
                             text:
                             "One time gift",
                             fontSize:
-                           isTablet?8.sp: 12.sp,
+                           isTablet?6.sp: 12.sp,
                             color: AppColors
                                 .black,
                             fontWeight:FontWeight.w600,
@@ -274,7 +274,7 @@ class _DonationScreenState extends State<DonationScreen> {
                             text:
                             "Recurring monthly gift",
                             fontSize:
-                            isTablet?8.sp: 12.sp,
+                            isTablet?6.sp: 12.sp,
                             color: AppColors
                                 .primary,
                             fontWeight:

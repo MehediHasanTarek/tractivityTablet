@@ -18,8 +18,10 @@ class OrganizerMissionDetailsScreen extends StatefulWidget {
 }
 
 class _OrganizerMissionDetailsScreenState extends State<OrganizerMissionDetailsScreen> {
+
   @override
   Widget build(BuildContext context) {
+
     return LayoutBuilder(builder: (context,constraints){
 
       final isTablet = constraints.maxWidth > 600;
@@ -276,9 +278,9 @@ class _OrganizerMissionDetailsScreenState extends State<OrganizerMissionDetailsS
 
                 CustomText(
                   textAlign: TextAlign.start,
-                  text: "Event List",
-                  fontSize:isTablet?6.sp: 18.sp,
-                  fontWeight: FontWeight.w500,
+                  text: "Events List",
+                  fontSize:isTablet?8.sp: 18.sp,
+                  fontWeight: FontWeight.bold,
                   color: AppColors.primary,
                   bottom: 8.h,
                 ),

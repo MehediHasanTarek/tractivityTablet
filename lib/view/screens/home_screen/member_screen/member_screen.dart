@@ -62,13 +62,13 @@ class _MemberScreenState extends State<MemberScreen> {
                                     SizedBox(
                                       width: 10.w,
                                     ),
-                                    const Column(
+                                      Column(
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         CustomText(
                                           text: "Mehedi Hassan",
-                                          fontSize: 18,
+                                          fontSize:isTablet?8.sp: 18,
                                           fontWeight: FontWeight.w600,
                                           color: AppColors.black,
                                         ),
@@ -148,7 +148,7 @@ class _MemberScreenState extends State<MemberScreen> {
 
                                                   Navigator.of(context).pop();
 
-                                                }, title: "Done",fontSize: 12.sp,),
+                                                }, title: "Done",fontSize:isTablet?6.sp: 12.sp,),
                                               ),
 
                                             ],
@@ -236,7 +236,7 @@ class _MemberScreenState extends State<MemberScreen> {
 
                                               CustomButton(onTap: (){
                                                 Navigator.of(context).pop();
-                                              }, title: "Edit",fontSize: 12.sp,),
+                                              }, title: "Edit",fontSize: isTablet?6.sp: 12.sp,),
 
                                             ],
                                           ),

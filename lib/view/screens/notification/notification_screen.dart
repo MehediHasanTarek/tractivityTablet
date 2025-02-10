@@ -285,7 +285,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           children: [
                             CustomButton(
                               onTap: () {
-                                Get.toNamed(AppRoutes.jonEventDetailsScreen);
+
+                                Get.toNamed(AppRoutes.organizerMissionDetailsScreen);
                               },
                               title: "Explore",
                               width: 70.w,

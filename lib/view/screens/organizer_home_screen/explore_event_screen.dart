@@ -94,7 +94,7 @@ class _ExploreEventScreenState extends State<ExploreEventScreen> {
                           ),
                           CustomText(
                             text: "Download",
-                            fontSize: 12.sp,
+                            fontSize:isTablet?6.sp: 12.sp,
                             fontWeight: FontWeight.w400,
                             color: AppColors.lightBlue,
                           ),
@@ -296,7 +296,7 @@ class _ExploreEventScreenState extends State<ExploreEventScreen> {
 
                 CustomText(
                   text: "Description",
-                  fontSize:isTablet?8.sp: 16.sp,
+                  fontSize:isTablet?6.sp: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),
@@ -322,7 +322,7 @@ class _ExploreEventScreenState extends State<ExploreEventScreen> {
 
                 CustomText(
                   text: "Time & Date",
-                  fontSize:isTablet?8.sp: 14.sp,
+                  fontSize:isTablet?6.sp: 14.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),
@@ -346,7 +346,7 @@ class _ExploreEventScreenState extends State<ExploreEventScreen> {
 
                 CustomText(
                   text: "Street",
-                  fontSize:isTablet?8.sp: 14.sp,
+                  fontSize:isTablet?6.sp: 14.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),
@@ -367,7 +367,7 @@ class _ExploreEventScreenState extends State<ExploreEventScreen> {
 
                 CustomText(
                   text: "City",
-                  fontSize:isTablet?8.sp: 14.sp,
+                  fontSize:isTablet?6.sp: 14.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),
@@ -388,7 +388,7 @@ class _ExploreEventScreenState extends State<ExploreEventScreen> {
 
                 CustomText(
                   text: "Country",
-                  fontSize:isTablet?8.sp: 14.sp,
+                  fontSize:isTablet?6.sp: 14.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),

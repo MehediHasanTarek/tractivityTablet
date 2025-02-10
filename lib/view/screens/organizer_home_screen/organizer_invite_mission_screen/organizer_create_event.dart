@@ -43,7 +43,7 @@ class _OrganizerEventCreateScreenState extends State<OrganizerEventCreateScreen>
 
                 CustomText(
                   textAlign: TextAlign.start,
-                  text: "Mission:",
+                  text: "Mission",
                   fontSize:isTablet?6.sp: 16.sp,
                   fontWeight: FontWeight.w500,
                   color: AppColors.primary,

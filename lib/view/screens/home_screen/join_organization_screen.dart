@@ -207,7 +207,7 @@ class _JoinOrganizationScreenState extends State<JoinOrganizationScreen> {
                  height: 60.h,
                  textColor: AppColors.black,
                  fillColor: AppColors.primary,
-                 fontSize: 14.sp,
+                 fontSize:isTablet?8.sp: 14.sp,
                ),
              )
            ],

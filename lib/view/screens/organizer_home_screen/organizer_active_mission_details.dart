@@ -110,7 +110,7 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
                               children: [
                                 CustomText(
                                   text: "Farhad Hossain",
-                                  fontSize:isTablet?8.sp:12.sp,
+                                  fontSize:isTablet?6.sp:12.sp,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.black,
                                 ),
@@ -155,7 +155,7 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
                               children: [
                                 CustomText(
                                   text: "Jamal Hasan",
-                                  fontSize:isTablet?8.sp:12.sp,
+                                  fontSize:isTablet?6.sp:12.sp,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.black,
                                 ),

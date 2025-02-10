@@ -7,6 +7,7 @@ import 'package:tractivity_app/utils/app_colors/app_colors.dart';
 import 'package:tractivity_app/utils/app_const/app_const.dart';
 import 'package:tractivity_app/utils/app_strings/app_strings.dart';
 import 'package:tractivity_app/utils/toast.dart';
+import 'package:tractivity_app/view/components/custom_button/custom_button.dart';
 import 'package:tractivity_app/view/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:tractivity_app/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:tractivity_app/view/components/custom_tab_selected/custom_tab_selected.dart';
@@ -60,7 +61,7 @@ class _UserEventProfileState extends State<UserEventProfile> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomText(
-                            text: "Mehedi Bin Ab. Salam",
+                            text: "Mehedi Hasan Tarek",
                             fontSize: 20,
                             fontWeight: FontWeight.w500,
                           ),
@@ -72,7 +73,7 @@ class _UserEventProfileState extends State<UserEventProfile> {
                                 size: 20,
                               ),
                               CustomText(
-                                text: "Bushwick Brooklyn, NY, USA",
+                                text: "Bushwhack Brooklyn, NY, USA",
                                 fontSize: 12,
                                 color: AppColors.primary,
                                 fontWeight: FontWeight.w400,
@@ -95,7 +96,7 @@ class _UserEventProfileState extends State<UserEventProfile> {
                         decoration: BoxDecoration(
                           color: AppColors.neutral02,
                           borderRadius: BorderRadius.circular(10),
-                        ),child: CustomText(text: "Hours: 4:30 Hours",fontSize: 12.sp,fontWeight: FontWeight.w400,),
+                        ),child: CustomText(text: "Hours: 4:30 Hours",fontSize:isTablet?8: 12.sp,fontWeight: FontWeight.w400,),
                       ),
 
                       SizedBox(
@@ -106,7 +107,7 @@ class _UserEventProfileState extends State<UserEventProfile> {
                         decoration: BoxDecoration(
                           color: AppColors.neutral02,
                           borderRadius: BorderRadius.circular(10),
-                        ),child: CustomText(text: "Millage: 8Km",fontSize: 12.sp,fontWeight: FontWeight.w400,),
+                        ),child: CustomText(text: "Millage: 8Km",fontSize:isTablet?8: 12.sp,fontWeight: FontWeight.w400,),
                       ),
                     ],
                   ),
@@ -119,16 +120,30 @@ class _UserEventProfileState extends State<UserEventProfile> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+
                       ///========== volunteer =========
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
 
                           CustomText(
                             text:"Details",
-                            fontSize: 18.sp,
+                            fontSize: isTablet?9.sp: 18.sp,
                             fontWeight: FontWeight.w600,
                             color: AppColors.primary,
-                          )
+                          ),
+
+                          CustomButton(
+                            onTap: () {
+                              Get.toNamed(AppRoutes.volunteerEventReportScreen);
+                            },
+                            title: "Report",
+                            height:isTablet?40.h: 35.h,
+                            width: 80.w,
+                            textColor: AppColors.white,
+                            fillColor: AppColors.primary,
+                            fontSize: 12,
+                          ),
                         ],
                       ),
                       ///========== full name =========

@@ -287,7 +287,7 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
 
                    CustomText(
                      text: "Description",
-                     fontSize:isTablet?8.sp: 16.sp,
+                     fontSize:isTablet?6.sp: 16.sp,
                      fontWeight: FontWeight.w600,
                      color: AppColors.primary,
                    ),
@@ -313,7 +313,7 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
 
                    CustomText(
                      text: "Time & Date",
-                     fontSize:isTablet?8.sp: 14.sp,
+                     fontSize:isTablet?6.sp: 16.sp,
                      fontWeight: FontWeight.w600,
                      color: AppColors.primary,
                    ),
@@ -337,7 +337,7 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
 
                    CustomText(
                      text: "Street",
-                     fontSize:isTablet?8.sp: 14.sp,
+                     fontSize:isTablet?6.sp: 16.sp,
                      fontWeight: FontWeight.w600,
                      color: AppColors.primary,
                    ),
@@ -358,7 +358,7 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
 
                    CustomText(
                      text: "City",
-                     fontSize:isTablet?8.sp: 14.sp,
+                     fontSize:isTablet?6.sp: 16.sp,
                      fontWeight: FontWeight.w600,
                      color: AppColors.primary,
                    ),
@@ -379,7 +379,7 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
 
                    CustomText(
                      text: "My Role",
-                     fontSize:isTablet?8.sp: 14.sp,
+                     fontSize:isTablet?6.sp: 16.sp,
                      fontWeight: FontWeight.w600,
                      color: AppColors.primary,
                    ),
@@ -417,7 +417,6 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
                                    fontSize: 24,
                                    color: AppColors.black,
                                    fontWeight: FontWeight.w500,
-                                   bottom: 8,
                                  ),
                                ),
 
@@ -444,16 +443,6 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
                                    mainAxisAlignment: MainAxisAlignment.start,
                                    crossAxisAlignment: CrossAxisAlignment.start,
                                    children: [
-
-                                     CustomText(
-                                       text: "🎉 Congratulations on successfully completing your volunteer work and submitting it! 🌟 Your dedication and effort are truly inspiring. 🙌 Keep up the great work!",
-                                       fontSize:isTablet?6.sp: 14.sp,
-                                       color: AppColors.black,
-                                       fontWeight: FontWeight.w400,
-                                       maxLines: 4,
-                                       bottom: 8,
-                                       textAlign: TextAlign.start,
-                                     ),
 
                                      CustomFormCard(
                                        title: "working Time",

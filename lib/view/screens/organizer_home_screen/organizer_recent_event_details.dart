@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:tractivity_app/core/app_routes/app_routes.dart';
 import 'package:tractivity_app/utils/app_colors/app_colors.dart';
 import 'package:tractivity_app/utils/app_const/app_const.dart';
@@ -21,6 +22,18 @@ class OrganizerRecentEventDetails extends StatefulWidget {
 }
 
 class _OrganizerRecentEventDetailsState extends State<OrganizerRecentEventDetails> {
+
+  final storage =   GetStorage();
+
+  String statues="";
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    statues = storage.read("status");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,18 +88,20 @@ class _OrganizerRecentEventDetailsState extends State<OrganizerRecentEventDetail
                                 color: AppColors.black_80,
                               ),
 
+                              statues=="active"?
                               GestureDetector(
                                   onTap: (){
                                     Get.toNamed(AppRoutes.messageScreen);
                                   },
-                                  child: CustomImage(imageSrc: AppIcons.chart)),
+                                  child: CustomImage(imageSrc: AppIcons.chart)):SizedBox(),
+
                               Padding(
                                 padding: const EdgeInsets.only(right: 16),
                                 child: GestureDetector(
                                     onTap: (){
                                       Get.toNamed(AppRoutes.adminstratorMember);
                                     },
-                                    child: Icon(Icons.menu,size: 24,)),
+                                    child: Icon(Icons.menu,size:isTablet?32: 24,)),
                               ),
                             ],
                           ),
@@ -297,7 +312,7 @@ class _OrganizerRecentEventDetailsState extends State<OrganizerRecentEventDetail
 
                 CustomText(
                   text: "Description",
-                  fontSize:isTablet?8.sp: 16.sp,
+                  fontSize:isTablet?6.sp: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),
@@ -323,7 +338,7 @@ class _OrganizerRecentEventDetailsState extends State<OrganizerRecentEventDetail
 
                 CustomText(
                   text: "Time & Date",
-                  fontSize:isTablet?8.sp: 14.sp,
+                  fontSize:isTablet?6.sp: 14.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),
@@ -332,7 +347,7 @@ class _OrganizerRecentEventDetailsState extends State<OrganizerRecentEventDetail
                 ),
                 CustomText(
                   text: "22 December, 2024, 8.00 am-12.00 pm",
-                  fontSize:isTablet?8.sp: 14.sp,
+                  fontSize:isTablet?6.sp: 14.sp,
                   fontWeight: FontWeight.w400,
                   color: AppColors.black_80,
                 ),
@@ -350,7 +365,7 @@ class _OrganizerRecentEventDetailsState extends State<OrganizerRecentEventDetail
 
                     CustomText(
                       text: "working Time:18:30 Hours",
-                      fontSize:isTablet?8.sp: 12.sp,
+                      fontSize:isTablet?6.sp: 12.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.primary,
                     ),
@@ -360,7 +375,7 @@ class _OrganizerRecentEventDetailsState extends State<OrganizerRecentEventDetail
                     ),
                     CustomText(
                       text: "Millage:18:30 Hours",
-                      fontSize:isTablet?8.sp: 12.sp,
+                      fontSize:isTablet?6.sp: 12.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.primary,
                     ),

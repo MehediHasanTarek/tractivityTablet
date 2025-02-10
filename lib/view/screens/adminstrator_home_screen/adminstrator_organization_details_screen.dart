@@ -78,13 +78,31 @@ class _AdminstratorOrganizationDetailsScreenState extends State<AdminstratorOrga
                   color: Colors.black54,
                 ),
 
-                CustomText(
-                  textAlign: TextAlign.start,
-                  text: "Mission:",
-                  fontSize:isTablet?6.sp: 16.sp,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.primary,
-                ),
+           Row(
+             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+             children: [
+
+               CustomText(
+                 textAlign: TextAlign.start,
+                 text: "Mission",
+                 fontSize:isTablet?8.sp: 18.sp,
+                 fontWeight: FontWeight.w500,
+                 color: AppColors.primary,
+               ),
+
+               CustomButton(
+                 onTap: () {
+                   Get.toNamed(AppRoutes.adminstratorOrganizationReportScreen);
+                 },
+                 title: "Report",
+                 height:isTablet?40.h: 35.h,
+                 width: 100.w,
+                 textColor: AppColors.white,
+                 fillColor: AppColors.primary,
+                 fontSize: 12,
+               ),
+             ],
+           ),
 
                   SizedBox(
                   height: 16.h,

@@ -5,6 +5,7 @@ import 'package:tractivity_app/view/screens/adminstrator_home_screen/adminstrato
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/adminstrator_home_screen.dart';
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/adminstrator_mission_details_screen.dart';
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/adminstrator_organization_details_screen.dart';
+import 'package:tractivity_app/view/screens/adminstrator_home_screen/adminstrator_organization_report_screen.dart';
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/event_complete_screen.dart';
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/member/adminstrator_member.dart';
 import 'package:tractivity_app/view/screens/auth_screen/signup_screen/location_map_screen.dart';
@@ -37,6 +38,7 @@ import 'package:tractivity_app/view/screens/home_screen/member_screen/event_comp
 import 'package:tractivity_app/view/screens/home_screen/member_screen/member_screen.dart';
 import 'package:tractivity_app/view/screens/home_screen/recent_event_explore_details.dart';
 import 'package:tractivity_app/view/screens/home_screen/user_event_profile/user_event_profile.dart';
+import 'package:tractivity_app/view/screens/home_screen/user_event_profile/volunteer_report_screen.dart';
 import 'package:tractivity_app/view/screens/home_screen/volunteer_chart_screen.dart';
 import 'package:tractivity_app/view/screens/notification/notification_screen.dart';
 import 'package:tractivity_app/view/screens/onboarding_screen/onboarding_screen.dart';
@@ -129,6 +131,8 @@ class AppRoutes {
   static const String joinOrganizationScreen = "/JoinOrganizationScreen";
   static const String missionToVolunteersInviteScreen = "/MissionToVolunteersInviteScreen";
   static const String missionEventReportScreen = "/MissionEventReportScreen";
+  static const String volunteerEventReportScreen = "/VolunteerEventReportScreen";
+  static const String adminstratorOrganizationReportScreen = "/AdminstratorOrganizationReportScreen";
 
 
 
@@ -205,6 +209,8 @@ class AppRoutes {
     GetPage(name: joinOrganizationScreen, page: () => JoinOrganizationScreen()),
     GetPage(name: missionToVolunteersInviteScreen, page: () => MissionToVolunteersInviteScreen()),
     GetPage(name: missionEventReportScreen, page: () => MissionEventReportScreen()),
+    GetPage(name: volunteerEventReportScreen, page: () => VolunteerEventReportScreen()),
+    GetPage(name: adminstratorOrganizationReportScreen, page: () => AdminstratorOrganizationReportScreen()),
 
 
 

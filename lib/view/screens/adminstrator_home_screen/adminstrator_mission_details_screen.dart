@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:tractivity_app/core/app_routes/app_routes.dart';
 import 'package:tractivity_app/utils/app_colors/app_colors.dart';
 import 'package:tractivity_app/utils/app_const/app_const.dart';
+import 'package:tractivity_app/view/components/custom_button/custom_button.dart';
 import 'package:tractivity_app/view/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:tractivity_app/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:tractivity_app/view/components/custom_text/custom_text.dart';
@@ -315,17 +316,39 @@ class _AdminstratorMissionDetailsScreenState extends State<AdminstratorMissionDe
                 ),
 
                   SizedBox(
-                  height: 24.h,
-                ),
-                CustomText(
-                  textAlign: TextAlign.start,
-                  text: "Events List",
-                  fontSize:isTablet?6.sp: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.primary,
-                  bottom: 8.h,
+                  height: 12.h,
                 ),
 
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "Events List",
+                      fontSize:isTablet?6.sp: 18.sp,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.primary,
+                      bottom: 8.h,
+                    ),
+
+                    CustomButton(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.missionEventReportScreen);
+                      },
+                      title: "Report",
+                      height:isTablet?40.h: 35.h,
+                      width: 100.w,
+                      textColor: AppColors.white,
+                      fillColor: AppColors.primary,
+                      fontSize: 12,
+                    ),
+                  ],
+                ),
+
+                SizedBox(
+                  height: 16.h,
+                ),
                 Column(
                     children: List.generate(3, (index) {
 

@@ -22,60 +22,65 @@ class InviteMemberScreen extends StatefulWidget {
 class _InviteMemberScreenState extends State<InviteMemberScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomRoyelAppbar(
-        titleName: "Invite",
-        leftIcon: true,
-      ),
-      body:Padding(
-        padding: const EdgeInsets.all(16.0),
-        child:Column(
+    return LayoutBuilder(builder: (context,constraints){
+
+      final isTablet = constraints.maxWidth > 600;
+
+      return Scaffold(
+        appBar: const CustomRoyelAppbar(
+          titleName: "Invite",
+          leftIcon: true,
+        ),
+        body:Padding(
+          padding: const EdgeInsets.all(16.0),
+          child:Column(
+            children: [
+
+              ///============ search ======================================
+              const CustomTextField(
+                  hintText: AppStrings.searchEvent,
+                  fillColor: AppColors.neutral02,
+                  suffixIcon: Icon(
+                    Icons.search,
+                    color: AppColors.black_60,
+                  )),
+
+              const SizedBox(
+                height: 12,
+              ),
+
+              Column(
+                  children: List.generate(6, (index) {
+                    return GestureDetector(
+                      onTap: (){
+
+                      },
+                      child: CustomFriendsList(
+                        image: AppConstants.profileImage,
+                        name: "Mehedi Hassan",
+                        userName: "Single",
+                        reversText: "Select",
+                      ),
+                    );
+                  })
+              )
+            ],
+          ),
+        ),
+
+        bottomNavigationBar: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-
-            ///============ search ======================================
-            const CustomTextField(
-                hintText: AppStrings.searchEvent,
-                fillColor: AppColors.neutral02,
-                suffixIcon: Icon(
-                  Icons.search,
-                  color: AppColors.black_60,
-                )),
-
-            const SizedBox(
-              height: 12,
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: CustomButton(onTap: (){
+                Get.toNamed(AppRoutes.organizerEventCreateScreen);
+              }, title: "Done",fontSize:isTablet?6.sp: 12.sp,),
             ),
 
-            Column(
-                children: List.generate(6, (index) {
-                  return GestureDetector(
-                    onTap: (){
-
-                    },
-                    child: CustomFriendsList(
-                      image: AppConstants.profileImage,
-                      name: "Mehedi Hassan",
-                      userName: "Single",
-                      reversText: "Select",
-                    ),
-                  );
-                })
-            )
           ],
         ),
-      ),
-
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: CustomButton(onTap: (){
-              Get.toNamed(AppRoutes.organizerEventCreateScreen);
-            }, title: "Done",fontSize: 12.sp,),
-          ),
-
-        ],
-      ),
-    );
+      );
+    });
   }
 }

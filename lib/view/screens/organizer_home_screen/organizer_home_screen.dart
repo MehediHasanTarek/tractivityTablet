@@ -32,6 +32,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
   final OrganizerController organizerController = Get.find<OrganizerController>();
 
   final administratorController = Get.put(AdministratiorController());
+
   final storage = GetStorage();
 
   @override
@@ -44,7 +45,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
       return Scaffold(
         key: _scaffoldKey,
         drawer: HomeSideDrawer(),
-        //drawerScrimColor: Colors.black,
+        ///drawerScrimColor: Colors.black,
         appBar: AppBar(
           leading: Builder(builder: (context) {
             return IconButton(
@@ -85,9 +86,9 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                       selectedColor: AppColors.primary,
                       unselectedColor: AppColors.grey_1
                   ),
-                //  SizedBox(height: 12,),
+                 ///SizedBox(height: 12,),
 
-                  ///============ Invited Mission ========
+                  ///============ Invited Mission ==================
                   Expanded(
                     child: ListView(
                       shrinkWrap: true,
@@ -99,6 +100,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                               return InkWell(
                                 onTap: (){
                                   Get.toNamed(AppRoutes.organizerMissionDetailsScreen);
+                                  storage.write("status", "Inactive");
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
@@ -231,7 +233,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
 
                                                                   CustomText(
                                                                     text: "Thanks for join the mission 🎉",
-                                                                    fontSize: 18.sp,
+                                                                    fontSize:isTablet?8.sp: 18.sp,
                                                                     color: AppColors.black,
                                                                     fontWeight: FontWeight.w500,
                                                                     bottom: 8,
@@ -317,7 +319,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                                         groupValue: organizerController.missionActiveInactiveStatus.value,
                                         onChanged:(bool?value) {
 
-                                       organizerController.missionActiveInactiveStatus.value = value!;
+                                         organizerController.missionActiveInactiveStatus.value = value!;
 
                                         },
                                       ),
@@ -368,7 +370,10 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                                   children: List.generate(3, (index) {
                                     return InkWell(
                                       onTap: (){
+
                                         Get.toNamed(AppRoutes.organizerActiveMissionDetails);
+
+                                        storage.write("status", "active");
                                       },
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
@@ -510,7 +515,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                                                                                       padding: const EdgeInsets.only(left: 8,right: 8),
                                                                                       child: CustomText(
                                                                                         text: "Empowering communities  worldwide  through education, healthcare.",
-                                                                                        fontSize: 12.sp,
+                                                                                        fontSize:isTablet?6.sp: 12.sp,
                                                                                         color: AppColors.black_80,
                                                                                         fontWeight: FontWeight.w400,
                                                                                         textAlign: TextAlign.start,
@@ -568,7 +573,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
 
                                                                                   CustomText(
                                                                                     text: "mark as Inactive",
-                                                                                    fontSize:isTablet?10.sp: 14.sp,
+                                                                                    fontSize:isTablet?8.sp: 14.sp,
                                                                                     fontWeight: FontWeight.w600,
                                                                                     color: AppColors.primary,
                                                                                   ),
@@ -799,7 +804,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                                                                                         padding: const EdgeInsets.only(left: 8,right: 8),
                                                                                         child: CustomText(
                                                                                           text: "Empowering communities  worldwide  through education, healthcare.",
-                                                                                          fontSize: 12.sp,
+                                                                                          fontSize:isTablet?8.sp: 12.sp,
                                                                                           color: AppColors.black_80,
                                                                                           fontWeight: FontWeight.w400,
                                                                                           textAlign: TextAlign.start,
@@ -857,7 +862,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
 
                                                                                     CustomText(
                                                                                       text: "mark as Active",
-                                                                                      fontSize:isTablet?10.sp: 14.sp,
+                                                                                      fontSize:isTablet?6.sp: 14.sp,
                                                                                       fontWeight: FontWeight.w600,
                                                                                       color: AppColors.primary,
                                                                                     ),

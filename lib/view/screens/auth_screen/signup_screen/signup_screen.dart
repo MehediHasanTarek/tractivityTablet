@@ -114,7 +114,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
                                 CustomText(
                                     text: "Volunteer",
-                                    fontSize:isTablet?10.sp: 14.sp,
+                                    fontSize:isTablet?8.sp: 14.sp,
                                     fontWeight: FontWeight.w600,
                                     color: AppColors.primary,
                                   ),
@@ -160,7 +160,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
                                   CustomText(
                                     text: "Organizer",
-                                    fontSize:isTablet?10.sp: 14.sp,
+                                    fontSize:isTablet?8.sp: 14.sp,
                                     fontWeight: FontWeight.w600,
                                     color: AppColors.primary,
                                   ),
@@ -185,7 +185,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                     side: const BorderSide(
                                       // ======> CHANGE THE BORDER COLOR HERE <======
                                       color: AppColors.primary,
-                                      // Give your checkbox border a custom width
+                                      ///Give your checkbox border a custom width
                                       width: 1.4,
                                     ),
                                     value: authController.administrator.value,
@@ -204,7 +204,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
                                   CustomText(
                                     text: "Administrator",
-                                    fontSize:isTablet?10.sp: 14.sp,
+                                    fontSize:isTablet?8.sp: 14.sp,
                                     fontWeight: FontWeight.w600,
                                     color: AppColors.primary,
                                   ),

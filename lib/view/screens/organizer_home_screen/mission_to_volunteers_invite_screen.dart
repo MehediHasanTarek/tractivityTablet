@@ -75,7 +75,7 @@ class _MissionToVolunteersInviteScreenState extends State<MissionToVolunteersInv
                 padding: const EdgeInsets.all(12.0),
                 child: CustomButton(onTap: (){
 
-                }, title: "Done",fontSize:isTablet?9.sp: 14.sp,),
+                }, title: "Done",fontSize:isTablet?8.sp: 14.sp,),
               ),
 
             ],

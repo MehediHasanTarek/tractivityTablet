@@ -289,7 +289,7 @@ class ExoloreCompleteDetailsScreen extends StatelessWidget {
 
                 CustomText(
                   text: "Description",
-                  fontSize:isTablet?8.sp: 16.sp,
+                  fontSize:isTablet?6.sp: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),
@@ -315,7 +315,7 @@ class ExoloreCompleteDetailsScreen extends StatelessWidget {
 
                 CustomText(
                   text: "Time & Date",
-                  fontSize:isTablet?8.sp: 14.sp,
+                  fontSize:isTablet?6.sp: 14.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),
@@ -339,7 +339,7 @@ class ExoloreCompleteDetailsScreen extends StatelessWidget {
 
                 CustomText(
                   text: "Street",
-                  fontSize:isTablet?8.sp: 14.sp,
+                  fontSize:isTablet?6.sp: 14.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),
@@ -360,7 +360,7 @@ class ExoloreCompleteDetailsScreen extends StatelessWidget {
 
                 CustomText(
                   text: "City",
-                  fontSize:isTablet?8.sp: 14.sp,
+                  fontSize:isTablet?6.sp: 14.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),
@@ -381,7 +381,7 @@ class ExoloreCompleteDetailsScreen extends StatelessWidget {
 
                 CustomText(
                   text: "My Role",
-                  fontSize:isTablet?8.sp: 14.sp,
+                  fontSize:isTablet?6.sp: 14.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),

@@ -117,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CustomText(
-                              text: "Mehedi Bin Ab. Salam",
+                              text: "Mehedi Bin ",
                               fontSize: isTablet ? 24 : 20,
                               fontWeight: FontWeight.w500,
                             ),

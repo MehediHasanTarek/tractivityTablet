@@ -290,7 +290,7 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
 
                    CustomText(
                      text: "Description",
-                     fontSize:isTablet?8.sp: 16.sp,
+                     fontSize:isTablet?6.sp: 16.sp,
                      fontWeight: FontWeight.w600,
                      color: AppColors.primary,
                    ),
@@ -316,7 +316,7 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
 
                    CustomText(
                      text: "Time & Date",
-                     fontSize:isTablet?8.sp: 14.sp,
+                     fontSize:isTablet?6.sp: 14.sp,
                      fontWeight: FontWeight.w600,
                      color: AppColors.primary,
                    ),
@@ -325,7 +325,7 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
                    ),
                    CustomText(
                      text: "22 December, 2024, 8.00 am-12.00 pm",
-                     fontSize:isTablet?8.sp: 14.sp,
+                     fontSize:isTablet?6.sp: 14.sp,
                      fontWeight: FontWeight.w400,
                      color: AppColors.black_80,
                    ),
@@ -340,7 +340,7 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
 
                    CustomText(
                      text: "Street",
-                     fontSize:isTablet?8.sp: 14.sp,
+                     fontSize:isTablet?6.sp: 14.sp,
                      fontWeight: FontWeight.w600,
                      color: AppColors.primary,
                    ),
@@ -361,7 +361,7 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
 
                    CustomText(
                      text: "City",
-                     fontSize:isTablet?8.sp: 14.sp,
+                     fontSize:isTablet?6.sp: 14.sp,
                      fontWeight: FontWeight.w600,
                      color: AppColors.primary,
                    ),
@@ -382,7 +382,7 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
 
                    CustomText(
                      text: "My Role",
-                     fontSize:isTablet?8.sp: 14.sp,
+                     fontSize:isTablet?6.sp: 14.sp,
                      fontWeight: FontWeight.w600,
                      color: AppColors.primary,
                    ),
@@ -420,7 +420,6 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
                                    fontSize: 24,
                                    color: AppColors.black,
                                    fontWeight: FontWeight.w500,
-                                   bottom: 8,
                                  ),
                                ),
 
@@ -448,15 +447,6 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
                                    crossAxisAlignment: CrossAxisAlignment.start,
                                    children: [
 
-                                     CustomText(
-                                       text: "🎉 Congratulations on successfully completing your volunteer work and submitting it! 🌟 Your dedication and effort are truly inspiring. 🙌 Keep up the great work!",
-                                       fontSize: 14.sp,
-                                       color: AppColors.black,
-                                       fontWeight: FontWeight.w400,
-                                       maxLines: 4,
-                                       bottom: 8,
-                                       textAlign: TextAlign.start,
-                                     ),
 
                                      CustomFormCard(
                                        title: "working Time",
@@ -553,7 +543,7 @@ class _JoinDetailsScreenState extends State<JoinDetailsScreen> {
 
                                        CustomText(
                                          text: "🎉 Congratulations on successfully completing your volunteer work and submitting it! 🌟 Your dedication and effort are truly inspiring. 🙌 Keep up the great work!",
-                                         fontSize: 14.sp,
+                                         fontSize:isTablet?6.sp: 14.sp,
                                          color: AppColors.black,
                                          fontWeight: FontWeight.w400,
                                          maxLines: 4,
