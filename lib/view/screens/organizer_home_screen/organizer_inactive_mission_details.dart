@@ -49,13 +49,12 @@ class _OrganizerInactiveMissionDetailsState extends State<OrganizerInactiveMissi
                 ),
 
                 CustomText(
-                  text: "Mission Horizons Foundation",
+                  text: "Organization Horizons Foundation",
                   fontSize:isTablet?6.sp: 16.sp,
                   color: AppColors.black_80,
                   fontWeight: FontWeight.w600,
                   bottom: 6.h,
                 ),
-
                 CustomText(
                   text: "Empowering communities  worldwide  through education, healthcare,  and sustainable development initiatives.",
                   fontSize: 12,
@@ -66,6 +65,37 @@ class _OrganizerInactiveMissionDetailsState extends State<OrganizerInactiveMissi
                   maxLines: 3,
                   bottom: 4.h,// Add ellipsis at the end if the text overflows.
                 ),
+
+                const Divider(
+                  color: Colors.black54,
+                  // height: 16.h,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: "Mission",
+                  fontSize:isTablet?6.sp: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.primary,
+                  bottom: 5,
+                ),
+                CustomText(
+                  text: "Mission Horizons Foundation",
+                  fontSize:isTablet?6.sp: 16.sp,
+                  color: AppColors.black_80,
+                  fontWeight: FontWeight.w600,
+                  bottom: 6.h,
+                ),
+                CustomText(
+                  text: "Empowering communities  worldwide  through education, healthcare,  and sustainable development initiatives.",
+                  fontSize: 12,
+                  color: AppColors.black_02,
+                  fontWeight: FontWeight.w400,
+                  textAlign: TextAlign.start,
+                  overflow: TextOverflow.clip,
+                  maxLines: 3,
+                  bottom: 4.h,// Add ellipsis at the end if the text overflows.
+                ),
+
 
                 const Divider(
                   color: Colors.black54,
@@ -270,13 +300,57 @@ class _OrganizerInactiveMissionDetailsState extends State<OrganizerInactiveMissi
                       );
                     })
                 ),*/
-
                 const Divider(
                   color: Colors.black54,
                 ),
-                  SizedBox(
-                  height: 16.h,
+
+                SizedBox(
+                  height: 10.h,
                 ),
+
+                CustomText(
+                  text: "working Time:18:30 Hours  Millage:18:30 Hours",
+                  fontSize:isTablet?6.sp: 12.sp,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.primary,
+                  textAlign: TextAlign.start,
+                ),
+
+                SizedBox(
+                  height: 8.h,
+                ),
+                Row(
+                  children: [
+                    CustomText(
+                      text:  "Mission mode:",
+                      fontSize:isTablet?6.sp: 16.sp,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.black,
+                    ),
+                    SizedBox(
+                      width: 8.w,
+                    ),
+                    CustomText(
+                      text:  "Public",
+                      fontSize:isTablet?6.sp: 16.sp,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.cardBarClr,
+                    )
+                  ],
+
+                ),
+
+                SizedBox(
+                  height: 4.h,
+                ),
+                const Divider(
+                  color: Colors.black54,
+                ),
+
+                  SizedBox(
+                  height: 8.h,
+                ),
+
 
                 CustomText(
                   textAlign: TextAlign.start,
@@ -363,17 +437,6 @@ class _OrganizerInactiveMissionDetailsState extends State<OrganizerInactiveMissi
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ],
-                                ),
-                                SizedBox(
-                                  height: 10.h,
-                                ),
-
-                                CustomText(
-                                  text: "working Time:18:30 Hours \n Millage:18:30 Hours",
-                                  fontSize:isTablet?6.sp: 8.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.primary,
-                                  textAlign: TextAlign.start,
                                 ),
 
                                 SizedBox(

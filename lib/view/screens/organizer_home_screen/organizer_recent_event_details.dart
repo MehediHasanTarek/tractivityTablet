@@ -32,7 +32,7 @@ class _OrganizerRecentEventDetailsState extends State<OrganizerRecentEventDetail
     // TODO: implement initState
     super.initState();
 
-    statues = storage.read("status");
+    statues = storage.read("status_charts");
   }
 
   @override
@@ -72,7 +72,7 @@ class _OrganizerRecentEventDetailsState extends State<OrganizerRecentEventDetail
                     const SizedBox(
                       width: 8,
                     ),
-                    Expanded(
+                    Flexible(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -105,9 +105,7 @@ class _OrganizerRecentEventDetailsState extends State<OrganizerRecentEventDetail
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 4,
-                          ),
+
                           CustomText(
                             text: "Download",
                             fontSize: 12,
@@ -268,7 +266,7 @@ class _OrganizerRecentEventDetailsState extends State<OrganizerRecentEventDetail
                       width: 8.w,
                     ),
                     CustomText(
-                      text: "Sujon",
+                      text: "Sujin",
                       fontSize:isTablet?6.sp: 14.sp,
                       fontWeight: FontWeight.bold,
                       color: AppColors.black,

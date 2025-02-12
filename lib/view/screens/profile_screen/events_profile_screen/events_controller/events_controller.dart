@@ -23,4 +23,12 @@ class EventsController extends GetxController{
    AppStrings.inviteFriends,
    AppStrings.request,
   ];
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+
+    currentIndex = 0.obs;
+  }
 }

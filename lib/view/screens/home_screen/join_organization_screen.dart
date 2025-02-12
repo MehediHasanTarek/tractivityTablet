@@ -69,7 +69,7 @@ class _JoinOrganizationScreenState extends State<JoinOrganizationScreen> {
                                 Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Container(
-                                    height:isTablet?130.h: 100.h,
+                                    height:isTablet?130.h: 110.h,
                                     decoration: BoxDecoration(
                                       color: AppColors.grey_3.withOpacity(0.5),
                                       borderRadius: BorderRadius.circular(15),

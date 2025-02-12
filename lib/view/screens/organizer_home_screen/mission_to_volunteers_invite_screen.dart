@@ -8,6 +8,7 @@ import 'package:tractivity_app/utils/app_const/app_const.dart';
 import 'package:tractivity_app/utils/app_strings/app_strings.dart';
 import 'package:tractivity_app/view/components/custom_button/custom_button.dart';
 import 'package:tractivity_app/view/components/custom_royel_appbar/custom_royel_appbar.dart';
+import 'package:tractivity_app/view/components/custom_text/custom_text.dart';
 import 'package:tractivity_app/view/components/custom_text_field/custom_text_field.dart';
 import 'package:tractivity_app/view/screens/friend_screen/inner_widget/custom_friend_list.dart';
 
@@ -27,18 +28,64 @@ class _MissionToVolunteersInviteScreenState extends State<MissionToVolunteersInv
         final isTablet = constraints.maxWidth > 600;
 
         return Scaffold(
-          appBar: const CustomRoyelAppbar(
+          appBar:   CustomRoyelAppbar(
             titleName: "Invite Volunteers",
             leftIcon: true,
           ),
           body:Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding:   EdgeInsets.all(16.0),
             child:Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
 
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: "Organization",
+                  fontSize:isTablet?6.sp: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.primary,
+                  bottom: 5,
+                ),
+
+                CustomText(
+                  text: "Organization Horizons Foundation",
+                  fontSize:isTablet?6.sp: 16.sp,
+                  color: AppColors.black_80,
+                  fontWeight: FontWeight.w600,
+                  bottom: 6.h,
+                ),
+
+                SizedBox(
+                  height: 12.h,
+                ),
+                const Divider(
+                  color: Colors.black54,
+                  // height: 16.h,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: "Mission",
+                  fontSize:isTablet?6.sp: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.primary,
+                  bottom: 5,
+                ),
+                CustomText(
+                  text: "Mission Horizons Foundation",
+                  fontSize:isTablet?6.sp: 16.sp,
+                  color: AppColors.black_80,
+                  fontWeight: FontWeight.w600,
+                  bottom: 6.h,
+                  // Add ellipsis at the end if the text overflows.
+                ),
+
+                SizedBox(
+                  height: 12.h,
+                ),
                 ///============ search ======================================
                 const CustomTextField(
-                    hintText: AppStrings.searchEvent,
+                    hintText: "Search for volunteer",
                     fillColor: AppColors.neutral02,
                     suffixIcon: Icon(
                       Icons.search,

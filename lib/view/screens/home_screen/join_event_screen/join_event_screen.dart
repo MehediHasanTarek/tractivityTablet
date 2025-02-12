@@ -9,6 +9,7 @@ import 'package:tractivity_app/utils/app_const/app_const.dart';
 import 'package:tractivity_app/view/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:tractivity_app/view/components/custom_tab_selected/custom_tab_selected.dart';
 import 'package:tractivity_app/view/components/custom_text/custom_text.dart';
+import 'package:tractivity_app/view/components/custom_text_field/custom_text_field.dart';
 import 'package:tractivity_app/view/components/nav_bar/nav_bar.dart';
 import 'package:tractivity_app/view/screens/adminstrator_home_screen/alert_dialog_event.dart';
 import 'package:tractivity_app/view/screens/profile_screen/events_profile_screen/events_controller/events_controller.dart';
@@ -21,7 +22,9 @@ class JoinEventScreen extends StatefulWidget {
 }
 
 class _JoinEventScreenState extends State<JoinEventScreen> {
+
   final EventsController eventsController = Get.find<EventsController>();
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context,constraints){
@@ -109,7 +112,17 @@ class _JoinEventScreenState extends State<JoinEventScreen> {
                   ),
 
                   SizedBox(
-                    height: 20,
+                    height: 12.h,
+                  ),
+
+                  ///Search Bar**
+                  CustomTextField(
+                    hintText: "search for event",
+                    fillColor: AppColors.neutral02,
+                    suffixIcon: Icon(Icons.search, color: AppColors.black_60),
+                  ),
+                  SizedBox(
+                    height: 22.h,
                   ),
 
                   ///============ Recent Event ========

@@ -288,7 +288,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
 
                                 Get.toNamed(AppRoutes.organizerMissionDetailsScreen);
                               },
-                              title: "Explore",
+                              title: "Join",
                               width: 70.w,
                               height: 32.h,
                               textColor: AppColors.black,
@@ -312,7 +312,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                     title: SizedBox(),
                                     content: SizedBox(
                                       width: MediaQuery.sizeOf(context).width,
-                                      child: AlertDialogEvent(title: "Are you sure you want to \n Delete this Event?",discription: "",),
+                                      child: AlertDialogEvent(title: "Are you sure you want to \n Delete this Mission?",discription: "",),
                                     ),
                                   ),
                                 );

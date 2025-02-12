@@ -97,7 +97,7 @@ class _OrganizeDetailsScreenState extends State<OrganizeDetailsScreen> {
                                           left: 8.h,
                                           right: 8.h,
                                         ),
-                                        CustomText(
+                                        const CustomText(
                                           text: "(Adminstrator)",
                                           fontSize: 14,
                                           color: AppColors.blue,

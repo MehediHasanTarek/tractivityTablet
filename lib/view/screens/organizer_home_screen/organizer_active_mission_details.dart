@@ -52,13 +52,42 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
                 ),
 
                 CustomText(
+                  text: "Organization Horizons Foundation",
+                  fontSize:isTablet?6.sp: 16.sp,
+                  color: AppColors.black_80,
+                  fontWeight: FontWeight.w600,
+                  bottom: 6.h,
+                ),
+                CustomText(
+                  text: "Empowering communities  worldwide  through education, healthcare,  and sustainable development initiatives.",
+                  fontSize: 12,
+                  color: AppColors.black_02,
+                  fontWeight: FontWeight.w400,
+                  textAlign: TextAlign.start,
+                  overflow: TextOverflow.clip,
+                  maxLines: 3,
+                  bottom: 4.h,// Add ellipsis at the end if the text overflows.
+                ),
+
+                const Divider(
+                  color: Colors.black54,
+                  // height: 16.h,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: "Mission",
+                  fontSize:isTablet?6.sp: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.primary,
+                  bottom: 5,
+                ),
+                CustomText(
                   text: "Mission Horizons Foundation",
                   fontSize:isTablet?6.sp: 16.sp,
                   color: AppColors.black_80,
                   fontWeight: FontWeight.w600,
                   bottom: 6.h,
                 ),
-
                 CustomText(
                   text: "Empowering communities  worldwide  through education, healthcare,  and sustainable development initiatives.",
                   fontSize: 12,
@@ -289,9 +318,9 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
 
                        Get.toNamed(AppRoutes.missionToVolunteersInviteScreen);
                         },
-                        title: "add volunteer",
+                        title: "Invite volunteers",
                         height:isTablet?40.h: 35.h,
-                        width: 110.w,
+                        width: 120.w,
                         textColor: AppColors.white,
                         fillColor: AppColors.primary,
                         fontSize: 12,
@@ -311,10 +340,6 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
                     ],
                   ),
 
-                SizedBox(
-                  height: 8.h,
-                ),
-
                   SizedBox(
                   height: 12.h,
                 ),
@@ -328,6 +353,36 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
 
                 SizedBox(
                   height: 12.h,
+                ),
+
+                Row(
+                  children: [
+                    CustomText(
+                      text:  "Mission mode:",
+                      fontSize:isTablet?6.sp: 16.sp,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.black,
+                    ),
+                    SizedBox(
+                      width: 8.w,
+                    ),
+                    CustomText(
+                      text:  "Public",
+                      fontSize:isTablet?6.sp: 16.sp,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.cardBarClr,
+                    )
+                  ],
+
+                ),
+                SizedBox(
+                  height: 4.h,
+                ),
+                const Divider(
+                  color: Colors.black54,
+                ),
+                SizedBox(
+                  height: 8.h,
                 ),
                 CustomText(
                   textAlign: TextAlign.start,

@@ -35,6 +35,8 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
 
   final storage = GetStorage();
 
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -100,7 +102,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                               return InkWell(
                                 onTap: (){
                                   Get.toNamed(AppRoutes.organizerMissionDetailsScreen);
-                                  storage.write("status", "Inactive");
+                                  storage.write("status_charts", "Inactive");
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
@@ -373,7 +375,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
 
                                         Get.toNamed(AppRoutes.organizerActiveMissionDetails);
 
-                                        storage.write("status", "active");
+                                        storage.write("status_charts", "active");
                                       },
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
@@ -479,6 +481,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                                                                           ///height: MediaQuery.sizeOf(context).height/1.4,
 
                                                                           child: Column(
+
                                                                             children: [
 
                                                                               Align(

@@ -83,9 +83,7 @@ class _AdminstratorEventDetailsScreenState extends State<AdminstratorEventDetail
                                 ),
                               ],
                             ),
-                            const SizedBox(
-                              height: 4,
-                            ),
+
                             CustomText(
                               text: "Download",
                               fontSize: 12,

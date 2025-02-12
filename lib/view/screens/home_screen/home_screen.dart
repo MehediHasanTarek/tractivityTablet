@@ -45,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context,constraints){
+
       final isTablet = constraints.maxWidth > 600;
 
       return Scaffold(
@@ -141,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   SizedBox(height: isTablet ? 20 : 12),
 
-                  /// **Search Bar**
+                  /// Search Bar
                   CustomTextField(
                     hintText: AppStrings.searchEvent,
                     fillColor: AppColors.neutral02,
