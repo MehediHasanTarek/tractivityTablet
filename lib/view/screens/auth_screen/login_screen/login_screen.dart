@@ -1,5 +1,4 @@
 
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -10,7 +9,6 @@ import 'package:tractivity_app/utils/app_strings/app_strings.dart';
 import 'package:tractivity_app/view/components/custom_button/custom_button.dart';
 import 'package:tractivity_app/view/components/custom_from_card/custom_from_card.dart';
 import 'package:tractivity_app/view/components/custom_image/custom_image.dart';
-import 'package:tractivity_app/view/components/custom_loader/custom_loader.dart';
 import 'package:tractivity_app/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:tractivity_app/view/components/custom_text/custom_text.dart';
 import 'package:tractivity_app/view/screens/auth_screen/controller/auth_controller.dart';

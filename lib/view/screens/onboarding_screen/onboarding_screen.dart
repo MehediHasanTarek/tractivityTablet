@@ -76,56 +76,6 @@ class OnboardingScreen extends StatelessWidget {
   }
 }
 
-/*
 
-return Scaffold(
-body: Container(
-height: double.infinity,
-width: double.infinity,
-decoration: BoxDecoration(
-image: DecorationImage(
-image: AssetImage(AppImages.onboarding), fit: BoxFit.fill)),
-child: Padding(
-padding:
-const EdgeInsets.only(left: 20, right: 20, top: 80, bottom: 80),
-child: Column(
-mainAxisAlignment: MainAxisAlignment.spaceBetween,
-children: [
-
-/// CustomImage(imageSrc: AppImages.onboarding), joinUpAlterNet
-
-Column(
-children: [
-
-CustomText(
-text: AppStrings.welcomeToAlterNet,
-fontSize: 48,
-fontWeight: FontWeight.w700,
-color: AppColors.white,
-),
-
-CustomText(
-text: AppStrings.joinUpAlterNet,
-fontSize: 32,
-fontWeight: FontWeight.w600,
-color: AppColors.white,
-),
-
-],
-),
-
-CustomButton(
-onTap: () {
-
-Get.toNamed(AppRoutes.loginScreen);
-},
-title: AppStrings.letsGo,
-)
-],
-),
-),
-));
-
-*/
 
 

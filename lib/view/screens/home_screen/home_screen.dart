@@ -235,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     selectedIndex: homeController.home_currentIndex.value,
                     onTabSelected: (value) {
                       homeController.home_currentIndex.value = value;
-                 ///  setState(() {});
+                   ///setState(() {});
                     },
                     selectedColor: AppColors.primary,
                     unselectedColor: AppColors.grey_1,
@@ -244,7 +244,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(height: isTablet ? 20 : 8),
 
                   /// Recent Events List
-
                   if(homeController.home_currentIndex.value ==0)
                     Column(
                         children: List.generate(6, (index) {

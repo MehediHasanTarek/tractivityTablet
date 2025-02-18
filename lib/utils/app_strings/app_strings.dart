@@ -55,7 +55,7 @@ class   AppStrings {
   static const String iAgree2 = "Terms ";
   static const String iAgree3 = "of Service and ";
   static const String privacyPolicy = "Privacy policy";
-  static const String termsAndConditions = "Terms and Conditions";
+  static const String termsAndConditions = "Terms and conditions";
   static const String singUp = "Sing Up";
   static const String singUpText = "SIGN UP";
   static const String singInText = "SIGN IN!";
@@ -124,8 +124,8 @@ class   AppStrings {
   static const String saveSetting = "SAVE SETTINGS";
   static const String setting = "Setting";
   static const String noDontDelete = "NO,DON’T DELETE";
-  static const String aboutus = "About Us";
-  static const String profileSetting = "Profile Setting";
+  static const String aboutus = "About us";
+  static const String profileSetting = "Edit profile";
   static const String meetUpList = "Meet Ups List";
   static const String meetUp = "Meet Ups";
   static const String promos = "Promos";

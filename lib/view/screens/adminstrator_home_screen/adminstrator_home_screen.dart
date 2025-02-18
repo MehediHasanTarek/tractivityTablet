@@ -67,7 +67,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                       size: isTablet?28.w:24.w
                   ));
             }),
-            title: Text( "Adminstratior",
+            title: Text("Adminstratior",
               style: TextStyle(
                   color: AppColors.black,
                   fontSize: 24.sp,
@@ -470,7 +470,92 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                           hasBackgroundColor: true,
                                                                           controller: administratorController.missionDescriptionController.value),
 
+                                                                      SizedBox(
+                                                                        height: 8.h,
+                                                                      ),
+                                                                      Row(
+                                                                        mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .start,
+                                                                        children: [
 
+                                                                          CustomText(
+                                                                            text:
+                                                                            "Access mode:",
+                                                                            fontSize:
+                                                                            14,
+                                                                            color: AppColors
+                                                                                .primary,
+                                                                            fontWeight:
+                                                                            FontWeight
+                                                                                .w600,
+                                                                          ),
+
+                                                                          Radio<bool>(
+                                                                            value:
+                                                                            false, // Value for "No"
+                                                                            fillColor:
+                                                                            WidgetStateColor.resolveWith((states) =>
+                                                                            AppColors.primary),
+                                                                            groupValue: administratorController
+                                                                                .missionStatues
+                                                                                .value,
+                                                                            onChanged:
+                                                                                (bool?
+                                                                            value) {
+                                                                              administratorController
+                                                                                  .missionStatues
+                                                                                  .value = value!;
+
+
+                                                                            },
+                                                                          ),
+                                                                          const CustomText(
+                                                                            text:
+                                                                            "private",
+                                                                            fontSize:
+                                                                            14,
+                                                                            color: AppColors
+                                                                                .black,
+                                                                            fontWeight:
+                                                                            FontWeight
+                                                                                .w600,
+                                                                          ),
+                                                                          Radio<bool>(
+                                                                            value:
+                                                                            true, // Value for "Yes"
+                                                                            fillColor:
+                                                                            WidgetStateColor.resolveWith((states) =>
+                                                                            AppColors.primary),
+                                                                            groupValue: administratorController
+                                                                                .missionStatues
+                                                                                .value,
+                                                                            onChanged:(bool? value) {
+
+                                                                              administratorController
+                                                                                  .missionStatues
+                                                                                  .value = value!;
+
+                                                                            },
+                                                                          ),
+
+                                                                          const CustomText(
+                                                                            text:
+                                                                            "public",
+                                                                            fontSize:
+                                                                            14,
+                                                                            color: AppColors
+                                                                                .black,
+                                                                            fontWeight:
+                                                                            FontWeight
+                                                                                .w600,
+                                                                          ),
+                                                                        ],
+                                                                      ),
+
+                                                                      SizedBox(
+                                                                        height: 8.h,
+                                                                      ),
                                                                       Padding(
                                                                         padding: const EdgeInsets.only(left: 12,right: 12,bottom: 12),
                                                                         child: CustomButton(
@@ -1050,6 +1135,92 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                         controller: administratorController.missionDescriptionController.value),
 
 
+                                                                    SizedBox(
+                                                                      height: 8.h,
+                                                                    ),
+                                                                    Row(
+                                                                      mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .start,
+                                                                      children: [
+
+                                                                        CustomText(
+                                                                          text:
+                                                                          "Access mode:",
+                                                                          fontSize:
+                                                                          14,
+                                                                          color: AppColors
+                                                                              .primary,
+                                                                          fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                        ),
+
+                                                                        Radio<bool>(
+                                                                          value:
+                                                                          false, // Value for "No"
+                                                                          fillColor:
+                                                                          WidgetStateColor.resolveWith((states) =>
+                                                                          AppColors.primary),
+                                                                          groupValue: administratorController
+                                                                              .missionStatues
+                                                                              .value,
+                                                                          onChanged:
+                                                                              (bool?
+                                                                          value) {
+                                                                            administratorController
+                                                                                .missionStatues
+                                                                                .value = value!;
+
+
+                                                                          },
+                                                                        ),
+                                                                        const CustomText(
+                                                                          text:
+                                                                          "private",
+                                                                          fontSize:
+                                                                          14,
+                                                                          color: AppColors
+                                                                              .black,
+                                                                          fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                        ),
+                                                                        Radio<bool>(
+                                                                          value:
+                                                                          true, // Value for "Yes"
+                                                                          fillColor:
+                                                                          WidgetStateColor.resolveWith((states) =>
+                                                                          AppColors.primary),
+                                                                          groupValue: administratorController
+                                                                              .missionStatues
+                                                                              .value,
+                                                                          onChanged:(bool? value) {
+
+                                                                            administratorController
+                                                                                .missionStatues
+                                                                                .value = value!;
+
+                                                                          },
+                                                                        ),
+
+                                                                        const CustomText(
+                                                                          text:
+                                                                          "public",
+                                                                          fontSize:
+                                                                          14,
+                                                                          color: AppColors
+                                                                              .black,
+                                                                          fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                        ),
+                                                                      ],
+                                                                    ),
+
+                                                                    SizedBox(
+                                                                      height: 8.h,
+                                                                    ),
                                                                     Padding(
                                                                       padding: const EdgeInsets.only(left: 12,right: 12,bottom: 12),
                                                                       child: CustomButton(

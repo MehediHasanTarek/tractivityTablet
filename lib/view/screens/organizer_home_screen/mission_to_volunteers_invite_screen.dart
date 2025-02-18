@@ -32,86 +32,88 @@ class _MissionToVolunteersInviteScreenState extends State<MissionToVolunteersInv
             titleName: "Invite Volunteers",
             leftIcon: true,
           ),
-          body:Padding(
-            padding:   EdgeInsets.all(16.0),
-            child:Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-
-                CustomText(
-                  textAlign: TextAlign.start,
-                  text: "Organization",
-                  fontSize:isTablet?6.sp: 16.sp,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.primary,
-                  bottom: 5,
-                ),
-
-                CustomText(
-                  text: "Organization Horizons Foundation",
-                  fontSize:isTablet?6.sp: 16.sp,
-                  color: AppColors.black_80,
-                  fontWeight: FontWeight.w600,
-                  bottom: 6.h,
-                ),
-
-                SizedBox(
-                  height: 12.h,
-                ),
-                const Divider(
-                  color: Colors.black54,
-                  // height: 16.h,
-                ),
-                CustomText(
-                  textAlign: TextAlign.start,
-                  text: "Mission",
-                  fontSize:isTablet?6.sp: 16.sp,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.primary,
-                  bottom: 5,
-                ),
-                CustomText(
-                  text: "Mission Horizons Foundation",
-                  fontSize:isTablet?6.sp: 16.sp,
-                  color: AppColors.black_80,
-                  fontWeight: FontWeight.w600,
-                  bottom: 6.h,
-                  // Add ellipsis at the end if the text overflows.
-                ),
-
-                SizedBox(
-                  height: 12.h,
-                ),
-                ///============ search ======================================
-                const CustomTextField(
-                    hintText: "Search for volunteer",
-                    fillColor: AppColors.neutral02,
-                    suffixIcon: Icon(
-                      Icons.search,
-                      color: AppColors.black_60,
-                    )),
-
-                const SizedBox(
-                  height: 12,
-                ),
-
-                Column(
-                    children: List.generate(6, (index) {
-                      return GestureDetector(
-                        onTap: (){
-
-                        },
-                        child: CustomFriendsList(
-                          image: AppConstants.profileImage,
-                          name: "Mehedi Hassan",
-                          userName: "Single",
-                          reversText: "Select",
-                        ),
-                      );
-                    })
-                )
-              ],
+          body:SingleChildScrollView(
+            child: Padding(
+              padding:   EdgeInsets.all(16.0),
+              child:Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+            
+                  CustomText(
+                    textAlign: TextAlign.start,
+                    text: "Organization",
+                    fontSize:isTablet?6.sp: 16.sp,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.primary,
+                    bottom: 5,
+                  ),
+            
+                  CustomText(
+                    text: "Organization Horizons Foundation",
+                    fontSize:isTablet?6.sp: 16.sp,
+                    color: AppColors.black_80,
+                    fontWeight: FontWeight.w600,
+                    bottom: 6.h,
+                  ),
+            
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  const Divider(
+                    color: Colors.black54,
+                    // height: 16.h,
+                  ),
+                  CustomText(
+                    textAlign: TextAlign.start,
+                    text: "Mission",
+                    fontSize:isTablet?6.sp: 16.sp,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.primary,
+                    bottom: 5,
+                  ),
+                  CustomText(
+                    text: "Mission Horizons Foundation",
+                    fontSize:isTablet?6.sp: 16.sp,
+                    color: AppColors.black_80,
+                    fontWeight: FontWeight.w600,
+                    bottom: 6.h,
+                    // Add ellipsis at the end if the text overflows.
+                  ),
+            
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  ///============ search ======================================
+                  const CustomTextField(
+                      hintText: "Search for volunteer",
+                      fillColor: AppColors.neutral02,
+                      suffixIcon: Icon(
+                        Icons.search,
+                        color: AppColors.black_60,
+                      )),
+            
+                  const SizedBox(
+                    height: 12,
+                  ),
+            
+                  Column(
+                      children: List.generate(6, (index) {
+                        return GestureDetector(
+                          onTap: (){
+            
+                          },
+                          child: CustomFriendsList(
+                            image: AppConstants.profileImage,
+                            name: "Mehedi Hassan",
+                            userName: "Single",
+                            reversText: "Select",
+                          ),
+                        );
+                      })
+                  )
+                ],
+              ),
             ),
           ),
 

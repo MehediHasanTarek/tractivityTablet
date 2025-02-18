@@ -146,7 +146,7 @@ class _EditPersonProfileScreenState extends State<EditPersonProfileScreen> {
                                   });
                                 },
                               ),
-                              CustomText(
+                              const CustomText(
                                 text: "Organizer",
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
@@ -170,7 +170,7 @@ class _EditPersonProfileScreenState extends State<EditPersonProfileScreen> {
                                 },
                               ),
 
-                              CustomText(
+                              const CustomText(
                                 text: "Administrator",
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
@@ -194,7 +194,7 @@ class _EditPersonProfileScreenState extends State<EditPersonProfileScreen> {
 
                     ///============ Last Name ============
                     CustomFormCard(
-                        title: "Talent/Skill",
+                        title: '"Profession" to Talent/Skill',
                         hintText: "Enter Talent/Skill",
                         fontSize: isTablet?16:16,
                         hasBackgroundColor: true,

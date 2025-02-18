@@ -53,7 +53,7 @@ class SettingScreen extends StatelessWidget {
                           onTap: (){
                             Get.toNamed(AppRoutes.joinOrganizationScreen);
                           },
-                          text: "Join Organization",
+                          text: "Join organization",
                           isTablet: isTablet,
                           icon: Icons.join_inner_outlined),
 

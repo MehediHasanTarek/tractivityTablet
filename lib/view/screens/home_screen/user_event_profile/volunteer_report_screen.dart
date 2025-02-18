@@ -1,8 +1,8 @@
 
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:tractivity_app/utils/app_colors/app_colors.dart';
 import 'package:tractivity_app/view/components/custom_royel_appbar/custom_royel_appbar.dart';
@@ -11,6 +11,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:path_provider/path_provider.dart';
 import 'package:open_file/open_file.dart';
+import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_controller/organizer_controller.dart';
 
 class VolunteerEventReportScreen extends StatefulWidget {
   const VolunteerEventReportScreen({super.key});
@@ -22,6 +23,8 @@ class VolunteerEventReportScreen extends StatefulWidget {
 class _VolunteerEventReportScreenState extends State<VolunteerEventReportScreen> {
 
   final _searchController =TextEditingController();
+
+  final  organizerController = Get.find<OrganizerController>();
 
   @override
   Widget build(BuildContext context) {
@@ -63,20 +66,42 @@ class _VolunteerEventReportScreenState extends State<VolunteerEventReportScreen>
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
+
+                Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 4,vertical: 8),
+                      decoration: BoxDecoration(
+                        color: AppColors.neutral02,
+                        borderRadius: BorderRadius.circular(10),
+                      ),child: CustomText(text: "Hours: 4:30 Hours",fontSize:isTablet?8: 12.sp,fontWeight: FontWeight.w400,),
+                    ),
+
+                    SizedBox(
+                      width: 8.h,
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8,vertical: 8),
+                      decoration: BoxDecoration(
+                        color: AppColors.neutral02,
+                        borderRadius: BorderRadius.circular(10),
+                      ),child: CustomText(text: "Millage: 8Km",fontSize:isTablet?8: 12.sp,fontWeight: FontWeight.w400,),
+                    ),
+                  ],
+                ),
+
                 SizedBox(
                   height: 8.h,
                 ),
 
                 CustomText(
-                  text: "working Time:18:30 Hours  Millage:18:30 Hours",
-                  fontSize:isTablet?6.sp: 14.sp,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.primary,
                   textAlign: TextAlign.start,
-                ),
-
-                SizedBox(
-                  height: 12.h,
+                  text: "Events",
+                  fontSize:isTablet?6.sp: 18.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.primary,
+                  bottom: 8.h,
                 ),
 
                 Row(
@@ -84,21 +109,10 @@ class _VolunteerEventReportScreenState extends State<VolunteerEventReportScreen>
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
 
-                    CustomText(
-                      textAlign: TextAlign.start,
-                      text: "Events",
-                      fontSize:isTablet?6.sp: 18.sp,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.primary,
-                      bottom: 8.h,
-                    ),
-
-                    SizedBox(
-                      width: 200.w,
-                      height: 40,
+                    Expanded(
                       child: TextFormField(
                         decoration: InputDecoration(
-                          hintText: 'search date..',
+                          hintText: 'search name..',
                           hintStyle: TextStyle(fontSize: 14.0),
                           filled: true,
                           fillColor:AppColors.grey_3.withOpacity(0.5),
@@ -121,9 +135,48 @@ class _VolunteerEventReportScreenState extends State<VolunteerEventReportScreen>
                       ),
                     ),
 
+                    SizedBox(
+                      width: 8.w,
+                    ),
+                    Expanded(
+                      child: TextFormField(
+                        textAlign: TextAlign.center,
+                        showCursor: false,
+                        readOnly: true,
+                        onTap: (){
+                          organizerController.eventSearchDate();
+                        },
+                        controller: organizerController.eventSearchDateController.value,
+                        decoration: InputDecoration(
+                          hintText: "00/00/0000",
+                          hintStyle: TextStyle(fontSize: 12.0,),
+                          filled: true,
+                          fillColor:AppColors.grey_3.withOpacity(0.5),
+                          ///prefixIcon: Icon(Icons.search, color: Colors.black54),
+                          suffixIcon: organizerController.eventSearchDateController.value.text.isNotEmpty
+                              ? IconButton(
+                            icon: Icon(Icons.clear, color: Colors.black54),
+                            onPressed: (){
+                              organizerController.eventSearchDateController.value.clear();
+                              FocusScope.of(context).unfocus();
+                            },
+                          ) : IconButton(onPressed: (){
+                            organizerController.eventSearchDate();
+                          }, icon: Icon(Icons.calendar_month)),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: BorderSide.none,
+                          ),
+                          contentPadding: EdgeInsets.all(4),
+                        ),
+                        onChanged: (query) {
+                          // Handle search query change (e.g., filtering data)
+                        },
+                      ),
+                    ),
+
                   ],
                 ),
-
 
                 SizedBox(
                   height: 8.h,
@@ -221,6 +274,8 @@ class _VolunteerEventReportScreenState extends State<VolunteerEventReportScreen>
       pw.Page(
         build: (pw.Context context) {
           return pw.Column(
+            crossAxisAlignment: pw.CrossAxisAlignment.start,
+            mainAxisAlignment: pw.MainAxisAlignment.start,
             children: [
               ///Mission Horizons Foundation Section
 
@@ -230,6 +285,7 @@ class _VolunteerEventReportScreenState extends State<VolunteerEventReportScreen>
                   pw.SizedBox(width: 10),
                   pw.Column(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
+                    mainAxisAlignment: pw.MainAxisAlignment.start,
                     children: [
                       pw.Text(
                         "Jamal Hasan",
@@ -243,27 +299,70 @@ class _VolunteerEventReportScreenState extends State<VolunteerEventReportScreen>
                   ),
                 ],
               ),
+
               pw.Divider(),
 
-              // Working Time and Mileage
-              pw.Text(
-                "Working Time: 18:30 Hours  Mileage: 18:30 Hours",
-                style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold, color: PdfColors.blue),
-              ),
               pw.SizedBox(height: 12),
-
-              // Event List Section Title
               pw.Row(
-                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text(
-                    "Events",
+                  pw.Container(
+                    padding:pw.EdgeInsets.symmetric(horizontal: 4,vertical: 8),
+                    decoration: pw.BoxDecoration(
+                      color: PdfColor.fromInt(Colors.white60.value),
+                      borderRadius:  pw.BorderRadius.circular(10),
+                    ),child:pw.Text(
+                    "Hours: 4:30 Hours",
                     style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold, color: PdfColors.blue),
                   ),
-                  // Search Bar (Search Date)
+                  ),
+
+                  pw.SizedBox(
+                    width: 8.h,
+                  ),
+                  pw.Container(
+                    padding:  pw.EdgeInsets.symmetric(horizontal: 8,vertical: 8),
+                    decoration:  pw.BoxDecoration(
+                      color:  PdfColor.fromInt(Colors.white60.value),
+                      borderRadius:  pw.BorderRadius.circular(10),
+                    ),child:pw.Text(
+                    "Millage: 8Km",
+                    style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold, color: PdfColors.blue),
+                  ),
+                  ),
                 ],
               ),
+
               pw.SizedBox(height: 8),
+
+              pw.Container(
+                padding: pw.EdgeInsets.all(8),
+                height: 30.h,
+                width: 150.w,
+                alignment: pw.Alignment.centerLeft,
+                decoration: pw.BoxDecoration(
+                 // color: PdfColors.grey100,
+                  borderRadius: pw.BorderRadius.circular(15),
+                ),
+                child: pw.Padding(
+                  padding: const pw.EdgeInsets.symmetric(horizontal: 8),
+                  child: pw.Text(
+                    textAlign: pw.TextAlign.start,
+                    "Report for 2025",
+                    style: pw.TextStyle(fontSize: 12, color: PdfColors.black),
+                  ),
+                ),
+              ),
+
+
+              pw.SizedBox(height: 8),
+
+              pw.Text(
+                textAlign: pw.TextAlign.start,
+                "Events",
+                style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold, color: PdfColors.blue,),
+              ),
+
+              pw.SizedBox(height: 12.h),
 
               ///Event List - Generate 3 events
               for (int i = 0; i < 6; i++)

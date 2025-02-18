@@ -87,9 +87,9 @@ class AuthController extends GetxController {
 
   RxBool administrator = false.obs;
 
- RxList<String>rolesList = <String>[].obs;
+  RxList<String>rolesList = <String>[].obs;
 
- RxList<String>cordsList = <String>[].obs;
+  RxList<String>cordsList = <String>[].obs;
 
   ///====================USER REGISTER CONTROLLER==================
   Rx<TextEditingController> fullNameController = TextEditingController().obs;
@@ -108,7 +108,7 @@ class AuthController extends GetxController {
     userRegisterLoading.value = true;
 
 
-   var body = json.encode({
+    var body = json.encode({
       "fullName": fullNameController.value.text,
       "profession": talentSkillController.value.text,
       "email": emailController.value.text,
@@ -366,7 +366,7 @@ class AuthController extends GetxController {
     if (response.statusCode == 200) {
       loginLoading.value = false;
       refresh();
-    ///  showCustomSnackBar(response.body['message']!, isError: false);
+      ///  showCustomSnackBar(response.body['message']!, isError: false);
 
       SharePrefsHelper.setString(AppConstants.bearerToken, response.body["data"]["accessToken"]);
 

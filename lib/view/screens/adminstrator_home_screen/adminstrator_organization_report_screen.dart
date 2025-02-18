@@ -2,6 +2,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -12,6 +13,7 @@ import 'package:open_file/open_file.dart';
 import 'package:tractivity_app/utils/app_colors/app_colors.dart';
 import 'package:tractivity_app/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:tractivity_app/view/components/custom_text/custom_text.dart';
+import 'package:tractivity_app/view/screens/organizer_home_screen/organizer_controller/organizer_controller.dart';
 
 class AdminstratorOrganizationReportScreen extends StatefulWidget {
   const AdminstratorOrganizationReportScreen({super.key});
@@ -22,7 +24,9 @@ class AdminstratorOrganizationReportScreen extends StatefulWidget {
 
 class _AdminstratorOrganizationReportScreenState extends State<AdminstratorOrganizationReportScreen> {
 
-  final _searchController =TextEditingController();
+  final _searchController = TextEditingController();
+
+  final  organizerController = Get.find<OrganizerController>();
 
   @override
   Widget build(BuildContext context) {
@@ -102,51 +106,89 @@ class _AdminstratorOrganizationReportScreenState extends State<AdminstratorOrgan
                 SizedBox(
                   height: 12.h,
                 ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-
-                    CustomText(
-                      textAlign: TextAlign.start,
-                      text: "Mission",
-                      fontSize:isTablet?6.sp: 18.sp,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.primary,
-                      bottom: 8.h,
-                    ),
-
-                    SizedBox(
-                      width: 200.w,
-                      height: 40,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'search date..',
-                          hintStyle: TextStyle(fontSize: 14.0),
-                          filled: true,
-                          fillColor:AppColors.grey_3.withOpacity(0.5),
-                          prefixIcon: Icon(Icons.search, color: Colors.black54),
-                          suffixIcon: _searchController.text.isNotEmpty
-                              ? IconButton(
-                            icon: Icon(Icons.clear, color: Colors.black54),
-                            onPressed: (){},
-                          )
-                              : null,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide.none,
-                          ),
-                          contentPadding: EdgeInsets.all(4),
-                        ),
-                        onChanged: (query) {
-                          // Handle search query change (e.g., filtering data)
-                        },
-                      ),
-                    ),
-
-                  ],
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: "Mission",
+                  fontSize:isTablet?6.sp: 18.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.primary,
+                  bottom: 8.h,
                 ),
+
+              Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+
+                Expanded(
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: 'search name..',
+                      hintStyle: TextStyle(fontSize: 14.0),
+                      filled: true,
+                      fillColor:AppColors.grey_3.withOpacity(0.5),
+                      prefixIcon: Icon(Icons.search, color: Colors.black54),
+                      suffixIcon: _searchController.text.isNotEmpty
+                          ? IconButton(
+                        icon: Icon(Icons.clear, color: Colors.black54),
+                        onPressed: (){},
+                      )
+                          : null,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
+                      ),
+                      contentPadding: EdgeInsets.all(4),
+                    ),
+                    onChanged: (query) {
+                      // Handle search query change (e.g., filtering data)
+                    },
+                  ),
+                ),
+
+                SizedBox(
+                  width: 8.w,
+                ),
+                Expanded(
+                  child: TextFormField(
+                    showCursor: false,
+                    readOnly: true,
+                    textAlign: TextAlign.center,
+                    onTap: (){
+                      organizerController.eventSearchDate();
+                    },
+                    controller: organizerController.eventSearchDateController.value,
+                    decoration: InputDecoration(
+                      hintText: "00/00/0000",
+                      hintStyle: TextStyle(fontSize: 12.0),
+                      filled: true,
+                      fillColor:AppColors.grey_3.withOpacity(0.5),
+                      ///prefixIcon: Icon(Icons.search, color: Colors.black54),
+                      suffixIcon: organizerController.eventSearchDateController.value.text.isNotEmpty
+                          ? IconButton(
+                        icon: Icon(Icons.clear, color: Colors.black54),
+                        onPressed: (){
+                          organizerController.eventSearchDateController.value.clear();
+                          FocusScope.of(context).unfocus();
+                        },
+                      ) : IconButton(onPressed: (){
+                        organizerController.eventSearchDate();
+                      }, icon: Icon(Icons.calendar_month)),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
+                      ),
+                      contentPadding: EdgeInsets.all(4),
+                    ),
+                    onChanged: (query) {
+                      // Handle search query change (e.g., filtering data)
+                    },
+                  ),
+                ),
+
+
+              ],
+            ),
 
                 SizedBox(
                   height: 8.h,
@@ -269,7 +311,25 @@ class _AdminstratorOrganizationReportScreenState extends State<AdminstratorOrgan
               pw.Divider(),
 
               pw.SizedBox(height: 12),
-
+              pw.Container(
+                padding: pw.EdgeInsets.all(8),
+                height: 30.h,
+                width: 150.w,
+                alignment: pw.Alignment.centerLeft,
+                decoration: pw.BoxDecoration(
+                  color: PdfColors.grey100,
+                  borderRadius: pw.BorderRadius.circular(15),
+                ),
+                child: pw.Padding(
+                  padding: const pw.EdgeInsets.symmetric(horizontal: 8),
+                  child: pw.Text(
+                    textAlign: pw.TextAlign.start,
+                    "Report for 2025",
+                    style: pw.TextStyle(fontSize: 12, color: PdfColors.black),
+                  ),
+                ),
+              ),
+              pw.SizedBox(height: 12),
               // Event List Section Title
               pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
