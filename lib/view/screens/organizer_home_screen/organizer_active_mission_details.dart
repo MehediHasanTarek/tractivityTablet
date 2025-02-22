@@ -1,11 +1,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:tractivity_app/core/app_routes/app_routes.dart';
 import 'package:tractivity_app/utils/app_colors/app_colors.dart';
 import 'package:tractivity_app/utils/app_const/app_const.dart';
+import 'package:tractivity_app/utils/app_images/app_images.dart';
 import 'package:tractivity_app/view/components/custom_button/custom_button.dart';
 import 'package:tractivity_app/view/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:tractivity_app/view/components/custom_royel_appbar/custom_royel_appbar.dart';
@@ -30,10 +32,11 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
       final isTablet = constraints.maxWidth > 600;
 
       return Scaffold(
-        appBar: CustomRoyelAppbar(
+         appBar: const CustomRoyelAppbar(
           leftIcon: true,
           titleName: "Mission Details",
         ),
+
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 16),
@@ -236,138 +239,165 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
                   color: Colors.black54,
                 ),
 
-                CustomText(
-                  textAlign: TextAlign.start,
-                  text: "volunteers",
-                  fontSize:isTablet?6.sp: 16.sp,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.primary,
-                  bottom: 8.h,
+                SizedBox(
+                  height: 8.h,
                 ),
 
-                Padding(
-                  padding: EdgeInsets.only(bottom: 10.h),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GestureDetector(
-                        onTap: (){},
-                        child: Row(
-                          children: [
+                Card(
+                  color: Colors.white,
+                  elevation: 0.2,
+                  child: Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: ExpansionTile(
+                      shape: Border(),
+                      title:  CustomText(
+                        textAlign: TextAlign.start,
+                        text: "volunteers",
+                        fontSize:isTablet?6.sp: 16.sp,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.primary,
+                        bottom: 8.h,
+                      ),
+                      children:  [
 
-                            CustomNetworkImage(
-                              imageUrl: AppConstants.profileImage,
-                              height:isTablet?64.h: 60.h,
-                              width:isTablet?64.w: 60.w,
-                              boxShape: BoxShape.circle,
-                            ),
-                            SizedBox(
-                              width: 10.w,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(
-                                  text: "Farhad Hossain",
-                                  fontSize:isTablet?6.sp:12.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black,
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            GestureDetector(
+                              onTap: (){},
+                              child: Row(
+                                children: [
+
+                                Container(
+                                  height: 60.h,
+                                  width:60.w,
+                                 decoration: BoxDecoration(
+                                  shape: BoxShape.circle,  // Circle shape
+                                   color: Colors.grey,
+                                  image: DecorationImage(
+                                    image: AssetImage(AppImages.userImage), // Your image path
+                                    fit: BoxFit.cover,  // Ensures the image fills the circle
+                                  ),
                                 ),
-                                CustomText(
-                                  text: "Student",
-                                  fontSize:isTablet?6.sp: 12.sp,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.black_80,
                                 ),
-                              ],
+
+
+                                  SizedBox(
+                                    width: 10.w,
+                                  ),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      CustomText(
+                                        text: "Farhad Hossain",
+                                        fontSize:isTablet?6.sp:12.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.black,
+                                      ),
+                                      CustomText(
+                                        text: "Student",
+                                        fontSize:isTablet?6.sp: 12.sp,
+                                        fontWeight: FontWeight.w400,
+                                        color: AppColors.black_80,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
+
                           ],
                         ),
-                      ),
 
-                    ],
+                        SizedBox(
+                          height: 12.h,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            GestureDetector(
+                              onTap: (){},
+                              child: Row(
+                                children: [
+
+                                  CustomNetworkImage(
+                                    imageUrl: AppConstants.profileImage,
+                                    height:isTablet?64.h: 60.h,
+                                    width:isTablet?64.w: 60.w,
+                                    boxShape: BoxShape.circle,
+                                  ),
+                                  SizedBox(
+                                    width: 10.w,
+                                  ),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      CustomText(
+                                        text: "Jamal Hasan",
+                                        fontSize:isTablet?6.sp:12.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.black,
+                                      ),
+                                      CustomText(
+                                        text: "worker",
+                                        fontSize:isTablet?6.sp: 12.sp,
+                                        fontWeight: FontWeight.w400,
+                                        color: AppColors.black_80,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+
+
+                            Row(
+
+                              children: [
+
+                                Container(
+                                  padding: EdgeInsets.all(6),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.black_04,
+                                    borderRadius: BorderRadius.circular(10.r),
+                                    // border: Border.all(color: AppColors.primary,width: 2),
+                                  ),
+                                  child: GestureDetector(
+                                    onTap: (){
+
+                                    },
+                                    child:  Center(
+                                        child: CustomText(
+                                          text: "Invited",
+                                          color: AppColors.white,
+                                          fontSize:isTablet?6.sp: 12.sp,
+                                          fontWeight: FontWeight.w600,
+                                        )),
+                                  ),
+                                ),
+
+                              ],
+                            )
+                          ],
+                        ),
+
+
+                      ],
+                    ),
                   ),
                 ),
 
-                Padding(
-                  padding: EdgeInsets.only(bottom: 10.h),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GestureDetector(
-                        onTap: (){},
-                        child: Row(
-                          children: [
-
-                            CustomNetworkImage(
-                              imageUrl: AppConstants.profileImage,
-                              height:isTablet?64.h: 60.h,
-                              width:isTablet?64.w: 60.w,
-                              boxShape: BoxShape.circle,
-                            ),
-                            SizedBox(
-                              width: 10.w,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(
-                                  text: "Jamal Hasan",
-                                  fontSize:isTablet?6.sp:12.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black,
-                                ),
-                                CustomText(
-                                  text: "worker",
-                                  fontSize:isTablet?6.sp: 12.sp,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.black_80,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-
-
-                      Row(
-
-                        children: [
-
-                          Container(
-                            padding: EdgeInsets.all(6),
-                            decoration: BoxDecoration(
-                              color: AppColors.black_04,
-                              borderRadius: BorderRadius.circular(10.r),
-                              // border: Border.all(color: AppColors.primary,width: 2),
-                            ),
-                            child: GestureDetector(
-                              onTap: (){
-
-                              },
-                              child:  Center(
-                                  child: CustomText(
-                                    text: "Invited",
-                                    color: AppColors.white,
-                                    fontSize:isTablet?6.sp: 12.sp,
-                                    fontWeight: FontWeight.w600,
-                                  )),
-                            ),
-                          ),
-
-                        ],
-                      )
-                    ],
-                  ),
+                SizedBox(
+                  height: 8.h,
                 ),
-
-
 
                 const Divider(
                   color: Colors.black54,
                 ),
+
                 SizedBox(
                   height: 8.h,
                 ),
@@ -379,7 +409,7 @@ class _OrganizerActiveMissionDetailsState extends State<OrganizerActiveMissionDe
                       CustomButton(
                         onTap: () {
 
-                       Get.toNamed(AppRoutes.missionToVolunteersInviteScreen);
+                         Get.toNamed(AppRoutes.missionToVolunteersInviteScreen);
                         },
                         title: "Invite volunteers",
                         height:isTablet?40.h: 35.h,

@@ -146,6 +146,7 @@ class _UserEventProfileState extends State<UserEventProfile> {
                           ),
                         ],
                       ),
+
                       ///========== full name =========
                       CustomText(
                         top: 10,

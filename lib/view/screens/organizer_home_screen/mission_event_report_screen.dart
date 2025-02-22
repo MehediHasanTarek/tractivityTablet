@@ -102,7 +102,7 @@ class _MissionEventReportScreenState extends State<MissionEventReportScreen> {
                       textAlign: TextAlign.start,
                       text: "Organizers",
                       fontSize:isTablet?6.sp: 16.sp,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.bold,
                       color: AppColors.primary,
                       bottom: 8.h,
                     ),
@@ -198,8 +198,6 @@ class _MissionEventReportScreenState extends State<MissionEventReportScreen> {
                       height: 8.h,
                     ),
 
-
-
                     Row(
                       children: [
                         Container(
@@ -223,6 +221,160 @@ class _MissionEventReportScreenState extends State<MissionEventReportScreen> {
                       ],
                     ),
 
+
+                    SizedBox(
+                      height: 12.h,
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        hintText: 'search event..',
+                        hintStyle: TextStyle(fontSize: 14.0),
+                        filled: true,
+                        fillColor:AppColors.grey_3.withOpacity(0.5),
+                        prefixIcon: Icon(Icons.search, color: Colors.black54),
+                        suffixIcon: _searchController.text.isNotEmpty
+                            ? IconButton(
+                          icon: Icon(Icons.clear, color: Colors.black54),
+                          onPressed: (){},
+                        )
+                            : null,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding: EdgeInsets.all(4),
+                      ),
+                      onChanged: (query) {
+                        // Handle search query change (e.g., filtering data)
+                      },
+                    ),
+
+                    SizedBox(
+                      height: 12.h,
+                    ),
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "Date range",
+                      fontSize:isTablet?6.sp: 18.sp,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.primary,
+                      bottom: 8.h,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8,right: 8,bottom: 8,top: 4),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+
+                         Expanded(
+                           child: Column(
+                             mainAxisAlignment: MainAxisAlignment.start,
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                           
+                               CustomText(
+                                 text: "From",
+                                 fontSize:isTablet?6.sp: 16.sp,
+                                 fontWeight: FontWeight.bold,
+                                 textAlign: TextAlign.start,
+                               ),
+                               TextFormField(
+                                 textAlign: TextAlign.center,
+                                 showCursor: false,
+                                 readOnly: true,
+                                 onTap: (){
+                                   organizerController.eventSartSearchDate();
+                           
+                                 },
+                                 controller: organizerController.eventStartSearchDateController.value,
+                                 decoration: InputDecoration(
+                                   hintText: "00/00/0000",
+                                   hintStyle: TextStyle(fontSize: 12.0,),
+                                   filled: true,
+                                   fillColor:AppColors.grey_3.withOpacity(0.5),
+                                   ///prefixIcon: Icon(Icons.search, color: Colors.black54),
+                                   suffixIcon: organizerController.eventStartSearchDateController.value.text.isNotEmpty
+                                       ? IconButton(
+                                     icon: Icon(Icons.clear, color: Colors.black54),
+                                     onPressed: (){
+                                       organizerController.eventStartSearchDateController.value.clear();
+                                       FocusScope.of(context).unfocus();
+                                     },
+                                   ) : IconButton(onPressed: (){
+                                     organizerController.eventSartSearchDate();
+                                   }, icon: Icon(Icons.calendar_month)),
+                                   border: OutlineInputBorder(
+                                     borderRadius: BorderRadius.circular(8),
+                                     borderSide: BorderSide.none,
+                                   ),
+                                   contentPadding: EdgeInsets.all(0),
+                                 ),
+                                 onChanged: (query) {
+                                   // Handle search query change (e.g., filtering data)
+                                 },
+                               ),
+                             ],
+                           ),
+                         ),
+
+                          SizedBox(
+                            width: 12.h,
+                          ),
+
+                         Expanded(
+                           child: Column(
+                             mainAxisAlignment: MainAxisAlignment.start,
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               
+                               CustomText(
+                                 text: "to",
+                                 fontSize:isTablet?6.sp: 16.sp,
+                                 fontWeight: FontWeight.bold,
+                                 textAlign: TextAlign.start,
+                               ),
+                               TextFormField(
+                                 textAlign: TextAlign.center,
+                                 showCursor: false,
+                                 readOnly: true,
+                                 onTap: (){
+                                   organizerController.eventSartSearchDate();
+                           
+                                 },
+                                 controller: organizerController.eventEndSearchDateController.value,
+                                 decoration: InputDecoration(
+                                   hintText: "00/00/0000",
+                                   hintStyle: TextStyle(fontSize: 12.0,),
+                                   filled: true,
+                                   fillColor:AppColors.grey_3.withOpacity(0.5),
+                                   ///prefixIcon: Icon(Icons.search, color: Colors.black54),
+                                   suffixIcon: organizerController.eventEndSearchDateController.value.text.isNotEmpty
+                                       ? IconButton(
+                                     icon: Icon(Icons.clear, color: Colors.black54),
+                                     onPressed: (){
+                                       organizerController.eventEndSearchDateController.value.clear();
+                                       FocusScope.of(context).unfocus();
+                                     },
+                                   ) : IconButton(onPressed: (){
+                                     organizerController.eventEndSearchDate();
+                                   }, icon: Icon(Icons.calendar_month)),
+                                   border: OutlineInputBorder(
+                                     borderRadius: BorderRadius.circular(8),
+                                     borderSide: BorderSide.none,
+                                   ),
+                                   contentPadding: EdgeInsets.all(0),
+                                 ),
+                                 onChanged: (query) {
+                                   // Handle search query change (e.g., filtering data)
+                                 },
+                               ),
+                             ],
+                           ),
+                         )
+                        ],
+                      ),
+                    ),
+
                     SizedBox(
                       height: 12.h,
                     ),
@@ -231,92 +383,14 @@ class _MissionEventReportScreenState extends State<MissionEventReportScreen> {
                       textAlign: TextAlign.start,
                       text: "Events",
                       fontSize:isTablet?6.sp: 18.sp,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.bold,
                       color: AppColors.primary,
                       bottom: 8.h,
                     ),
-
-                    Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-
-                        Expanded(
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              hintText: 'search name..',
-                              hintStyle: TextStyle(fontSize: 14.0),
-                              filled: true,
-                              fillColor:AppColors.grey_3.withOpacity(0.5),
-                              prefixIcon: Icon(Icons.search, color: Colors.black54),
-                              suffixIcon: _searchController.text.isNotEmpty
-                                  ? IconButton(
-                                icon: Icon(Icons.clear, color: Colors.black54),
-                                onPressed: (){},
-                              )
-                                  : null,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide.none,
-                              ),
-                              contentPadding: EdgeInsets.all(4),
-                            ),
-                            onChanged: (query) {
-                              // Handle search query change (e.g., filtering data)
-                            },
-                          ),
-                        ),
-
-                        SizedBox(
-                          width: 8.w,
-                        ),
-                        Expanded(
-                          child: TextFormField(
-                           showCursor: false,
-                           readOnly: true,
-                            textAlign: TextAlign.center,
-                            onTap: (){
-                              organizerController.eventSearchDate();
-                            },
-                            controller: organizerController.eventSearchDateController.value,
-                            decoration: InputDecoration(
-                              hintText: "00/00/0000",
-                              hintStyle: TextStyle(fontSize: 12.0),
-                              filled: true,
-                              fillColor:AppColors.grey_3.withOpacity(0.5),
-                             ///prefixIcon: Icon(Icons.search, color: Colors.black54),
-                              suffixIcon: organizerController.eventSearchDateController.value.text.isNotEmpty
-                                  ? IconButton(
-                                icon: Icon(Icons.clear, color: Colors.black54),
-                                onPressed: (){
-                                  organizerController.eventSearchDateController.value.clear();
-                                  FocusScope.of(context).unfocus();
-                                },
-                              ) : IconButton(onPressed: (){
-                                organizerController.eventSearchDate();
-                              }, icon: Icon(Icons.calendar_month)),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide.none,
-                              ),
-                              contentPadding: EdgeInsets.all(4),
-                            ),
-                            onChanged: (query) {
-                              // Handle search query change (e.g., filtering data)
-                            },
-                          ),
-                        ),
-
-
-                      ],
-                    ),
-
-
                     SizedBox(
-                      height: 12.h,
+                      height: 8.h,
                     ),
                     Column(children: List.generate(3, (index) {
-
                           return Card(
                             color: Colors.white,
                              elevation: 0.2,
@@ -507,7 +581,7 @@ class _MissionEventReportScreenState extends State<MissionEventReportScreen> {
               pw.Container(
                 padding: pw.EdgeInsets.all(8),
                 height: 30.h,
-                width: 150.w,
+               // width: 150.w,
                 alignment: pw.Alignment.centerLeft,
                 decoration: pw.BoxDecoration(
                    color: PdfColors.grey100,
@@ -517,12 +591,13 @@ class _MissionEventReportScreenState extends State<MissionEventReportScreen> {
                   padding: const pw.EdgeInsets.symmetric(horizontal: 8),
                   child: pw.Text(
                     textAlign: pw.TextAlign.start,
-                    "Report for 2025",
+                    "Report for February 19, 2024 - March 25, 2025",
                     style: pw.TextStyle(fontSize: 12, color: PdfColors.black),
                   ),
                 ),
               ),
 
+              pw.SizedBox(height: 8.h),
               ///Event List Section Title
               pw.Text(
                 "Events",

@@ -29,11 +29,15 @@ class OrganizerController extends GetxController{
   RxBool missionMarkasActiveStatus = false.obs;
 
 
-  RxString formattedDate="".obs;
+  RxString formattedEndDate="".obs;
 
-  Rx<TextEditingController> eventSearchDateController = TextEditingController().obs;
+  RxString formattedStartDate="".obs;
 
-  void eventSearchDate() async {
+  Rx<TextEditingController> eventStartSearchDateController = TextEditingController().obs;
+
+  Rx<TextEditingController> eventEndSearchDateController = TextEditingController().obs;
+
+  void eventSartSearchDate() async {
     DateTime? pickedDate = await showDatePicker(
       context: Get.context!,
       initialDate: DateTime(2007, 12, 31), // Latest selectable date
@@ -43,10 +47,27 @@ class OrganizerController extends GetxController{
     );
 
     if (pickedDate != null) {
-      formattedDate.value = DateFormat('yyyy-MM-dd').format(pickedDate);
-      eventSearchDateController.value.text  = formattedDate.value;
+      formattedStartDate.value = DateFormat('yyyy-MM-dd').format(pickedDate);
+      eventStartSearchDateController.value.text  = formattedStartDate.value;
     } else {
-      formattedDate.value = "Date not selected";
+      formattedStartDate.value = "Date not selected";
+    }
+  }
+
+  void eventEndSearchDate() async {
+    DateTime? pickedDate = await showDatePicker(
+      context: Get.context!,
+      initialDate: DateTime(2007, 12, 31), // Latest selectable date
+      firstDate: DateTime(2000), // Earliest selectable date
+      lastDate: DateTime(2100),  // Needed for future filtering
+
+    );
+
+    if (pickedDate != null) {
+      formattedEndDate.value = DateFormat('yyyy-MM-dd').format(pickedDate);
+      eventEndSearchDateController.value.text  = formattedEndDate.value;
+    } else {
+      formattedEndDate.value = "Date not selected";
     }
   }
 

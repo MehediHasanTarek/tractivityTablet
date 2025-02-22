@@ -10,6 +10,7 @@ import 'package:tractivity_app/view/components/custom_image/custom_image.dart';
 import 'package:tractivity_app/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:tractivity_app/view/components/custom_text/custom_text.dart';
 import 'package:tractivity_app/view/components/custom_text_field/custom_text_field.dart';
+import 'package:tractivity_app/view/components/nav_bar/nav_bar.dart';
 import 'package:tractivity_app/view/screens/home_screen/controller/home_controller.dart';
 
 class DonationScreen extends StatefulWidget {
@@ -23,13 +24,18 @@ class _DonationScreenState extends State<DonationScreen> {
 
   final  homeController = Get.find<HomeController>();
 
+
   @override
   Widget build(BuildContext context) {
+
+    String longText =
+        "100% of your donation will go towards building the infrastructure  of Serve Out. We have no paid staff.building the infrastructure  of Serve Out. We have no paid staff.500% of your donation will go towards building the infrastructure  of Serve Out. We have no paid staff.building the infrastructure  of Serve Out. We have no paid staff";
+
     return Scaffold(
-      appBar: CustomRoyelAppbar(
+      appBar: const CustomRoyelAppbar(
         titleName: AppStrings.donation,
         fontSize: 22,
-        leftIcon: true,
+        leftIcon: false,
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -46,19 +52,48 @@ class _DonationScreenState extends State<DonationScreen> {
 
                       SizedBox(height: isTablet ? 20 : 12),
 
-                      /// **Donation Description**
-                      SingleChildScrollView(
-                        scrollDirection: Axis.vertical,
-                        child: CustomText(
-                          text: "100% of your donation will go towards building the infrastructure  of Serve Out. We have no paid staff.building the infrastructure  of Serve Out. We have no paid staff.",
-                          fontSize: isTablet ? 8.sp : 18.sp,
-                          fontWeight: FontWeight.w500,
-                          textAlign: TextAlign.start,
-                          maxLines: 3,
+                      /// Donation Description**
+                   /*   CustomText(
+                        text: "100% of your donation will go towards building the infrastructure  of Serve Out. We have no paid staff.building the infrastructure  of Serve Out. We have no paid staff.",
+                        fontSize: isTablet ? 8.sp : 18.sp,
+                        fontWeight: FontWeight.w500,
+                        textAlign: TextAlign.start,
+                        maxLines: 3,
+                      ),*/
+
+                      CustomText(
+                        text: longText,
+                        fontSize:isTablet?6.sp: 14.sp,
+                        fontWeight: FontWeight.w500,
+                        textAlign: TextAlign.start,
+                        maxLines: 3,
+                      ),
+
+                    SizedBox(height: 4.h),
+                      // Show more/less button
+                      GestureDetector(
+                        onTap: () {
+
+                          homeController.isExpanded.value = !homeController.isExpanded.value;
+
+                          if(isTablet){
+
+                            showAlertDialog(context, longText,longText.length,isTablet);
+
+                          }else{
+
+                            ///Show BottomSheet when clicking on the text
+                            showBottomSheet(context, longText,longText.length,isTablet);
+                          }
+
+                        },
+                        child: Text(
+                          homeController.isExpanded.value ? 'Show less' : 'Show more',
+                          style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: isTablet?8.sp:14.sp),
                         ),
                       ),
 
-                      SizedBox(height: isTablet ? 20 : 12),
+                      SizedBox(height: isTablet ? 20 : 16.h),
 
                       CustomText(
                         text: "Basic details",
@@ -106,8 +141,8 @@ class _DonationScreenState extends State<DonationScreen> {
 
                       SizedBox(height: isTablet ? 16 : 8),
 
-                      /// **Country & State**
-                      Row(
+                      ///Country & State**
+                 /*     Row(
                         children: [
                           Expanded(
                             child: CustomFormCard(
@@ -129,7 +164,7 @@ class _DonationScreenState extends State<DonationScreen> {
                             ),
                           ),
                         ],
-                      ),
+                      ),*/
 
                       SizedBox(height: isTablet ? 16 : 8),
 
@@ -161,7 +196,7 @@ class _DonationScreenState extends State<DonationScreen> {
                       ),
 
 
-                      /// **Card Input**
+                      ///Card Input
                       Container(
                         height: 60.h,
                         width: constraints.maxWidth,
@@ -224,12 +259,12 @@ class _DonationScreenState extends State<DonationScreen> {
                         bottom: 8,
                       ),
 
-                      CustomText(
+                   /*   CustomText(
                         text: "Donation Type",
                         fontSize: isTablet ? 8.sp : 12.sp,
                         fontWeight: FontWeight.w600,
 
-                      ),
+                      ),*/
 
                       Row(
                         mainAxisAlignment:MainAxisAlignment.start,
@@ -302,6 +337,126 @@ class _DonationScreenState extends State<DonationScreen> {
           );
         },
       ),
+      bottomNavigationBar: NavBar(currentIndex: 4),
     );
+  }
+
+
+  // Function to show the full text in a BottomSheet
+  void showBottomSheet(BuildContext context, String longText,int maxLines, bool isTablet) {
+    showModalBottomSheet(
+      context: context,
+      isDismissible: false,
+      builder: (BuildContext context) {
+        return SizedBox(
+           width: double.infinity,
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+
+                    Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+
+                    const Text(
+                        '',
+                        style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                      ),
+
+                      InkWell(
+                          onTap: (){
+                            Navigator.pop(context);
+
+                            homeController.isExpanded.value=false;
+                          },
+                          child: Icon(Icons.clear,size: 32,))
+                    ],
+                  ),
+                    SizedBox(height: 12.h),
+
+                  CustomText(
+                    text: longText,
+                    fontSize:isTablet?6.sp:14.sp,
+                    fontWeight: FontWeight.w500,
+                    textAlign: TextAlign.start,
+                    maxLines: maxLines,
+                  ),
+                  SizedBox(height: 10),
+
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  // Function to show the full text in a BottomSheet
+  void showAlertDialog(BuildContext context, String longText,int maxLines, bool isTablet) {
+
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: Colors.white,
+        insetPadding: EdgeInsets.all(8),
+        contentPadding: EdgeInsets.all(8),
+        //   clipBehavior: Clip.antiAliasWithSaveLayer,
+        title:Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            Align(
+              alignment: Alignment.centerLeft,
+              child: CustomText(
+                text: "",
+                fontSize: 24,
+                color: AppColors.black,
+                fontWeight: FontWeight.w500,
+                bottom: 8,
+              ),
+            ),
+
+            Align(
+              alignment: Alignment.centerRight,
+              child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    homeController.isExpanded.value=false;
+                  },
+                  child: const Icon(
+                    Icons.close,
+                    size: 32,
+                    color: Colors.black,
+                  )),
+            )
+          ],
+        ),
+        content: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+
+                CustomText(
+                  text: longText,
+                  fontSize:isTablet?6.sp:14.sp,
+                  fontWeight: FontWeight.w500,
+                  textAlign: TextAlign.start,
+                  maxLines: maxLines,
+                ),
+                SizedBox(height: 10),
+
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+
   }
 }

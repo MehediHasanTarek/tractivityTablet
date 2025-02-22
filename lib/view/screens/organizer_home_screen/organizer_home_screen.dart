@@ -807,7 +807,7 @@ class _OrganizerHomeScreenState extends State<OrganizerHomeScreen> {
                                                                                         padding: const EdgeInsets.only(left: 8,right: 8),
                                                                                         child: CustomText(
                                                                                           text: "Empowering communities  worldwide  through education, healthcare.",
-                                                                                          fontSize:isTablet?8.sp: 12.sp,
+                                                                                          fontSize:isTablet?6.sp: 12.sp,
                                                                                           color: AppColors.black_80,
                                                                                           fontWeight: FontWeight.w400,
                                                                                           textAlign: TextAlign.start,

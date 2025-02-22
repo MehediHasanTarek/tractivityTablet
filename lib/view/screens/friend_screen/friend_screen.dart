@@ -32,8 +32,7 @@ class FriendScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8.0),
             child: Obx(() {
-
-
+              
                   return Column(
                     children: [
                       ///========= Tab Bar ========

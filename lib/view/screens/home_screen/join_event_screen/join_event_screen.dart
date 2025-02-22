@@ -28,10 +28,12 @@ class _JoinEventScreenState extends State<JoinEventScreen> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context,constraints){
+
       final isTablet = constraints.maxWidth > 600;
 
       return Scaffold(
         appBar: AppBar(
+          scrolledUnderElevation: 0,
           title: Text(
             "Join Event",
             style: TextStyle(
@@ -80,7 +82,7 @@ class _JoinEventScreenState extends State<JoinEventScreen> {
                                   size: 20,
                                 ),
                                 CustomText(
-                                  text: "Bushwick Brooklyn, NY, USA",
+                                  text: "Bushwhack Brooklyn, NY, USA",
                                   fontSize: 12,
                                   color: AppColors.primary,
                                   fontWeight: FontWeight.w400,
@@ -401,7 +403,6 @@ class _JoinEventScreenState extends State<JoinEventScreen> {
                                                   ),
                                                 ),
                                               ),
-
 
 
                                             ],

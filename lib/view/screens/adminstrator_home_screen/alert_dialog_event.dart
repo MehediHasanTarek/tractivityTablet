@@ -50,9 +50,11 @@ class _AlertDialogEventState extends State<AlertDialogEvent> {
             CustomButton(onTap: (){
               Navigator.of(context).pop();
             },title:"NO",height:isTablet?70.h: 45.h,
-              fontSize: 12.sp,fillColor: AppColors.white,
+              fontSize: 12.sp,
+              fillColor: AppColors.white,
               textColor: AppColors.primary,
-              isBorder: true,borderWidth: 1,)
+              isBorder: true,borderWidth: 1,
+            )
           ],
         ),
       );

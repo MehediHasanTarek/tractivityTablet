@@ -15,6 +15,8 @@ class AppImages {
 
   static const String checkImage = "$basePath/check.png";
 
+  static const String userImage = "$basePath/user2.png";
+
 
 
 

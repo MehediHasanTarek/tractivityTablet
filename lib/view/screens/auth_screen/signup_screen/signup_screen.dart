@@ -296,7 +296,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           },
                           onTap: (){
 
-                           // Get.toNamed(AppRoutes.locationMapScreen);
+                             //Get.toNamed(AppRoutes.locationMapScreen);
                           },
                         ),
 

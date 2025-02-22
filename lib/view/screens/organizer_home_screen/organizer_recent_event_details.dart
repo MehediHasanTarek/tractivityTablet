@@ -43,9 +43,43 @@ class _OrganizerRecentEventDetailsState extends State<OrganizerRecentEventDetail
       final isTablet = constraints.maxWidth > 600;
 
       return Scaffold(
-        appBar: CustomRoyelAppbar(
+       /* appBar: CustomRoyelAppbar(
           leftIcon: true,
           titleName: "Event Details",
+        ),*/
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          scrolledUnderElevation: 0,
+          leading: Builder(
+            builder: (context) {
+              return IconButton(
+                onPressed: (){
+                  Get.back();
+                },
+                icon: Icon(Icons.arrow_back_rounded, color: AppColors.primary,size: isTablet?28.w:24.w
+                  ,),
+              );
+            },
+          ),
+          title: Text(
+            "Event Details",
+            style: TextStyle(
+              color: AppColors.black,
+              fontSize: 22.sp,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          actions: [
+
+            IconButton(
+              onPressed: () {
+              },
+              icon: Padding(
+                padding: const EdgeInsets.only(right: 12),
+                child:Icon(Icons.delete_forever,size: 32,color: Colors.black,),
+              ),
+            )
+          ],
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),

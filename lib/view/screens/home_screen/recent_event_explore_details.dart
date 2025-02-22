@@ -331,13 +331,34 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
                    SizedBox(
                      height: 8.h,
                    ),
+
                    const Divider(
                      color: Colors.black54,
                    ),
 
                    CustomText(
-                     text: "Street",
-                     fontSize:isTablet?6.sp: 16.sp,
+                     text: "City",
+                     fontSize:isTablet?6.sp: 14.sp,
+                     fontWeight: FontWeight.w600,
+                     color: AppColors.primary,
+                   ),
+                   SizedBox(
+                     height: 4.h,
+                   ),
+                   CustomText(
+                     text: "Dhaka city, Keraniganj",
+                     fontSize:isTablet?6.sp: 14.sp,
+                     fontWeight: FontWeight.w500,
+                     color: AppColors.black_80,
+                     bottom: 6,
+                   ),
+                   const Divider(
+                     color: Colors.black54,
+                   ),
+
+                   CustomText(
+                     text: "State",
+                     fontSize:isTablet?6.sp: 14.sp,
                      fontWeight: FontWeight.w600,
                      color: AppColors.primary,
                    ),
@@ -352,13 +373,15 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
                      bottom: 6,
                    ),
 
+
+
                    const Divider(
                      color: Colors.black54,
                    ),
 
                    CustomText(
-                     text: "City",
-                     fontSize:isTablet?6.sp: 16.sp,
+                     text: "Zip",
+                     fontSize:isTablet?6.sp: 14.sp,
                      fontWeight: FontWeight.w600,
                      color: AppColors.primary,
                    ),
@@ -366,7 +389,7 @@ class _RecentEventExploreDetailsState extends State<RecentEventExploreDetails> {
                      height: 4.h,
                    ),
                    CustomText(
-                     text: "Dhaka city, Keraniganj",
+                     text: "1000",
                      fontSize:isTablet?6.sp: 14.sp,
                      fontWeight: FontWeight.w500,
                      color: AppColors.black_80,

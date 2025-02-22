@@ -194,7 +194,7 @@ class _EditPersonProfileScreenState extends State<EditPersonProfileScreen> {
 
                     ///============ Last Name ============
                     CustomFormCard(
-                        title: '"Profession" to Talent/Skill',
+                        title: 'Talent/Skill',
                         hintText: "Enter Talent/Skill",
                         fontSize: isTablet?16:16,
                         hasBackgroundColor: true,

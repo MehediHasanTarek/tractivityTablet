@@ -110,11 +110,11 @@ class _JonEventDetailsScreenState extends State<JonEventDetailsScreen> {
 
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.location_pin,
                           size: 18,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 4,
                         ),
                         CustomText(
@@ -341,26 +341,6 @@ class _JonEventDetailsScreenState extends State<JonEventDetailsScreen> {
                     SizedBox(
                       height: 8.h,
                     ),
-                    const Divider(
-                      color: Colors.black54,
-                    ),
-
-                    CustomText(
-                      text: "Street",
-                      fontSize:isTablet?6.sp: 14.sp,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.primary,
-                    ),
-                    SizedBox(
-                      height: 4.h,
-                    ),
-                    CustomText(
-                      text: "Bijoy Sarani",
-                      fontSize:isTablet?6.sp: 14.sp,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.black_80,
-                      bottom: 6,
-                    ),
 
                     const Divider(
                       color: Colors.black54,
@@ -377,6 +357,48 @@ class _JonEventDetailsScreenState extends State<JonEventDetailsScreen> {
                     ),
                     CustomText(
                       text: "Dhaka city, Keraniganj",
+                      fontSize:isTablet?6.sp: 14.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.black_80,
+                      bottom: 6,
+                    ),
+                    const Divider(
+                      color: Colors.black54,
+                    ),
+
+                    CustomText(
+                      text: "State",
+                      fontSize:isTablet?6.sp: 14.sp,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.primary,
+                    ),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    CustomText(
+                      text: "Bijoy Sarani",
+                      fontSize:isTablet?6.sp: 14.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.black_80,
+                      bottom: 6,
+                    ),
+
+
+                    const Divider(
+                      color: Colors.black54,
+                    ),
+
+                    CustomText(
+                      text: "Zip",
+                      fontSize:isTablet?6.sp: 14.sp,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.primary,
+                    ),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    CustomText(
+                      text: "1000",
                       fontSize:isTablet?6.sp: 14.sp,
                       fontWeight: FontWeight.w500,
                       color: AppColors.black_80,
