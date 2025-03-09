@@ -22,6 +22,7 @@ class OrganizerEventCreateScreen extends StatefulWidget {
 }
 
 class _OrganizerEventCreateScreenState extends State<OrganizerEventCreateScreen> {
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context,constraints){
@@ -314,6 +315,7 @@ class _OrganizerEventCreateScreenState extends State<OrganizerEventCreateScreen>
                 SizedBox(
                   height: 16,
                 ),
+
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: CustomButton(onTap: (){

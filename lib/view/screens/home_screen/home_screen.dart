@@ -44,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return LayoutBuilder(builder: (context,constraints){
 
       final isTablet = constraints.maxWidth > 600;

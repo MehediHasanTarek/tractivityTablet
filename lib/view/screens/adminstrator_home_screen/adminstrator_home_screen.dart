@@ -75,7 +75,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
             ),
           ),
 
-        body: SingleChildScrollView(
+           body: SingleChildScrollView(
           child: Obx(
                   () {
                 return Padding(
@@ -93,7 +93,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                           selectedIndex: administratorController.adminstratior_currentIndex.value,
                           onTabSelected: (value) {
                             administratorController.adminstratior_currentIndex.value = value;
-                           setState(() {});
+                            setState(() {});
                           },
                           selectedColor: AppColors.primary,
                           unselectedColor: AppColors.grey_1
@@ -107,7 +107,6 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                             children: List.generate(4, (index) {
                               return InkWell(
                                 onTap: (){
-
                                   Get.toNamed(AppRoutes.adminstratorOrganizationDetailsScreen);
                                 },
                                 child: Padding(
@@ -230,7 +229,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                   child: Column(
                                                                     children: [
 
-                                                                        Align(
+                                                                      Align(
                                                                         alignment: Alignment.topLeft,
                                                                         child: CustomText(
                                                                           text: "Organization",
@@ -240,47 +239,47 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                                           bottom: 8,
                                                                         ),
                                                                       ),
-                                                                        Container(
-                                                                          padding: EdgeInsets.all(8),
-                                                                          decoration: BoxDecoration(
-                                                                            color: AppColors.grey_3.withOpacity(0.5),
-                                                                            borderRadius: BorderRadius.circular(15),
-                                                                          ),
-                                                                          child: Column(
-                                                                            mainAxisAlignment: MainAxisAlignment.start,
-                                                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                                                            children: [
-
-                                                                              CustomText(
-                                                                                text: "Donation Administrator",
-                                                                                fontSize: 16,
-                                                                                color: AppColors.black_80,
-                                                                                fontWeight: FontWeight.w600,
-                                                                                textAlign: TextAlign.start,
-                                                                                left: 8,
-                                                                              ),
-
-                                                                              Padding(
-                                                                                padding: const EdgeInsets.only(left: 8,right: 8),
-                                                                                child: CustomText(
-                                                                                  text: "Empowering communities  worldwide  through education, healthcare.",
-                                                                                  fontSize:isTablet?6.sp: 12.sp,
-                                                                                  color: AppColors.black_80,
-                                                                                  fontWeight: FontWeight.w400,
-                                                                                  textAlign: TextAlign.start,
-                                                                                  maxLines: 2,
-                                                                                  overflow: TextOverflow.ellipsis, // Add ellipsis at the end if the text overflows.
-                                                                                  // maxLines: 3,
-                                                                                ),
-                                                                              ),
-                                                                            ],
-                                                                          ),
+                                                                      Container(
+                                                                        padding: EdgeInsets.all(8),
+                                                                        decoration: BoxDecoration(
+                                                                          color: AppColors.grey_3.withOpacity(0.5),
+                                                                          borderRadius: BorderRadius.circular(15),
                                                                         ),
+                                                                        child: Column(
+                                                                          mainAxisAlignment: MainAxisAlignment.start,
+                                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                                          children: [
+
+                                                                            CustomText(
+                                                                              text: "Donation Administrator",
+                                                                              fontSize: 16,
+                                                                              color: AppColors.black_80,
+                                                                              fontWeight: FontWeight.w600,
+                                                                              textAlign: TextAlign.start,
+                                                                              left: 8,
+                                                                            ),
+
+                                                                            Padding(
+                                                                              padding: const EdgeInsets.only(left: 8,right: 8),
+                                                                              child: CustomText(
+                                                                                text: "Empowering communities  worldwide  through education, healthcare.",
+                                                                                fontSize:isTablet?6.sp: 12.sp,
+                                                                                color: AppColors.black_80,
+                                                                                fontWeight: FontWeight.w400,
+                                                                                textAlign: TextAlign.start,
+                                                                                maxLines: 2,
+                                                                                overflow: TextOverflow.ellipsis, // Add ellipsis at the end if the text overflows.
+                                                                                // maxLines: 3,
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
                                                                       const SizedBox(
                                                                         height: 12,
                                                                       ),
 
-                                                                        Align(
+                                                                      Align(
                                                                         alignment: Alignment.topLeft,
                                                                         child: CustomText(
                                                                           text: "Add Organizer",
@@ -833,6 +832,7 @@ class _AdminstratorHomeScreenState extends State<AdminstratorHomeScreen> {
                                                       ),
                                                     ),
                                                   );
+
                                                 },
                                                 title: "Delete",
                                                 width: 60.w,

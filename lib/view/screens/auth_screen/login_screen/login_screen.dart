@@ -159,7 +159,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                       SizedBox(height: isTablet ? 40.h : 30.h),
 
-                      /// Divider with Text
+                      /// divider with Text
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,

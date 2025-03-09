@@ -267,14 +267,12 @@ class _VolunteerEventReportScreenState extends State<VolunteerEventReportScreen>
                   height: 8.h,
                 ),
                 Column(children: List.generate(6, (index) {
-
                   return Card(
                     color: Colors.white,
                     elevation: 0.2,
                     child: ExpansionTile(
                       shape: Border(),
                       title: Text("Helping Hands"),
-
                       children: [
 
                         Container(
@@ -291,7 +289,7 @@ class _VolunteerEventReportScreenState extends State<VolunteerEventReportScreen>
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
 
-                                CustomText(
+                                const CustomText(
                                   textAlign: TextAlign.start,
                                   text: "Hours 3.5 ",
                                   maxLines: 3,
@@ -307,7 +305,7 @@ class _VolunteerEventReportScreenState extends State<VolunteerEventReportScreen>
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
 
-                                    CustomText(
+                                    const CustomText(
                                       textAlign: TextAlign.start,
                                       text: "Mileage: 186.9 ",
                                       maxLines: 3,
